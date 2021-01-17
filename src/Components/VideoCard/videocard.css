@@ -1,0 +1,149 @@
+.videocard {
+  /* border-radius: 40px; */
+  width: 265px;
+  height: 175px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #2b0001;
+
+  /* border: 1px solid #2b0001; */
+  /* -webkit-box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41); */
+}
+
+.videocard-details {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 17%;
+  /* border-radius: 40px; */
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  /* background: rgb(43, 0, 1, 0.9); */
+  transition: 5s ease-in-out in;
+  overflow: hidden;
+}
+.videocard-details:hover {
+  height: 100%;
+}
+.videocard-title {
+  /* color: white; */
+  color: #2b0001;
+  position: absolute;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.videocard-img {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+  /* border-radius: 40px; */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 23px 46px -14px rgba(0, 0, 0, 0.59);
+  box-shadow: 0px 23px 46px -14px rgba(0, 0, 0, 0.59);
+}
+/* .videocard-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+} */
+.videocard-likes-view-icon-container {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  color: white;
+}
+
+.videocard-play-icon-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: rgb(255, 255, 255, 0.4);
+}
+
+.videocard-play-icon-container:hover {
+  opacity: 1;
+}
+
+.videocard-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(43, 0, 1, 0.8);
+  z-index: 1;
+  font-size: 4em !important;
+}
+.videocard-play-icon:hover {
+  font-size: 5rem !important;
+  color: #2b0001;
+}
+
+/* -----VideoCard Row----- */
+
+.videocard-row {
+  height: 100%;
+  width: 100%;
+  /* border-top: 1px solid #2b0001;
+  border-bottom: 1px solid #2b0001; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.videocard-row-title {
+  color: #2b0001;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  margin-left: 40px;
+  border-bottom: 2px solid hsl(359, 100%, 8%);
+
+  /* border-bottom: 2px solid rgb(43, 0, 1, 0.3); */
+}
+
+/* New video card-styling unsure ???? */
+
+.videocard-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.videocard-avatar-icon-container {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+}
+.videocard-avatar-icon {
+  font-size: 3rem !important;
+  color: #2b0001;
+}
+
+.videocard-views-like-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+  padding-right: 5px;
+}
+
+.videocard-views-icon {
+  color: #2b0001;
+}
+.videocard-heart-icon {
+  color: #2b0001;
+}

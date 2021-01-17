@@ -1,0 +1,85 @@
+.suggestedrow {
+  border-top: 2px solid #2b0001;
+  border-bottom: 2px solid #2b0001;
+  background-color: whitesmoke;
+  height: 9vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  z-index: 1000000;
+  /* overflow: hidden; */
+}
+.suggestrow-filtered-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  transition: 1s ease-in-out;
+}
+
+.suggestion-item {
+  border-radius: 25px;
+  border: 1px solid #2b0001;
+  padding: 10px;
+  width: 100%;
+  min-width: 7%;
+  margin: 10px;
+  background: rgb(43, 0, 1, 0.8);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.suggestions-row-fade {
+  height: 100%;
+  width: 30px;
+  background: rgb(43, 0, 1, 0.8);
+}
+
+.suggestions-row-icons {
+  cursor: pointer;
+}
+
+.suggestions-start-icon {
+  width: 200px;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  background: rgb(43, 0, 1, 0.8);
+}
+
+.suggestions-row-right-icon-container {
+  height: 100%;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(43, 0, 1, 1) 25%
+  );
+  -webkit-box-shadow: -50px 0px 44px -14px rgba(255, 255, 255, 0.9);
+  box-shadow: -50px 0px 44px -14px rgba(255, 255, 255, 0.9);
+  z-index: 100;
+}
+.suggestions-row-left-icon-container {
+  height: 100%;
+  width: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: rgb(43, 0, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(43, 0, 1, 1) 75%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  -webkit-box-shadow: 39px 0px 30px -4px #ffffff;
+  box-shadow: 39px 0px 30px -4px #ffffff;
+  z-index: 100;
+}

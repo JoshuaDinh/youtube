@@ -1,0 +1,32 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.3);
+  width: 100vw;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+}
+.app-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-content {
+  position: relative;
+  top: 20vh;
+  width: 100%;
+  /* background: #1d1919; */
+}
