@@ -27,6 +27,6 @@ body {
 .app-content {
   position: relative;
   top: 20vh;
-  width: 100%;
+  width: 100vw;
   /* background: #1d1919; */
 }

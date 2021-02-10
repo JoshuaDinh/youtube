@@ -2,11 +2,9 @@
   /* border-radius: 40px; */
   width: 265px;
   height: 175px;
-  margin: 10px;
   cursor: pointer;
   position: relative;
   border: 1px solid #2b0001;
-
   /* border: 1px solid #2b0001; */
   /* -webkit-box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41);
   box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41); */
@@ -39,7 +37,7 @@
 .videocard-img {
   height: 100%;
   width: 100%;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   /* border-radius: 40px; */
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -96,17 +94,20 @@
   /* border-top: 1px solid #2b0001;
   border-bottom: 1px solid #2b0001; */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
+  grid-gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: 25px;
 }
 
 .videocard-row-title {
   color: #2b0001;
   font-size: 2rem;
-  width: 100%;
+  width: 98%;
   height: 100%;
-  margin-left: 40px;
+  margin: 40px 0;
+  margin-left: 10px;
   border-bottom: 2px solid hsl(359, 100%, 8%);
 
   /* border-bottom: 2px solid rgb(43, 0, 1, 0.3); */

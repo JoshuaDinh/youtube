@@ -25,7 +25,7 @@
   width: 40%;
   display: flex;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid white;
   color: white;
 }
 .searchbar-input {

@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyDhH1Pv_8hlOVJr0dFrkngzaMLkU9JzXGE";
+export const API_KEY = "AIzaSyDhH1Pv_8hlOVJr0dFrkngzaMLkU9JzXGE";
 
 const requests = {
   fetchJavascript: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=Javascript+Tutorials&key=${API_KEY}`,

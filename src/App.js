@@ -9,6 +9,8 @@ import { VideoCardRow } from "./Components/VideoCard/VideoCardRow";
 
 const App = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [input, setInput] = useState("");
+  const [searchVideo, setSearchVideo] = useState("");
 
   // Sets authorization token from Google_OAuth
   //  useEffect(() => {
@@ -123,7 +125,13 @@ const App = () => {
     <div className="App">
       <div className="app-fixed-header">
         {" "}
-        <Searchbar setToggleSidebar={setToggleSidebar} />
+        <Searchbar
+          input={input}
+          setInput={setInput}
+          searchVideo={searchVideo}
+          setSearchVideo={setSearchVideo}
+          setToggleSidebar={setToggleSidebar}
+        />
         <SuggestionsRow />
       </div>
 
