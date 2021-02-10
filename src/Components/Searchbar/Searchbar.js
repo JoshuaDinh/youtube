@@ -7,8 +7,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from "@material-ui/icons/Menu";
 import { SuggestionsRow } from "../SuggestionsRow/SuggestionsRow";
-import { API_KEY } from "../../requests";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const Searchbar = ({
   setToggleSidebar,
@@ -17,23 +16,6 @@ export const Searchbar = ({
   searchVideo,
   setSearchVideo,
 }) => {
-  useEffect(() => {
-    const fetchData = async () => {
-      const searchVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: input,
-            key: API_KEY,
-            maxResults: 5,
-          },
-        }
-      );
-    };
-    // fetchData();
-  }, []);
-
   const submitSearch = (e) => {
     e.preventDefault(e);
     setSearchVideo(input);
@@ -61,15 +43,22 @@ export const Searchbar = ({
             type="text"
             onChange={(e) => setInput(e.target.value)}
           ></input>
-          <SearchIcon
-            className="searchbar-search-icon"
+          <Link
+            className="router-link"
+            to="/Results"
             onClick={(input) => {
               setSearchVideo(input);
             }}
-          />
+          >
+            {" "}
+            <SearchIcon className="searchbar-search-icon" />
+          </Link>
         </div>
         <div className="searchbar-icons-right-container">
-          <HomeIcon className="searchbar-home-icon" />
+          <Link className="router-link" to="/Home">
+            {" "}
+            <HomeIcon className="searchbar-home-icon " />
+          </Link>{" "}
           <NotificationsIcon className="searchbar-notifications-icon" />
           <AccountCircleIcon className="searchbar-avatar-icon" />
         </div>

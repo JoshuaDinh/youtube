@@ -1,5 +1,44 @@
-.results {
-  border: 1px solid black;
-  height: 20%;
-  width: 80%;
+.results-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  color: white;
+}
+
+.result-card {
+  height: 25%;
+  width: 70%;
+  border: 1px solid #2b0001;
+  background-color: rgb(43, 0, 1, 0.8);
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.result-card-img {
+  width: 35%;
+  height: 240px;
+}
+
+.result-video-info {
+  display: grid;
+  width: 70%;
+}
+
+.result-title {
+  font-size: 1.5rem;
+}
+
+.result-account {
+  display: flex;
+  align-items: center;
+}
+
+.result-avatar {
+  font-size: 2em !important;
+  color: white;
 }

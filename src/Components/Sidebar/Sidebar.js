@@ -24,7 +24,7 @@ export const Sidebar = ({ setToggleSidebar }) => {
             />
           }
         />
-        <SidebarOption icon={<HomeIcon />} title="Home" />
+        <SidebarOption icon={<HomeIcon />} title="Home" link="/Home" />
         <SidebarOption icon={<WhatshotIcon />} title="Trending" />
         <SidebarOption icon={<SubscriptionsIcon />} title="Subscriptions" />
         <SidebarOption icon={<VideoLibraryIcon />} title="Library" />

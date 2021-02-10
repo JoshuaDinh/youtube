@@ -52,6 +52,7 @@
 .searchbar-search-icon {
   font-size: 2rem !important;
   cursor: pointer;
+  text-decoration: none;
 }
 .searchbar-avatar-icon {
   font-size: 2rem !important;

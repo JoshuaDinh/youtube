@@ -8,6 +8,10 @@ body {
   background: rgba(255, 255, 255, 0.3);
   width: 100vw;
 }
+.router-link {
+  color: white;
+  text-decoration: none;
+}
 
 .App {
   height: 100vh;
