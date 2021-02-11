@@ -10,6 +10,8 @@ import { Results } from "./Components/Results/Results";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { API_KEY } from "./requests";
+import { Watch } from "@material-ui/icons";
+import { WatchVideo } from "./Components/WatchVideo/WatchVideo";
 
 const App = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -32,7 +34,7 @@ const App = () => {
       );
       setSearchResults(searchVideos.data.items);
     };
-    // fetchData();
+    fetchData();
   }, [searchVideo]);
   console.log(searchResults);
 
@@ -53,6 +55,9 @@ const App = () => {
         <Switch>
           {toggleSidebar && <Sidebar setToggleSidebar={setToggleSidebar} />}{" "}
           <div className="app-content">
+            <Route path="/Watch">
+              <WatchVideo />
+            </Route>
             <Route path="/Results">
               <Results searchResults={searchResults} />
             </Route>

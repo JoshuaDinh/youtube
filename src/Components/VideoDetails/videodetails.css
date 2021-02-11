@@ -1,0 +1,35 @@
+.video-title {
+  font-size: 2rem;
+}
+
+.video-views-date {
+  font-size: 0.9rem;
+}
+.videodetails-right-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  font-size: 1.3rem;
+}
+.videodetails-left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  height: 70px;
+  font-size: 1.3rem;
+}
+
+.videodetails-icons {
+  font-size: 1.4em !important;
+  color: #2b0001;
+  cursor: pointer;
+}
+
+.videodetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

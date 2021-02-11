@@ -1,0 +1,33 @@
+.videodetails-account {
+  margin: 20px 0;
+  display: flex;
+}
+.videodetails-account-info {
+  width: 70%;
+  margin-left: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.videodetails-name-subscribers-container {
+  margin-bottom: 40px;
+}
+.videodetails-account-name {
+  font-size: 1.2rem;
+}
+.videodetails-account-subscribers {
+  font-size: 0.8rem;
+}
+
+.videodetails-avatar-icon {
+  font-size: 4em !important;
+  color: #2b0001;
+}
+.videodetails-account-verified-icon {
+  color: #2b0001;
+}
+
+.videodetails-video-description {
+  word-spacing: 1.7px;
+}

@@ -11,7 +11,7 @@ export const Results = ({ searchResults }) => {
             account={info.snippet.channelTitle}
             description={info.snippet.description}
             title={info.snippet.title}
-            thumbnail={info.snippet.thumbnails.high}
+            thumbnail={info.snippet.thumbnails.high.url}
           />
         );
       })}

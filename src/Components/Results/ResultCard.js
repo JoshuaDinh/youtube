@@ -2,6 +2,7 @@ import React from "react";
 import "./results.css";
 import jslogo from "../../images/js-logo.png";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import CheckIcon from "@material-ui/icons/Check";
 
 export const ResultCard = ({ title, account, description, thumbnail }) => {
   return (
@@ -16,8 +17,9 @@ export const ResultCard = ({ title, account, description, thumbnail }) => {
         <p className="result-title">{title}</p>
         <div className="result-account">
           {" "}
-          <AccountCircleIcon className="result-avatar" />
+          <AccountCircleIcon className="result-avatar-icon" />
           <p className="result-account-name">{account}</p>
+          <CheckIcon className="result-account-verified-icon" />
         </div>
         <p className="result-description">{description}</p>
       </div>
