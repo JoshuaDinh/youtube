@@ -12,7 +12,7 @@
 .result-card {
   width: 70%;
   border: 1px solid #2b0001;
-  background-color: rgb(43, 0, 1, 0.8);
+  background-color: rgba(8, 8, 8);
   display: flex;
   justify-content: space-between;
   margin: 10px 0;

@@ -1,5 +1,6 @@
 .comments {
   margin-top: 5%;
+  width: 90%;
 }
 
 .comments-header-container {
@@ -7,9 +8,6 @@
   margin: 15px 0;
 }
 
-.comments-header {
-  color: #2b0001;
-}
 .comments-comment-amount {
   color: black;
   margin-right: 10px;
@@ -33,23 +31,28 @@
   cursor: pointer;
   width: 100%;
   padding: 10px;
+  background: none;
 }
 
 .addcomment-avatar-icon {
-  color: #2b0001;
+  color: black;
   font-size: 3em !important;
 }
 
 /*---------- comment card ---------- */
 
 .commentcard {
-  width: 65%;
+  width: 100%;
   height: 100%;
   /* border: 1px solid black; */
   padding: 25px;
 }
+
+.commentcard-account > p {
+  margin-left: 13px;
+}
 .commentcard-comment-posted-date {
-  padding-left: 10px;
+  margin-left: 10px;
   font-size: 0.8rem;
 }
 
@@ -65,11 +68,11 @@
 
 .commentcard-icons-container {
   margin: 3% 0;
-  color: #2b0001;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 28%;
+  width: 14%;
 }
 
 .commentcard-icon-container {
@@ -77,7 +80,7 @@
   align-items: center;
 }
 .commentcard-icon {
-  font-size: 1.6em !important;
+  font-size: 1.3em !important;
   margin-right: 5px;
 }
 

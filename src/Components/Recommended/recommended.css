@@ -1,0 +1,34 @@
+.recommended {
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 50%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.recommendedvideocard {
+  display: flex;
+  width: 100%;
+  /* border: 1px solid blue; */
+  margin: 5% 0;
+}
+
+.recommended-video-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 5%;
+}
+
+.recommended-thumbnail {
+  width: 203px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recommendedvideocard {
+}

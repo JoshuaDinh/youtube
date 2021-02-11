@@ -4,9 +4,10 @@ import "./watchvideo.css";
 import { Comments } from "../Comments/Comments";
 import { VideoDetails } from "../VideoDetails/VideoDetails";
 import { VideoDetailsAccount } from "../VideoDetailsAccount/VideoDetailsAccount";
+import { Recommended } from "../Recommended/Recommended";
 
-export const VideoPlayer = () => {
-  const videoSrc = `https://www.youtube.com/embed/`;
+export const VideoPlayer = ({ videoId }) => {
+  const videoSrc = `https://www.youtube.com/embed/${videoId}`;
   // video id needed for video
   return (
     <div className="videoplayer-container">
@@ -20,17 +21,18 @@ export const VideoPlayer = () => {
   );
 };
 
-export const WatchVideo = () => {
+export const WatchVideo = ({ selectedVideoData, videoId }) => {
   return (
     <div className="watchvideo">
       <div className="video-left-container">
-        <VideoPlayer />
+        <VideoPlayer videoId={videoId} />
         <VideoDetails />
         <hr></hr>
         <VideoDetailsAccount />
         <hr></hr>
-        <Comments />
+        <Comments selectedVideoData={selectedVideoData} />
       </div>
+      <Recommended />
     </div>
   );
 };

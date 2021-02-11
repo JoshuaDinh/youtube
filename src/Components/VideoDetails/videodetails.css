@@ -23,7 +23,8 @@
 
 .videodetails-icons {
   font-size: 1.4em !important;
-  color: #2b0001;
+  color: rgba(8, 8, 8);
+
   cursor: pointer;
 }
 

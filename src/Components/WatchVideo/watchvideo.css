@@ -1,18 +1,17 @@
 .watchvideo {
   padding: 20px;
   height: 100%;
-  border: 3px solid green;
+  display: flex;
 }
 .videoplayer-container {
-  width: 70%;
+  width: 75%;
 }
 
 .videoplayer {
-  border: 1px solid red;
   height: 535px;
   width: 951px;
 }
 
 .video-left-container {
-  width: 70%;
+  min-width: 50%;
 }

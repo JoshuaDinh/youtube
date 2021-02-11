@@ -18,7 +18,7 @@ export const AddComment = () => {
   );
 };
 
-export const CommentCard = () => {
+export const CommentCard = ({ selectedVideoData }) => {
   return (
     <div className="commentcard">
       <div class="commentcard-account">
@@ -49,7 +49,7 @@ export const CommentCard = () => {
   );
 };
 
-export const Comments = () => {
+export const Comments = ({ selectedVideoData }) => {
   return (
     <div className="comments">
       <div className="comments-header-container">

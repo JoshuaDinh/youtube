@@ -17,7 +17,11 @@ const App = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [input, setInput] = useState("");
   const [searchVideo, setSearchVideo] = useState("");
+  const [videoId, setVideoId] = useState("");
+  const [selectedVideoData, setSelectedVideoData] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
+  // search video database for results of input
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,10 +38,32 @@ const App = () => {
       );
       setSearchResults(searchVideos.data.items);
     };
-    fetchData();
+    // fetchData();
   }, [searchVideo]);
   console.log(searchResults);
 
+  // get selected video data for display
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchVideoById = await axios.get(
+        "https://www.googleapis.com/youtube/v3/videos",
+        {
+          params: {
+            part: "snippet",
+            id: videoId,
+            key: API_KEY,
+            maxResults: 25,
+          },
+        }
+      );
+      setSelectedVideoData(fetchVideoById.data.items[0]);
+    };
+    if (videoId) {
+      fetchData();
+    }
+  }, [videoId]);
+
+  console.log(selectedVideoData);
   return (
     <Router>
       <div className="App">
@@ -56,7 +82,7 @@ const App = () => {
           {toggleSidebar && <Sidebar setToggleSidebar={setToggleSidebar} />}{" "}
           <div className="app-content">
             <Route path="/Watch">
-              <WatchVideo />
+              <WatchVideo videoId={videoId} />
             </Route>
             <Route path="/Results">
               <Results searchResults={searchResults} />
@@ -64,18 +90,22 @@ const App = () => {
             <Route path="/Home">
               <FeaturedVideoFrame />
               <VideoCardRow
+                setVideoId={setVideoId}
                 fetchUrl={requests.fetchReact}
                 rowTitle="React.Js "
               />{" "}
               <VideoCardRow
+                setVideoId={setVideoId}
                 fetchUrl={requests.fetchJavascript}
                 rowTitle="Javascript"
               />
               <VideoCardRow
+                setVideoId={setVideoId}
                 fetchUrl={requests.fetchTechnology}
                 rowTitle="Technology"
               />
               <VideoCardRow
+                setVideoId={setVideoId}
                 fetchUrl={requests.fetchBitcoin}
                 rowTitle="Bitcoin"
               />{" "}
