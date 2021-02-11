@@ -1,5 +1,5 @@
 .videodetails-account {
-  margin: 20px 0;
+  margin: 3% 0;
   display: flex;
 }
 .videodetails-account-info {
@@ -12,6 +12,8 @@
 }
 .videodetails-name-subscribers-container {
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 .videodetails-account-name {
   font-size: 1.2rem;
@@ -30,4 +32,15 @@
 
 .videodetails-video-description {
   word-spacing: 1.7px;
+}
+
+.videodetails-subscribe-button {
+  padding: 11px;
+  background: #2b0001;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 2px;
 }

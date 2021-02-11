@@ -9,12 +9,15 @@ export const VideoDetailsAccount = () => {
       <AccountCircleIcon className="videodetails-avatar-icon" />
       <div className="videodetails-account-info">
         <div className="videodetails-name-subscribers-container">
-          <p className="videodetails-account-name">
-            {" "}
-            account name{" "}
-            <CheckIcon className="videodetails-account-verified-icon" />
-          </p>
-          <p className="videodetails-account-subscribers"> 30M subscribers</p>
+          <div>
+            <p className="videodetails-account-name">
+              {" "}
+              account name{" "}
+              <CheckIcon className="videodetails-account-verified-icon" />
+            </p>
+            <p className="videodetails-account-subscribers"> 30M subscribers</p>
+          </div>
+          <button className="videodetails-subscribe-button">Subscribe</button>
         </div>
         <div>
           <p className="videodetails-video-description">
@@ -24,7 +27,7 @@ export const VideoDetailsAccount = () => {
             commodi aut doloremque unde, inventore magni consectetur, sapiente
             doloribus error sequi quidem ipsam.
           </p>
-        </div>
+        </div>{" "}
       </div>
     </div>
   );
