@@ -15,6 +15,7 @@ export const Searchbar = ({
   setInput,
   searchVideo,
   setSearchVideo,
+  toggleSidebar,
 }) => {
   const submitSearch = (e) => {
     e.preventDefault(e);
@@ -31,7 +32,7 @@ export const Searchbar = ({
       >
         <div className="searchbar-icons-left-container">
           <MenuIcon
-            onClick={() => setToggleSidebar(true)}
+            onClick={() => setToggleSidebar(!toggleSidebar)}
             className="searchbar-menu-icon"
           />
           <img className="youtube-logo" src={logo} alt="youtube-logo" />

@@ -21,18 +21,18 @@ export const VideoCardRow = ({ fetchUrl, rowTitle, videos, setVideoId }) => {
       {" "}
       <p className="videocard-row-title">{rowTitle}</p>
       <div className="videocard-row">
-        {homePageVideoRows?.map((video) => {
-          return (
-            <Link to="/Watch" onClick={() => setVideoId(video.id.videoId)}>
-              <VideoCard
-                title={video.snippet.title}
-                channelTitle={video.snippet.channelTitle}
-                thumbnail={video.snippet.thumbnails.medium.url}
-                posted={video.snippet.publishTime}
-              />{" "}
-            </Link>
-          );
-        })}
+        <VideoCard title="Programming" thumbnail={jslogo} />
+        <VideoCard title="React.Js" thumbnail={jslogo} />
+        <VideoCard title="Front-End Dev" thumbnail={jslogo} />
+        <VideoCard title="Async-await" thumbnail={jslogo} />
+        <VideoCard title="Programming" thumbnail={jslogo} />
+        <VideoCard title="React.Js" thumbnail={jslogo} />
+        <VideoCard title="Front-End Dev" thumbnail={jslogo} />
+        <VideoCard title="Async-await" thumbnail={jslogo} />
+        <VideoCard title="Programming" thumbnail={jslogo} />
+        <VideoCard title="React.Js" thumbnail={jslogo} />
+        <VideoCard title="Front-End Dev" thumbnail={jslogo} />
+        <VideoCard title="Async-await" thumbnail={jslogo} />
       </div>
     </div>
   );
@@ -67,3 +67,16 @@ export const VideoCardRow = ({ fetchUrl, rowTitle, videos, setVideoId }) => {
     <VideoCard title="Async-await" thumbnail={jslogo} />
   </div>
 )} */
+
+// {homePageVideoRows?.map((video) => {
+//   return (
+//     <Link to="/Watch" onClick={() => setVideoId(video.id.videoId)}>
+//       <VideoCard
+//         title={video.snippet.title}
+//         channelTitle={video.snippet.channelTitle}
+//         thumbnail={video.snippet.thumbnails.medium.url}
+//         posted={video.snippet.publishTime}
+//       />{" "}
+//     </Link>
+//   );
+// })}

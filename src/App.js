@@ -12,6 +12,8 @@ import axios from "axios";
 import { API_KEY } from "./requests";
 import { Watch } from "@material-ui/icons";
 import { WatchVideo } from "./Components/WatchVideo/WatchVideo";
+import { NewSidebar } from "./Components/NewSidebar/NewSidebar";
+import { ToggleSidebar } from "./Components/NewSidebar/ToggleSidebar";
 
 const App = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -59,7 +61,7 @@ const App = () => {
       setSelectedVideoData(fetchVideoById.data.items[0]);
     };
     if (videoId) {
-      fetchData();
+      // fetchData();
     }
   }, [videoId]);
 
@@ -75,9 +77,16 @@ const App = () => {
             searchVideo={searchVideo}
             setSearchVideo={setSearchVideo}
             setToggleSidebar={setToggleSidebar}
+            toggleSidebar={toggleSidebar}
           />
           <SuggestionsRow />
         </div>
+
+        {/* {toggleSidebar ? (
+          <ToggleSidebar />
+        ) : (
+          <NewSidebar toggleSidebar={toggleSidebar} />
+        )} */}
         <Switch>
           {toggleSidebar && <Sidebar setToggleSidebar={setToggleSidebar} />}{" "}
           <div className="app-content">

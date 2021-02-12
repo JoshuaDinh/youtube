@@ -1,0 +1,24 @@
+.newsidebar {
+  width: 5vw;
+  height: 100vh;
+  border-right: 1px solid black;
+  position: fixed;
+  background: rgb(8, 8, 8);
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.togglesidebar {
+  width: 12vw;
+  height: 100vh;
+  border-right: 1px solid black;
+  position: fixed;
+  background: rgb(8, 8, 8);
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: 3s ease-in;
+}
