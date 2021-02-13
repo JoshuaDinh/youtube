@@ -13,7 +13,7 @@ export const VideoCardRow = ({ fetchUrl, rowTitle, videos, setVideoId }) => {
       const request = await axios.get(fetchUrl);
       sethomePageVideoRows(request.data.items);
     };
-    fetchData();
+    // fetchData();
   }, [fetchUrl]);
 
   return (

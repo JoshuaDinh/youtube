@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import requests from "./requests";
-import { Sidebar } from "./Components/Sidebar/Sidebar";
 import { Searchbar } from "./Components/Searchbar/Searchbar";
 import { FeaturedVideoFrame } from "./Components/FeaturedVideoFrame/FeaturedVideoFrame";
 import { SuggestionsRow } from "./Components/SuggestionsRow/SuggestionsRow";
@@ -12,11 +11,13 @@ import axios from "axios";
 import { API_KEY } from "./requests";
 import { Watch } from "@material-ui/icons";
 import { WatchVideo } from "./Components/WatchVideo/WatchVideo";
-import { NewSidebar } from "./Components/NewSidebar/NewSidebar";
-import { ToggleSidebar } from "./Components/NewSidebar/ToggleSidebar";
+import { WatchSidebar } from "./Components/WatchSidebar/WatchSidebar";
+import { MainSidebar } from "./Components/MainSidebar/MainSidebar";
+import { ToggleMainSidebar } from "./Components/MainSidebar/ToggleMainSidebar";
 
 const App = () => {
-  const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [openWatchSidebar, setOpenWatchSidebar] = useState(false);
+  const [toggleMainSidebar, setToggleMainSidebar] = useState(false);
   const [input, setInput] = useState("");
   const [searchVideo, setSearchVideo] = useState("");
   const [videoId, setVideoId] = useState("");
@@ -24,7 +25,6 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   // search video database for results of input
-
   useEffect(() => {
     const fetchData = async () => {
       const searchVideos = await axios.get(
@@ -66,6 +66,16 @@ const App = () => {
   }, [videoId]);
 
   console.log(selectedVideoData);
+
+  const ToggleSidebars = () => {
+    if (window.location.href.indexOf("watch")) {
+      setOpenWatchSidebar(!openWatchSidebar);
+    }
+    if (window.location.href.indexOf("home")) {
+      setToggleMainSidebar(!toggleMainSidebar);
+    }
+  };
+
   return (
     <Router>
       <div className="App">
@@ -76,48 +86,66 @@ const App = () => {
             setInput={setInput}
             searchVideo={searchVideo}
             setSearchVideo={setSearchVideo}
-            setToggleSidebar={setToggleSidebar}
-            toggleSidebar={toggleSidebar}
+            openWatchSidebar={openWatchSidebar}
+            setOpenWatchSidebar={setOpenWatchSidebar}
+            toggleMainSidebar={toggleMainSidebar}
+            setToggleMainSidebar={setToggleMainSidebar}
+            ToggleSidebars={ToggleSidebars}
           />
           <SuggestionsRow />
         </div>
 
-        {/* {toggleSidebar ? (
-          <ToggleSidebar />
-        ) : (
-          <NewSidebar toggleSidebar={toggleSidebar} />
-        )} */}
         <Switch>
-          {toggleSidebar && <Sidebar setToggleSidebar={setToggleSidebar} />}{" "}
-          <div className="app-content">
-            <Route path="/Watch">
+          <Route path="/Watch">
+            <div className="app-watch">
+              {openWatchSidebar && (
+                <WatchSidebar
+                  openWatchSidebar={openWatchSidebar}
+                  setOpenWatchSidebar={setOpenWatchSidebar}
+                  ToggleSidebars={ToggleSidebars}
+                />
+              )}
               <WatchVideo videoId={videoId} />
-            </Route>
+            </div>
+          </Route>
+          <div className="app-content">
+            {toggleMainSidebar ? (
+              <ToggleMainSidebar
+                setToggleMainSidebar={setToggleMainSidebar}
+                toggleMainSidebar={toggleMainSidebar}
+              />
+            ) : (
+              <MainSidebar />
+            )}
             <Route path="/Results">
-              <Results searchResults={searchResults} />
+              <div className="app-results">
+                <Results searchResults={searchResults} />
+              </div>
             </Route>
             <Route path="/Home">
-              <FeaturedVideoFrame />
-              <VideoCardRow
-                setVideoId={setVideoId}
-                fetchUrl={requests.fetchReact}
-                rowTitle="React.Js "
-              />{" "}
-              <VideoCardRow
-                setVideoId={setVideoId}
-                fetchUrl={requests.fetchJavascript}
-                rowTitle="Javascript"
-              />
-              <VideoCardRow
-                setVideoId={setVideoId}
-                fetchUrl={requests.fetchTechnology}
-                rowTitle="Technology"
-              />
-              <VideoCardRow
-                setVideoId={setVideoId}
-                fetchUrl={requests.fetchBitcoin}
-                rowTitle="Bitcoin"
-              />{" "}
+              <div className="app-home">
+                <FeaturedVideoFrame />
+                <VideoCardRow
+                  setVideoId={setVideoId}
+                  fetchUrl={requests.fetchReact}
+                  rowTitle="React.Js "
+                />{" "}
+                <VideoCardRow
+                  setVideoId={setVideoId}
+                  fetchUrl={requests.fetchJavascript}
+                  rowTitle="Javascript"
+                />
+                <VideoCardRow
+                  setVideoId={setVideoId}
+                  fetchUrl={requests.fetchTechnology}
+                  rowTitle="Technology"
+                />
+                <VideoCardRow
+                  setVideoId={setVideoId}
+                  fetchUrl={requests.fetchBitcoin}
+                  rowTitle="Bitcoin"
+                />{" "}
+              </div>
             </Route>
           </div>{" "}
         </Switch>

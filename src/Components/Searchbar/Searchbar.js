@@ -10,12 +10,15 @@ import { SuggestionsRow } from "../SuggestionsRow/SuggestionsRow";
 import { Link } from "react-router-dom";
 
 export const Searchbar = ({
-  setToggleSidebar,
+  setToggleMainSidebar,
+  toggleMainSidebar,
   input,
   setInput,
   searchVideo,
   setSearchVideo,
-  toggleSidebar,
+  openWatchSidebar,
+  setOpenWatchSidebar,
+  ToggleSidebars,
 }) => {
   const submitSearch = (e) => {
     e.preventDefault(e);
@@ -26,13 +29,13 @@ export const Searchbar = ({
     <header className="searchbar">
       <form
         className="searchbar-form"
-        onSubmit={() => {
-          submitSearch();
+        onSubmit={(e) => {
+          submitSearch(e);
         }}
       >
         <div className="searchbar-icons-left-container">
           <MenuIcon
-            onClick={() => setToggleSidebar(!toggleSidebar)}
+            onClick={() => ToggleSidebars()}
             className="searchbar-menu-icon"
           />
           <img className="youtube-logo" src={logo} alt="youtube-logo" />

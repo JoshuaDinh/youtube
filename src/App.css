@@ -29,9 +29,14 @@ body {
   justify-content: center;
 }
 
-.app-content {
+.app-home {
   position: relative;
   top: 20vh;
-  width: 100%;
-  /* background: #1d1919; */
+  left: 18%;
+  width: 70%;
+}
+
+.app-watch {
+  position: relative;
+  top: 17%;
 }

@@ -2,21 +2,10 @@ import React from "react";
 import "./sidebar.css";
 // import { Link } from "react-scroll";
 import { Link } from "react-router-dom";
-import { ToggleSidebar } from "../NewSidebar/ToggleSidebar";
 
-export const SidebarOption = ({
-  title,
-  icon,
-  link,
-  toggleSidebar,
-  setToggleSidebar,
-}) => {
+export const SidebarOption = ({ title, icon, link }) => {
   return (
-    <Link
-      onClick={() => setToggleSidebar(!ToggleSidebar)}
-      className="router-link"
-      to={link}
-    >
+    <Link className="router-link" to={link}>
       {" "}
       <div className="sidebar-option-container">
         <div className="sidebar-option">

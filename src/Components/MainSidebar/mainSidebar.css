@@ -1,4 +1,4 @@
-.newsidebar {
+.main-sidebar {
   width: 5vw;
   height: 100vh;
   border-right: 1px solid black;
@@ -9,9 +9,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  z-index: 1;
 }
-.togglesidebar {
-  width: 12vw;
+.toggle-main-sidebar {
+  width: 13vw;
   height: 100vh;
   border-right: 1px solid black;
   position: fixed;
