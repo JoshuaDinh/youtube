@@ -1,19 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./comments.css";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
 export const AddComment = () => {
+  const [buttons, setButtons] = useState(false);
   return (
     <div className="addcomment">
-      <AccountCircleIcon className="addcomment-avatar-icon" />
-      <form className="addcomment-form">
-        <input
-          placeholder="add a public comment.."
-          className="addcomment-input"
-        />
-      </form>
+      <div className="addcomment-form-container">
+        {" "}
+        <AccountCircleIcon className="addcomment-avatar-icon" />
+        <form
+          onClick={() => setButtons(!buttons)}
+          className={`addcomment-form ${
+            buttons && "addcomment-form-underline"
+          }`}
+        >
+          <input
+            placeholder="add a public comment.."
+            className="addcomment-input"
+          />
+        </form>{" "}
+      </div>
+      {buttons && (
+        <div className="addcomment-buttons">
+          <div
+            onClick={() => setButtons(false)}
+            className="addcomment-cancle addcomment-button"
+          >
+            Cancle
+          </div>
+          <div
+            onClick={() => setButtons(!buttons)}
+            className="addcomment-comment addcomment-button"
+          >
+            Comment
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -27,7 +52,6 @@ export const CommentCard = ({ selectedVideoData }) => {
         <div className="commentcard-comment-posted-date"> 1 year ago</div>
       </div>
       <div className="commentcard-comment">
-        {" "}
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero quaerat
         cumque rem quisquam omnis, harum pariatur, ullam aliquid odit doloremque
         sed. Culpa unde recusandae sapiente temporibus quaerat obcaecati impedit

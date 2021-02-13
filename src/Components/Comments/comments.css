@@ -17,13 +17,22 @@
 
 .addcomment {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 15px 0;
+}
+.addcomment-form-container {
+  display: flex;
+  width: 100%;
 }
 
 .addcomment-form {
   border-bottom: 1px solid black;
   width: 100%;
+}
+
+.addcomment-form-underline {
+  border-bottom: 2px solid black;
 }
 .addcomment-input {
   border: none;
@@ -37,6 +46,31 @@
 .addcomment-avatar-icon {
   color: black;
   font-size: 3em !important;
+}
+
+.addcomment-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin-top: 2%;
+}
+
+.addcomment-button {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  width: 30%;
+  cursor: pointer;
+}
+
+.addcomment-comment {
+  background: black;
+  color: white;
+}
+.addcomment-comment:hover {
+  background: whitesmoke;
+  color: black;
+  border: 2px solid black;
 }
 
 /*---------- comment card ---------- */

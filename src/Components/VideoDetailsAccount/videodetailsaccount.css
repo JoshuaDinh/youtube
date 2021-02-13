@@ -44,3 +44,9 @@
   border: none;
   border-radius: 2px;
 }
+
+.videodetails-subscribe-button:hover {
+  color: black;
+  background: whitesmoke;
+  border: 2px solid black;
+}

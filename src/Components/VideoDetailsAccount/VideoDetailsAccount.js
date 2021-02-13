@@ -11,8 +11,7 @@ export const VideoDetailsAccount = () => {
         <div className="videodetails-name-subscribers-container">
           <div>
             <p className="videodetails-account-name">
-              {" "}
-              account name{" "}
+              Joshua Dinh
               <CheckIcon className="videodetails-account-verified-icon" />
             </p>
             <p className="videodetails-account-subscribers"> 30M subscribers</p>

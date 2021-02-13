@@ -7,16 +7,16 @@
 }
 .videodetails-right-container {
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   width: 50%;
   font-size: 1.3rem;
+  height: 100%;
 }
 .videodetails-left-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20%;
+  width: 30%;
   height: 70px;
   font-size: 1.3rem;
 }
@@ -24,13 +24,19 @@
 .videodetails-icons {
   font-size: 1.4em !important;
   color: rgba(8, 8, 8);
-
   cursor: pointer;
+}
+.videodetails-icons:hover {
+  color: whitesmoke;
 }
 
 .videodetails {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.video-title {
   width: 100%;
 }

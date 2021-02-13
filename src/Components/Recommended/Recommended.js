@@ -8,9 +8,9 @@ export const RecommendedVideoCard = () => {
       {/* <div className="recommended-thumbnail"></div> */}
       <img className="recommended-thumbnail" src={jslogo} />
       <div className="recommended-video-info-container">
-        <p>TITLE</p>
-        <p>account name</p>
-        <p>views</p>
+        <p className="recommended-title">Javacript Tutorials</p>
+        <p className="recommended-account">Joshua Dinh</p>
+        <p className="recommended-views">11k Views</p>
       </div>
     </div>
   );
@@ -19,6 +19,15 @@ export const RecommendedVideoCard = () => {
 export const Recommended = () => {
   return (
     <div className="recommended">
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
+      <RecommendedVideoCard />
       <RecommendedVideoCard />
       <RecommendedVideoCard />
       <RecommendedVideoCard />

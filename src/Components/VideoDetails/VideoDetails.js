@@ -9,8 +9,8 @@ export const VideoDetails = () => {
   return (
     <div className="videodetails">
       <div className="videodetails-left-container">
-        <p className="video-title">title</p>
-        <p className="video-views-date">views and date</p>
+        <p className="video-title">React Tutorials</p>
+        <p className="video-views-date">100k Views , Jun 8th</p>
       </div>
       <div className="videodetails-right-container">
         <ThumbUpIcon className="videodetails-icons" /> 11k
