@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./videocard.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -7,11 +7,23 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link } from "react-router-dom";
 
 export const VideoCard = ({ title, thumbnail }) => {
+  const [overlay, setOverlay] = useState(false);
   return (
-    <Link to="/Watch" className="videocard">
-      <div className="videocard-details">
+    <Link
+      to="/Watch"
+      className="videocard"
+      onMouseEnter={() => setOverlay(true)}
+      onMouseLeave={() => setOverlay(false)}
+    >
+      <div
+        className={`videocard-details ${overlay && "videocard-details-active"}`}
+      >
         <p className="videocard-title">{title}</p>
-        <div className="videocard-play-icon-container">
+        <div
+          className={`videocard-play-icon-container ${
+            overlay && "videocard-play-icon-container-active "
+          }`}
+        >
           <div className="videocard-likes-view-icon-container">
             <FavoriteBorderIcon />
             <VisibilityIcon />

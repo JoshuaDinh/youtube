@@ -10,14 +10,11 @@ import { SuggestionsRow } from "../SuggestionsRow/SuggestionsRow";
 import { Link } from "react-router-dom";
 
 export const Searchbar = ({
-  setToggleMainSidebar,
-  toggleMainSidebar,
   input,
   setInput,
   searchVideo,
   setSearchVideo,
-  openWatchSidebar,
-  setOpenWatchSidebar,
+
   ToggleSidebars,
 }) => {
   const submitSearch = (e) => {
@@ -63,7 +60,6 @@ export const Searchbar = ({
             {" "}
             <HomeIcon className="searchbar-home-icon " />
           </Link>{" "}
-          <NotificationsIcon className="searchbar-notifications-icon" />
           <AccountCircleIcon className="searchbar-avatar-icon" />
         </div>
       </form>

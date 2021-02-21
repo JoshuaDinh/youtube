@@ -13,7 +13,6 @@ import { Watch } from "@material-ui/icons";
 import { WatchVideo } from "./Components/WatchVideo/WatchVideo";
 import { WatchSidebar } from "./Components/WatchSidebar/WatchSidebar";
 import { MainSidebar } from "./Components/MainSidebar/MainSidebar";
-import { ToggleMainSidebar } from "./Components/MainSidebar/ToggleMainSidebar";
 
 const App = () => {
   const [openWatchSidebar, setOpenWatchSidebar] = useState(false);
@@ -68,12 +67,8 @@ const App = () => {
   console.log(selectedVideoData);
 
   const ToggleSidebars = () => {
-    if (window.location.href.indexOf("watch")) {
-      setOpenWatchSidebar(!openWatchSidebar);
-    }
-    if (window.location.href.indexOf("home")) {
-      setToggleMainSidebar(!toggleMainSidebar);
-    }
+    setOpenWatchSidebar(true);
+    setToggleMainSidebar(!toggleMainSidebar);
   };
 
   return (
@@ -105,14 +100,7 @@ const App = () => {
             </div>
           </Route>
           <div className="app-content">
-            {toggleMainSidebar ? (
-              <ToggleMainSidebar
-                setToggleMainSidebar={setToggleMainSidebar}
-                toggleMainSidebar={toggleMainSidebar}
-              />
-            ) : (
-              <MainSidebar />
-            )}
+            <MainSidebar toggleMainSidebar={toggleMainSidebar} />
             <Route path="/Home">
               <div className="app-home">
                 <VideoCardRow

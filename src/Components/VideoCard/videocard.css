@@ -1,13 +1,11 @@
 .videocard {
-  /* border-radius: 40px; */
   width: 265px;
   height: 175px;
   cursor: pointer;
   position: relative;
   border: 1px solid black;
-  /* border: 1px solid #2b0001; */
-  /* -webkit-box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41);
-  box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41); */
+  -webkit-box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 26px 28px -5px rgba(0, 0, 0, 0.41);
 }
 
 .videocard-details {
@@ -22,7 +20,7 @@
   transition: 5s ease-in-out in;
   overflow: hidden;
 }
-.videocard-details:hover {
+.videocard-details-active {
   height: 100%;
 }
 .videocard-title {
@@ -33,21 +31,14 @@
 }
 
 .videocard-img {
-  height: 100%;
   width: 100%;
-  /* margin-bottom: 10px; */
-  /* border-radius: 40px; */
+  height: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   -webkit-box-shadow: 0px 23px 46px -14px rgba(0, 0, 0, 0.59);
   box-shadow: 0px 23px 46px -14px rgba(0, 0, 0, 0.59);
 }
-/* .videocard-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-} */
+
 .videocard-likes-view-icon-container {
   position: absolute;
   display: flex;
@@ -66,7 +57,7 @@
   background: rgb(255, 255, 255, 0.4);
 }
 
-.videocard-play-icon-container:hover {
+.videocard-play-icon-container-active {
   opacity: 1;
 }
 
@@ -104,11 +95,7 @@
   margin: 15px 0;
   margin-left: 10px;
   border-bottom: 1px solid black;
-
-  /* border-bottom: 2px solid rgb(43, 0, 1, 0.3); */
 }
-
-/* New video card-styling unsure ???? */
 
 .videocard-info {
   display: flex;

@@ -59,10 +59,11 @@
   font-size: 2rem !important;
   cursor: pointer;
 }
-.searchbar-notifications-icon {
-  font-size: 2rem !important;
-  cursor: pointer;
+.searchbar-home-icon:hover,
+.searchbar-avatar-icon:hover {
+  border-bottom: 1px solid whitesmoke;
 }
+
 .searchbar-home-icon {
   font-size: 2rem !important;
   cursor: pointer;
