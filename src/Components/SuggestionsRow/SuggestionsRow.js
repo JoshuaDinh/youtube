@@ -29,7 +29,6 @@ export const SuggestionsRow = () => {
         }}
         className="suggestrow-filtered-row"
       >
-        {" "}
         <SuggestionItem suggestion={"Programming"} />
         <SuggestionItem suggestion={"Javascript"} />
         <SuggestionItem suggestion={"React.js"} />

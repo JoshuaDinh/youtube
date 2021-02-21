@@ -79,22 +79,18 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <div className="app-fixed-header">
-          {" "}
-          <Searchbar
-            input={input}
-            setInput={setInput}
-            searchVideo={searchVideo}
-            setSearchVideo={setSearchVideo}
-            openWatchSidebar={openWatchSidebar}
-            setOpenWatchSidebar={setOpenWatchSidebar}
-            toggleMainSidebar={toggleMainSidebar}
-            setToggleMainSidebar={setToggleMainSidebar}
-            ToggleSidebars={ToggleSidebars}
-          />
-          <SuggestionsRow />
-        </div>
-
+        <Searchbar
+          input={input}
+          setInput={setInput}
+          searchVideo={searchVideo}
+          setSearchVideo={setSearchVideo}
+          openWatchSidebar={openWatchSidebar}
+          setOpenWatchSidebar={setOpenWatchSidebar}
+          toggleMainSidebar={toggleMainSidebar}
+          setToggleMainSidebar={setToggleMainSidebar}
+          ToggleSidebars={ToggleSidebars}
+        />{" "}
+        <SuggestionsRow />
         <Switch>
           <Route path="/Watch">
             <div className="app-watch">
@@ -117,37 +113,16 @@ const App = () => {
             ) : (
               <MainSidebar />
             )}
-            <Route path="/Results">
-              <div className="app-results">
-                <Results searchResults={searchResults} />
-              </div>
-            </Route>
             <Route path="/Home">
               <div className="app-home">
-                <FeaturedVideoFrame />
                 <VideoCardRow
                   setVideoId={setVideoId}
                   fetchUrl={requests.fetchReact}
-                  rowTitle="React.Js "
-                />{" "}
-                <VideoCardRow
-                  setVideoId={setVideoId}
-                  fetchUrl={requests.fetchJavascript}
-                  rowTitle="Javascript"
+                  rowTitle="React.Js"
                 />
-                <VideoCardRow
-                  setVideoId={setVideoId}
-                  fetchUrl={requests.fetchTechnology}
-                  rowTitle="Technology"
-                />
-                <VideoCardRow
-                  setVideoId={setVideoId}
-                  fetchUrl={requests.fetchBitcoin}
-                  rowTitle="Bitcoin"
-                />{" "}
               </div>
             </Route>
-          </div>{" "}
+          </div>
         </Switch>
       </div>
     </Router>
@@ -264,3 +239,78 @@ export default App;
 //     fetchVideoInfoById();
 //   }
 // }, [videoId]);
+
+// <Router>
+//       <div className="App">
+//         <div className="app-fixed-header">
+//           {" "}
+//           <Searchbar
+//             input={input}
+//             setInput={setInput}
+//             searchVideo={searchVideo}
+//             setSearchVideo={setSearchVideo}
+//             openWatchSidebar={openWatchSidebar}
+//             setOpenWatchSidebar={setOpenWatchSidebar}
+//             toggleMainSidebar={toggleMainSidebar}
+//             setToggleMainSidebar={setToggleMainSidebar}
+//             ToggleSidebars={ToggleSidebars}
+//           />
+//           <SuggestionsRow />
+//         </div>
+
+//         <Switch>
+//           <Route path="/Watch">
+//             <div className="app-watch">
+//               {openWatchSidebar && (
+//                 <WatchSidebar
+//                   openWatchSidebar={openWatchSidebar}
+//                   setOpenWatchSidebar={setOpenWatchSidebar}
+//                   ToggleSidebars={ToggleSidebars}
+//                 />
+//               )}
+//               <WatchVideo videoId={videoId} />
+//             </div>
+//           </Route>
+//           <div className="app-content">
+//             {toggleMainSidebar ? (
+//               <ToggleMainSidebar
+//                 setToggleMainSidebar={setToggleMainSidebar}
+//                 toggleMainSidebar={toggleMainSidebar}
+//               />
+//             ) : (
+//               <MainSidebar />
+//             )}
+//             <Route path="/Results">
+//               <div className="app-results">
+//                 <Results searchResults={searchResults} />
+//               </div>
+//             </Route>
+//             <Route path="/Home">
+//               <div className="app-home">
+//                 {/* <FeaturedVideoFrame /> */}
+//                 <VideoCardRow
+//                   setVideoId={setVideoId}
+//                   fetchUrl={requests.fetchReact}
+//                   rowTitle="React.Js "
+//                 />{" "}
+//                 <VideoCardRow
+//                   setVideoId={setVideoId}
+//                   fetchUrl={requests.fetchJavascript}
+//                   rowTitle="Javascript"
+//                 />
+//                 <VideoCardRow
+//                   setVideoId={setVideoId}
+//                   fetchUrl={requests.fetchTechnology}
+//                   rowTitle="Technology"
+//                 />
+//                 <VideoCardRow
+//                   setVideoId={setVideoId}
+//                   fetchUrl={requests.fetchBitcoin}
+//                   rowTitle="Bitcoin"
+//                 />{" "}
+//               </div>
+//             </Route>
+//           </div>{" "}
+//         </Switch>
+//       </div>
+//     </Router>

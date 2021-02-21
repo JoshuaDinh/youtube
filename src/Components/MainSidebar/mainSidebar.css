@@ -1,23 +1,15 @@
 .main-sidebar {
   width: 5vw;
-  height: 100vh;
-  border-right: 1px solid black;
-  position: fixed;
+  height: 100%;
   background: rgb(8, 8, 8);
-  top: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  z-index: 1;
 }
 .toggle-main-sidebar {
   width: 13vw;
-  height: 100vh;
-  border-right: 1px solid black;
-  position: fixed;
   background: rgb(8, 8, 8);
-  top: 15%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

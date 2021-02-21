@@ -18,13 +18,8 @@ export const VideoCardRow = ({ fetchUrl, rowTitle, videos, setVideoId }) => {
 
   return (
     <div className="videocard-row-container">
-      {" "}
       <p className="videocard-row-title">{rowTitle}</p>
       <div className="videocard-row">
-        <VideoCard title="Programming" thumbnail={jslogo} />
-        <VideoCard title="React.Js" thumbnail={jslogo} />
-        <VideoCard title="Front-End Dev" thumbnail={jslogo} />
-        <VideoCard title="Async-await" thumbnail={jslogo} />
         <VideoCard title="Programming" thumbnail={jslogo} />
         <VideoCard title="React.Js" thumbnail={jslogo} />
         <VideoCard title="Front-End Dev" thumbnail={jslogo} />

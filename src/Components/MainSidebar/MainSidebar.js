@@ -40,21 +40,6 @@ export const MainSidebar = ({ toggleSidebar, setToggleSidebar }) => {
         setToggleSidebar={setToggleSidebar}
         icon={<HistoryIcon />}
       />
-      <SidebarOption
-        toggleSidebar={toggleSidebar}
-        setToggleSidebar={setToggleSidebar}
-        icon={<WatchLaterIcon />}
-      />
-      <SidebarOption
-        toggleSidebar={toggleSidebar}
-        setToggleSidebar={setToggleSidebar}
-        icon={<ThumbUpIcon />}
-      />
-      <SidebarOption
-        toggleSidebar={toggleSidebar}
-        setToggleSidebar={setToggleSidebar}
-        icon={<PlaylistPlayIcon />}
-      />
     </div>
   );
 };

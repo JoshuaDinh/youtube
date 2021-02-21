@@ -2,15 +2,15 @@ import React from "react";
 import "./recommended.css";
 import jslogo from "../../images/js-logo.png";
 
-export const RecommendedVideoCard = () => {
+export const RecommendedVideoCard = ({ title, account, views }) => {
   return (
     <div className="recommendedvideocard">
       {/* <div className="recommended-thumbnail"></div> */}
       <img className="recommended-thumbnail" src={jslogo} />
       <div className="recommended-video-info-container">
-        <p className="recommended-title">Javacript Tutorials</p>
-        <p className="recommended-account">Joshua Dinh</p>
-        <p className="recommended-views">11k Views</p>
+        <p className="recommended-title">{title}</p>
+        <p className="recommended-account">{account}</p>
+        <p className="recommended-views">{views}</p>
       </div>
     </div>
   );
@@ -19,24 +19,31 @@ export const RecommendedVideoCard = () => {
 export const Recommended = () => {
   return (
     <div className="recommended">
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
-      <RecommendedVideoCard />
+      <RecommendedVideoCard
+        title="Javacript Tutorials"
+        account="joshua dinh"
+        views="11k"
+      />
+      <RecommendedVideoCard
+        title="Javacript Tutorials"
+        account="joshua dinh"
+        views="11k"
+      />
+      <RecommendedVideoCard
+        title="Javacript Tutorials"
+        account="joshua dinh"
+        views="11k"
+      />
+      <RecommendedVideoCard
+        title="Javacript Tutorials"
+        account="joshua dinh"
+        views="11k"
+      />
+      <RecommendedVideoCard
+        title="Javacript Tutorials"
+        account="joshua dinh"
+        views="11k"
+      />
     </div>
   );
 };

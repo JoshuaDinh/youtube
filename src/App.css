@@ -19,24 +19,24 @@ body {
   width: 100vw;
 }
 .app-fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+.app-content {
+  display: flex;
+  width: 100%;
+  height: 82.5%;
+}
+
 .app-home {
-  position: relative;
-  top: 20vh;
-  left: 18%;
-  width: 70%;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .app-watch {
-  position: relative;
-  top: 17%;
 }

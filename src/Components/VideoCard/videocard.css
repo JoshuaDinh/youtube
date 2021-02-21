@@ -85,25 +85,23 @@
 }
 
 /* -----VideoCard Row----- */
+.videocard-row-container {
+  height: 100%;
+}
 
 .videocard-row {
-  height: 100%;
-  width: 100%;
-  /* border-top: 1px solid #2b0001;
-  border-bottom: 1px solid #2b0001; */
+  height: 80%;
   display: grid;
   align-items: center;
-  justify-content: center;
   grid-gap: 40px;
   grid-template-columns: repeat(4, 1fr);
-  margin-left: 25px;
+  margin-left: 3%;
 }
 
 .videocard-row-title {
   font-size: 2rem;
   width: 98%;
-  height: 100%;
-  margin: 40px 0;
+  margin: 15px 0;
   margin-left: 10px;
   border-bottom: 1px solid black;
 

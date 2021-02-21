@@ -61,20 +61,6 @@ export const ToggleMainSidebar = (
         icon={<WatchLaterIcon />}
         title="Watch Later "
       />
-      <SidebarOption
-        setToggleMainSidebar={setToggleMainSidebar}
-        toggleMainSidebar={toggleMainSidebar}
-        ToggleSidebars={ToggleSidebars}
-        icon={<ThumbUpIcon />}
-        title="Liked Videos"
-      />
-      <SidebarOption
-        setToggleMainSidebar={setToggleMainSidebar}
-        toggleMainSidebar={toggleMainSidebar}
-        ToggleSidebars={ToggleSidebars}
-        icon={<PlaylistPlayIcon />}
-        title="Turn up"
-      />
     </div>
   );
 };
