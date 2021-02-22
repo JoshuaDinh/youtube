@@ -12,9 +12,7 @@ import { Link } from "react-router-dom";
 export const Searchbar = ({
   input,
   setInput,
-  searchVideo,
   setSearchVideo,
-
   ToggleSidebars,
 }) => {
   const submitSearch = (e) => {

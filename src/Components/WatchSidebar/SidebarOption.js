@@ -8,14 +8,14 @@ export const SidebarOption = ({
   icon,
   link,
   toggleMainSidebar,
-  openWatchSidebar,
+  toggleWatchSidebar,
 }) => {
   return (
     <Link className="router-link" to={link}>
       <div className="sidebar-option-container">
         <div className="sidebar-option">{icon}</div>
         {toggleMainSidebar && <p className="sidebar-option-title"> {title}</p>}
-        {openWatchSidebar && <p className="sidebar-option-title"> {title}</p>}
+        {toggleWatchSidebar && <p className="sidebar-option-title"> {title}</p>}
       </div>
     </Link>
   );

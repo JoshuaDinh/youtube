@@ -11,61 +11,60 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 
-export const WatchSidebar = ({ openWatchSidebar, setOpenWatchSidebar }) => {
+export const WatchSidebar = ({ toggleWatchSidebar, setToggleWatchSidebar }) => {
   return (
     <div className="sidebar-container">
       <div className="sidebar-background"></div>
       <div className="sidebar">
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setOpenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
           title={
             <CloseIcon
-              onClick={() => setOpenWatchSidebar(!openWatchSidebar)}
+              onClick={() => setToggleWatchSidebar(!toggleWatchSidebar)}
               style={{ fontSize: "2rem" }}
             />
           }
         />
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setopenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
+          setToggleWatchSidebar={setToggleWatchSidebar}
           icon={<HomeIcon />}
           title="Home"
           link="/Home"
         />
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setopenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
+          setToggleWatchSidebar={setToggleWatchSidebar}
           icon={<WhatshotIcon />}
           title="Trending"
         />
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setopenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
+          setToggleWatchSidebar={setToggleWatchSidebar}
           icon={<SubscriptionsIcon />}
           title="Subscriptions"
         />
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setopenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
+          setToggleWatchSidebar={setToggleWatchSidebar}
           icon={<VideoLibraryIcon />}
           title="Library"
         />
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setopenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
+          setToggleWatchSidebar={setToggleWatchSidebar}
           icon={<HistoryIcon />}
           title="History"
         />
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setopenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
+          setToggleWatchSidebar={setToggleWatchSidebar}
           icon={<WatchLaterIcon />}
           title="Watch Later "
         />
         <SidebarOption
-          openWatchSidebar={openWatchSidebar}
-          setopenWatchSidebar={setOpenWatchSidebar}
+          toggleWatchSidebar={toggleWatchSidebar}
+          setToggleWatchSidebar={setToggleWatchSidebar}
           icon={<ThumbUpIcon />}
           title="Liked Videos"
         />

@@ -15,7 +15,7 @@ import { WatchSidebar } from "./Components/WatchSidebar/WatchSidebar";
 import { MainSidebar } from "./Components/MainSidebar/MainSidebar";
 
 const App = () => {
-  const [openWatchSidebar, setOpenWatchSidebar] = useState(false);
+  const [toggleWatchSidebar, setToggleWatchSidebar] = useState(false);
   const [toggleMainSidebar, setToggleMainSidebar] = useState(false);
   const [input, setInput] = useState("");
   const [searchVideo, setSearchVideo] = useState("");
@@ -66,42 +66,41 @@ const App = () => {
 
   console.log(selectedVideoData);
 
-  const ToggleSidebars = () => {
-    setOpenWatchSidebar(true);
-    setToggleMainSidebar(!toggleMainSidebar);
-  };
-
   return (
     <Router>
       <div className="App">
-        <Searchbar
-          input={input}
-          setInput={setInput}
-          searchVideo={searchVideo}
-          setSearchVideo={setSearchVideo}
-          openWatchSidebar={openWatchSidebar}
-          setOpenWatchSidebar={setOpenWatchSidebar}
-          toggleMainSidebar={toggleMainSidebar}
-          setToggleMainSidebar={setToggleMainSidebar}
-          ToggleSidebars={ToggleSidebars}
-        />{" "}
-        <SuggestionsRow />
         <Switch>
           <Route path="/Watch">
+            <Searchbar
+              input={input}
+              setInput={setInput}
+              searchVideo={searchVideo}
+              setSearchVideo={setSearchVideo}
+              ToggleSidebars={() => setToggleWatchSidebar(!toggleWatchSidebar)}
+            />
+            <SuggestionsRow />
             <div className="app-watch">
-              {openWatchSidebar && (
+              {toggleWatchSidebar && (
                 <WatchSidebar
-                  openWatchSidebar={openWatchSidebar}
-                  setOpenWatchSidebar={setOpenWatchSidebar}
-                  ToggleSidebars={ToggleSidebars}
+                  toggleWatchSidebar={toggleWatchSidebar}
+                  setToggleWatchSidebar={setToggleWatchSidebar}
                 />
               )}
               <WatchVideo videoId={videoId} />
             </div>
           </Route>
-          <div className="app-content">
-            <MainSidebar toggleMainSidebar={toggleMainSidebar} />
-            <Route path="/Home">
+
+          <Route path="/Home">
+            <Searchbar
+              input={input}
+              setInput={setInput}
+              searchVideo={searchVideo}
+              setSearchVideo={setSearchVideo}
+              ToggleSidebars={() => setToggleMainSidebar(!toggleMainSidebar)}
+            />
+            <SuggestionsRow />
+            <div className="app-content">
+              <MainSidebar toggleMainSidebar={toggleMainSidebar} />
               <div className="app-home">
                 <VideoCardRow
                   setVideoId={setVideoId}
@@ -109,8 +108,8 @@ const App = () => {
                   rowTitle="React.Js"
                 />
               </div>
-            </Route>
-          </div>
+            </div>
+          </Route>
         </Switch>
       </div>
     </Router>
