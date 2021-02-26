@@ -5,12 +5,11 @@ import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import ShareIcon from "@material-ui/icons/Share";
 import BookmarksIcon from "@material-ui/icons/Bookmarks";
 
-export const VideoDetails = () => {
+export const VideoDetails = ({ selectedVideoDataTitle }) => {
   return (
     <div className="videodetails">
       <div className="videodetails-left-container">
-        <p className="video-title">React Tutorials</p>
-        <p className="video-views-date">100k Views , Jun 8th</p>
+        <p className="video-title">{selectedVideoDataTitle}</p>
       </div>
       <div className="videodetails-right-container">
         <ThumbUpIcon className="videodetails-icons" /> 11k

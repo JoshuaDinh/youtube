@@ -2,18 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./searchbar.css";
 import logo from "../../images/logo.png";
 import SearchIcon from "@material-ui/icons/Search";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from "@material-ui/icons/Menu";
-import { SuggestionsRow } from "../SuggestionsRow/SuggestionsRow";
 import { Link } from "react-router-dom";
+import { loginUrl } from "../../GoogleAuth";
+import { Avatar } from "@material-ui/core";
 
 export const Searchbar = ({
   input,
   setInput,
   setSearchVideo,
   ToggleSidebars,
+  token,
 }) => {
   const submitSearch = (e) => {
     e.preventDefault(e);
@@ -57,7 +57,13 @@ export const Searchbar = ({
             {" "}
             <HomeIcon className="searchbar-home-icon " />
           </Link>{" "}
-          <AccountCircleIcon className="searchbar-avatar-icon" />
+          {token ? (
+            <Avatar className="searchbar-avatar-icon" />
+          ) : (
+            <a href={loginUrl} className="searchbar-login">
+              Log In
+            </a>
+          )}
         </div>
       </form>
     </header>

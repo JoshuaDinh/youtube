@@ -20,16 +20,16 @@ export const VideoPlayer = ({ videoId }) => {
   );
 };
 
-export const WatchVideo = ({ selectedVideoData, videoId }) => {
+export const WatchVideo = ({ selectedVideoDataTitle, videoId }) => {
   return (
     <div className="watchvideo">
       <div className="video-left-container">
         <VideoPlayer videoId={videoId} />
-        <VideoDetails />
+        <VideoDetails selectedVideoDataTitle={selectedVideoDataTitle} />
         <hr></hr>
         <VideoDetailsAccount />
         <hr></hr>
-        <Comments selectedVideoData={selectedVideoData} />
+        <Comments />
       </div>
       {/* <Recommended /> */}
     </div>

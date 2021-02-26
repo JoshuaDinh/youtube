@@ -14,6 +14,7 @@ import { WatchVideo } from "./Components/WatchVideo/WatchVideo";
 import { WatchSidebar } from "./Components/WatchSidebar/WatchSidebar";
 import { MainSidebar } from "./Components/MainSidebar/MainSidebar";
 import { VideoCard } from "./Components/VideoCard/VideoCard";
+import { getTokenFromUrl } from "./GoogleAuth";
 import jslogo from "./images/js-logo.png";
 
 const App = () => {
@@ -22,8 +23,18 @@ const App = () => {
   const [input, setInput] = useState("Javacript");
   const [searchVideo, setSearchVideo] = useState("");
   const [videoId, setVideoId] = useState("");
-  const [selectedVideoData, setSelectedVideoData] = useState("");
+  const [selectedVideoDataTitle, setSelectedVideoDataTitle] = useState("");
+  const [selectedVideoDataStats, setSelectedVideoDataStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [token, setToken] = useState([]);
+
+  // Sets authorization token from Google_OAuth
+  useEffect(() => {
+    const _token = getTokenFromUrl();
+    if (_token) {
+      setToken(_token);
+    }
+  }, []);
 
   // search video database for results of input
   useEffect(() => {
@@ -41,9 +52,8 @@ const App = () => {
       );
       setSearchResults(searchVideos.data.items);
     };
-    // fetchData();
+    fetchData();
   }, [searchVideo]);
-  console.log(searchResults);
 
   // get selected video data for display
   useEffect(() => {
@@ -52,22 +62,24 @@ const App = () => {
         "https://www.googleapis.com/youtube/v3/videos",
         {
           params: {
-            part: "snippet",
+            part: "snippet,contentDetails,statistics",
             id: videoId,
             key: API_KEY,
             maxResults: 1,
           },
         }
       );
-      setSelectedVideoData(fetchVideoById.data.items[0]);
+      fetchVideoById.data.items.map((data) => {
+        setSelectedVideoDataTitle(data.snippet.title);
+        setSelectedVideoDataStats(data.snippet.statistics);
+      });
     };
-    // if (videoId) {
-    //   fetchData();
-    // }
+    if (videoId) {
+      fetchData();
+    }
   }, [videoId]);
 
-  console.log(videoId);
-
+  console.log(selectedVideoDataStats);
   return (
     <Router>
       <div className="App">
@@ -79,6 +91,7 @@ const App = () => {
               searchVideo={searchVideo}
               setSearchVideo={setSearchVideo}
               ToggleSidebars={() => setToggleWatchSidebar(!toggleWatchSidebar)}
+              token={token}
             />
             <SuggestionsRow />
             <div className="app-watch">
@@ -88,18 +101,23 @@ const App = () => {
                   setToggleWatchSidebar={setToggleWatchSidebar}
                 />
               )}
-              <WatchVideo videoId={videoId} />
+              <WatchVideo
+                selectedVideoDataTitle={selectedVideoDataTitle}
+                videoId={videoId}
+              />
             </div>
           </Route>
-          <Route path="/Home">
+          <Route path="/">
             <Searchbar
               input={input}
               setInput={setInput}
               searchVideo={searchVideo}
               setSearchVideo={setSearchVideo}
               ToggleSidebars={() => setToggleMainSidebar(!toggleMainSidebar)}
+              token={token}
+              setToken={setToken}
             />
-            <SuggestionsRow />
+            <SuggestionsRow setSearchVideo={setSearchVideo} />
             <div className="app-content">
               <MainSidebar
                 toggleMainSidebar={toggleMainSidebar}
