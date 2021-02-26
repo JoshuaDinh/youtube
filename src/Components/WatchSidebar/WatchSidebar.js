@@ -17,7 +17,9 @@ export const WatchSidebar = ({ toggleWatchSidebar, setToggleWatchSidebar }) => {
       <div className="sidebar-background"></div>
       <div className="sidebar">
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
+          toggleWatchSidebar
+          toggleSidebar={toggleWatchSidebar}
+          setToggleSidebar={setToggleWatchSidebar}
           title={
             <CloseIcon
               onClick={() => setToggleWatchSidebar(!toggleWatchSidebar)}
@@ -26,45 +28,52 @@ export const WatchSidebar = ({ toggleWatchSidebar, setToggleWatchSidebar }) => {
           }
         />
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
-          setToggleWatchSidebar={setToggleWatchSidebar}
+          toggleWatchSidebar
+          setToggleSidebar={setToggleWatchSidebar}
+          toggleSidebar={toggleWatchSidebar}
           icon={<HomeIcon />}
           title="Home"
           link="/Home"
         />
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
-          setToggleWatchSidebar={setToggleWatchSidebar}
+          toggleWatchSidebar
+          setToggleSidebar={setToggleWatchSidebar}
+          toggleSidebar={toggleWatchSidebar}
           icon={<WhatshotIcon />}
           title="Trending"
         />
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
-          setToggleWatchSidebar={setToggleWatchSidebar}
+          toggleWatchSidebar
+          setToggleSidebar={setToggleWatchSidebar}
+          toggleSidebar={toggleWatchSidebar}
           icon={<SubscriptionsIcon />}
           title="Subscriptions"
         />
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
-          setToggleWatchSidebar={setToggleWatchSidebar}
+          toggleWatchSidebar
+          setToggleSidebar={setToggleWatchSidebar}
+          toggleSidebar={toggleWatchSidebar}
           icon={<VideoLibraryIcon />}
           title="Library"
         />
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
-          setToggleWatchSidebar={setToggleWatchSidebar}
+          toggleWatchSidebar
+          setToggleSidebar={setToggleWatchSidebar}
+          toggleSidebar={toggleWatchSidebar}
           icon={<HistoryIcon />}
           title="History"
         />
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
-          setToggleWatchSidebar={setToggleWatchSidebar}
+          toggleWatchSidebar
+          setToggleSidebar={setToggleWatchSidebar}
+          toggleSidebar={toggleWatchSidebar}
           icon={<WatchLaterIcon />}
           title="Watch Later "
         />
         <SidebarOption
-          toggleWatchSidebar={toggleWatchSidebar}
-          setToggleWatchSidebar={setToggleWatchSidebar}
+          toggleWatchSidebar
+          setToggleSidebar={setToggleWatchSidebar}
+          toggleSidebar={toggleWatchSidebar}
           icon={<ThumbUpIcon />}
           title="Liked Videos"
         />

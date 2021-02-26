@@ -13,11 +13,13 @@ import { Watch } from "@material-ui/icons";
 import { WatchVideo } from "./Components/WatchVideo/WatchVideo";
 import { WatchSidebar } from "./Components/WatchSidebar/WatchSidebar";
 import { MainSidebar } from "./Components/MainSidebar/MainSidebar";
+import { VideoCard } from "./Components/VideoCard/VideoCard";
+import jslogo from "./images/js-logo.png";
 
 const App = () => {
   const [toggleWatchSidebar, setToggleWatchSidebar] = useState(false);
   const [toggleMainSidebar, setToggleMainSidebar] = useState(false);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("Javacript");
   const [searchVideo, setSearchVideo] = useState("");
   const [videoId, setVideoId] = useState("");
   const [selectedVideoData, setSelectedVideoData] = useState("");
@@ -33,7 +35,7 @@ const App = () => {
             part: "snippet",
             q: input,
             key: API_KEY,
-            maxResults: 5,
+            maxResults: 1,
           },
         }
       );
@@ -53,18 +55,18 @@ const App = () => {
             part: "snippet",
             id: videoId,
             key: API_KEY,
-            maxResults: 25,
+            maxResults: 1,
           },
         }
       );
       setSelectedVideoData(fetchVideoById.data.items[0]);
     };
-    if (videoId) {
-      // fetchData();
-    }
+    // if (videoId) {
+    //   fetchData();
+    // }
   }, [videoId]);
 
-  console.log(selectedVideoData);
+  console.log(videoId);
 
   return (
     <Router>
@@ -89,7 +91,6 @@ const App = () => {
               <WatchVideo videoId={videoId} />
             </div>
           </Route>
-
           <Route path="/Home">
             <Searchbar
               input={input}
@@ -100,13 +101,21 @@ const App = () => {
             />
             <SuggestionsRow />
             <div className="app-content">
-              <MainSidebar toggleMainSidebar={toggleMainSidebar} />
+              <MainSidebar
+                toggleMainSidebar={toggleMainSidebar}
+                setToggleMainSidebar={setToggleMainSidebar}
+              />
               <div className="app-home">
-                <VideoCardRow
-                  setVideoId={setVideoId}
-                  fetchUrl={requests.fetchReact}
-                  rowTitle="React.Js"
-                />
+                {searchResults.map((video) => {
+                  return (
+                    <VideoCard
+                      setVideoId={() => setVideoId(video.id.videoId)}
+                      title="Async-await"
+                      title={video.snippet.title}
+                      thumbnail={video.snippet.thumbnails.high.url}
+                    />
+                  );
+                })}
               </div>
             </div>
           </Route>

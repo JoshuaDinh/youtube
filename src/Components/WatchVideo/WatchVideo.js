@@ -1,6 +1,5 @@
 import React from "react";
 import "./watchvideo.css";
-
 import { Comments } from "../Comments/Comments";
 import { VideoDetails } from "../VideoDetails/VideoDetails";
 import { VideoDetailsAccount } from "../VideoDetailsAccount/VideoDetailsAccount";
@@ -32,7 +31,7 @@ export const WatchVideo = ({ selectedVideoData, videoId }) => {
         <hr></hr>
         <Comments selectedVideoData={selectedVideoData} />
       </div>
-      <Recommended />
+      {/* <Recommended /> */}
     </div>
   );
 };

@@ -42,16 +42,15 @@ export const Searchbar = ({
             type="text"
             onChange={(e) => setInput(e.target.value)}
           ></input>
-          <Link
+          <div
             className="router-link"
-            to="/Results"
             onClick={(input) => {
               setSearchVideo(input);
             }}
           >
             {" "}
             <SearchIcon className="searchbar-search-icon" />
-          </Link>
+          </div>
         </div>
         <div className="searchbar-icons-right-container">
           <Link className="router-link" to="/Home">

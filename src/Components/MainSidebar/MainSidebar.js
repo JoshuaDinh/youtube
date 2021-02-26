@@ -11,34 +11,44 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 
-export const MainSidebar = ({ toggleMainSidebar }) => {
+export const MainSidebar = ({ toggleMainSidebar, setToggleMainSidebar }) => {
   return (
     <div
       className={`main-sidebar ${toggleMainSidebar && "toggle-main-sidebar"}`}
     >
       <SidebarOption
         toggleMainSidebar={toggleMainSidebar}
+        toggleSidebar={toggleMainSidebar}
+        setToggleSidebar={setToggleMainSidebar}
         title="Home"
         icon={<HomeIcon />}
         link="/Home"
       />
       <SidebarOption
         toggleMainSidebar={toggleMainSidebar}
+        toggleSidebar={toggleMainSidebar}
+        setToggleSidebar={setToggleMainSidebar}
         title="WhatsHot"
         icon={<WhatshotIcon />}
       />
       <SidebarOption
         toggleMainSidebar={toggleMainSidebar}
+        toggleSidebar={toggleMainSidebar}
+        setToggleSidebar={setToggleMainSidebar}
         title="Subscriptions"
         icon={<SubscriptionsIcon />}
       />
       <SidebarOption
         toggleMainSidebar={toggleMainSidebar}
+        toggleSidebar={toggleMainSidebar}
+        setToggleSidebar={setToggleMainSidebar}
         title="Library"
         icon={<VideoLibraryIcon />}
       />
       <SidebarOption
         toggleMainSidebar={toggleMainSidebar}
+        toggleSidebar={toggleMainSidebar}
+        setToggleSidebar={setToggleMainSidebar}
         title="History"
         icon={<HistoryIcon />}
       />

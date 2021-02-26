@@ -9,9 +9,15 @@ export const SidebarOption = ({
   link,
   toggleMainSidebar,
   toggleWatchSidebar,
+  setToggleSidebar,
+  toggleSidebar,
 }) => {
   return (
-    <Link className="router-link" to={link}>
+    <Link
+      onClick={() => setToggleSidebar(!toggleSidebar)}
+      className="router-link"
+      to={link}
+    >
       <div className="sidebar-option-container">
         <div className="sidebar-option">{icon}</div>
         {toggleMainSidebar && <p className="sidebar-option-title"> {title}</p>}

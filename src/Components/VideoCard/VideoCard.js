@@ -6,7 +6,7 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link } from "react-router-dom";
 
-export const VideoCard = ({ title, thumbnail }) => {
+export const VideoCard = ({ title, thumbnail, setVideoId }) => {
   const [overlay, setOverlay] = useState(false);
   return (
     <Link
@@ -14,6 +14,7 @@ export const VideoCard = ({ title, thumbnail }) => {
       className="videocard"
       onMouseEnter={() => setOverlay(true)}
       onMouseLeave={() => setOverlay(false)}
+      onClick={() => setVideoId()}
     >
       <div
         className={`videocard-details ${overlay && "videocard-details-active"}`}
@@ -36,6 +37,7 @@ export const VideoCard = ({ title, thumbnail }) => {
         alt="img"
         style={{ backgroundImage: `url(${thumbnail})` }}
       ></div>
+      <p className="videocard-title">{title}</p>
     </Link>
   );
 };
