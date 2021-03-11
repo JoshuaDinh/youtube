@@ -1,30 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import requests from "./requests";
 import { Searchbar } from "./Components/Searchbar/Searchbar";
-import { FeaturedVideoFrame } from "./Components/FeaturedVideoFrame/FeaturedVideoFrame";
-import { SuggestionsRow } from "./Components/SuggestionsRow/SuggestionsRow";
-import { VideoCardRow } from "./Components/VideoCard/VideoCardRow";
-import { Results } from "./Components/Results/Results";
+import { VideoPlayer } from "./Components/VideoPlayer/VideoPlayer";
+import { AddComment } from "./Components/AddComment/AddComment";
+import { Comments } from "./Components/Comments/Comments";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { API_KEY } from "./requests";
-import { Watch } from "@material-ui/icons";
-import { WatchVideo } from "./Components/WatchVideo/WatchVideo";
-import { WatchSidebar } from "./Components/WatchSidebar/WatchSidebar";
-import { MainSidebar } from "./Components/MainSidebar/MainSidebar";
-import { VideoCard } from "./Components/VideoCard/VideoCard";
 import { getTokenFromUrl } from "./GoogleAuth";
-import jslogo from "./images/js-logo.png";
+import { VideoSuggestions } from "./Components/VideoSuggestions/VideoSuggestions";
 
 const App = () => {
-  const [toggleWatchSidebar, setToggleWatchSidebar] = useState(false);
-  const [toggleMainSidebar, setToggleMainSidebar] = useState(false);
   const [input, setInput] = useState("Javacript");
   const [searchVideo, setSearchVideo] = useState("");
-  const [videoId, setVideoId] = useState("");
-  const [selectedVideoDataTitle, setSelectedVideoDataTitle] = useState("");
-  const [selectedVideoDataStats, setSelectedVideoDataStats] = useState("");
+  const [videoId, setVideoId] = useState("4UZrsTqkcW4");
+  const [selectedVideoData, setSelectedVideoData] = useState("");
+  const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [token, setToken] = useState([]);
 
@@ -46,7 +37,7 @@ const App = () => {
             part: "snippet",
             q: input,
             key: API_KEY,
-            maxResults: 1,
+            maxResults: 6,
           },
         }
       );
@@ -55,7 +46,9 @@ const App = () => {
     fetchData();
   }, [searchVideo]);
 
-  // get selected video data for display
+  console.log(videoId);
+
+  // Get selected video data for display
   useEffect(() => {
     const fetchData = async () => {
       const fetchVideoById = await axios.get(
@@ -70,8 +63,8 @@ const App = () => {
         }
       );
       fetchVideoById.data.items.map((data) => {
-        setSelectedVideoDataTitle(data.snippet.title);
-        setSelectedVideoDataStats(data.snippet.statistics);
+        setSelectedVideoData(data.snippet);
+        setSelectedVideoStats(data.statistics);
       });
     };
     if (videoId) {
@@ -79,79 +72,37 @@ const App = () => {
     }
   }, [videoId]);
 
-  console.log(selectedVideoDataStats);
   return (
     <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/Watch">
+      <Switch>
+        <Route path="/">
+          <div className="App">
             <Searchbar
               input={input}
               setInput={setInput}
               searchVideo={searchVideo}
               setSearchVideo={setSearchVideo}
-              ToggleSidebars={() => setToggleWatchSidebar(!toggleWatchSidebar)}
-              token={token}
-            />
-            <SuggestionsRow />
-            <div className="app-watch">
-              {toggleWatchSidebar && (
-                <WatchSidebar
-                  toggleWatchSidebar={toggleWatchSidebar}
-                  setToggleWatchSidebar={setToggleWatchSidebar}
-                />
-              )}
-              <WatchVideo
-                selectedVideoDataTitle={selectedVideoDataTitle}
-                videoId={videoId}
-              />
-            </div>
-          </Route>
-          <Route path="/">
-            <Searchbar
-              input={input}
-              setInput={setInput}
-              searchVideo={searchVideo}
-              setSearchVideo={setSearchVideo}
-              ToggleSidebars={() => setToggleMainSidebar(!toggleMainSidebar)}
               token={token}
               setToken={setToken}
             />
-            <SuggestionsRow setSearchVideo={setSearchVideo} />
-            <div className="app-content">
-              <MainSidebar
-                toggleMainSidebar={toggleMainSidebar}
-                setToggleMainSidebar={setToggleMainSidebar}
-              />
-              <div className="app-home">
-                {searchResults.map((video) => {
-                  return (
-                    <VideoCard
-                      setVideoId={() => setVideoId(video.id.videoId)}
-                      title="Async-await"
-                      title={video.snippet.title}
-                      thumbnail={video.snippet.thumbnails.high.url}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          </Route>
-        </Switch>
-      </div>
+            <VideoPlayer
+              videoId={videoId}
+              selectedVideoData={selectedVideoData}
+              selectedVideoStats={selectedVideoStats}
+            />
+            <Comments />
+            <VideoSuggestions
+              searchResults={searchResults}
+              setVideoId={setVideoId}
+            />
+          </div>
+        </Route>
+      </Switch>
     </Router>
   );
 };
 
 export default App;
-
-// Sets authorization token from Google_OAuth
-//  useEffect(() => {
-//   const _token = getTokenFromUrl();
-//   if (_token) {
-//     setToken(_token);
-//   }
-// }, []);
 
 // useEffect(() => {
 //   const fetchData = async () => {
@@ -328,3 +279,21 @@ export default App;
 //         </Switch>
 //       </div>
 //     </Router>
+
+// {searchResults.map((video) => {
+//   return (
+//     <VideoCard
+//       setVideoId={() => setVideoId(video.id.videoId)}
+//       title="Async-await"
+//       title={video.snippet.title}
+//       thumbnail={video.snippet.thumbnails.high.url}
+//     />
+//   );
+// })}
+
+{
+  /* <MainSidebar
+toggleMainSidebar={toggleMainSidebar}
+setToggleMainSidebar={setToggleMainSidebar}
+/> */
+}

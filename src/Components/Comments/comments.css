@@ -1,127 +1,16 @@
 .comments {
-  margin-top: 5%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.comments-header-container {
-  display: flex;
-  margin: 15px 0;
-}
-
-.comments-comment-amount {
-  color: black;
-  margin-right: 10px;
-}
-
-/*---------- add comment ---------- */
-
-.addcomment {
+  grid-area: comments;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2% 0;
-  width: 100%;
-}
-.addcomment-form-container {
-  display: flex;
-  width: 100%;
+  background: rgb(8, 8, 8);
+  overflow-y: scroll;
 }
 
-.addcomment-form {
-  border-bottom: 1px solid black;
-  width: 100%;
-}
-
-.addcomment-form-underline {
-  border-bottom: 2px solid black;
-}
-.addcomment-input {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  width: 100%;
-  padding: 10px;
-  background: none;
-}
-
-.addcomment-avatar-icon {
-  color: black;
-  font-size: 3em !important;
-}
-
-.addcomment-buttons {
-  display: flex;
-  justify-content: space-evenly;
-  width: 60%;
-  margin-top: 2%;
-}
-
-.addcomment-button {
-  border: 1px solid black;
-  text-align: center;
-  padding: 10px;
-  width: 30%;
-  cursor: pointer;
-}
-
-.addcomment-comment {
-  background: black;
+.comment {
+  background: rgb(216, 210, 210);
   color: white;
-}
-.addcomment-comment:hover {
-  background: whitesmoke;
-  color: black;
-  border: 2px solid black;
-}
-
-/*---------- comment card ---------- */
-
-.commentcard {
-  width: 95%;
-  height: 100%;
-}
-
-.commentcard-account > p {
-  margin-left: 13px;
-}
-.commentcard-comment-posted-date {
-  margin-left: 10px;
-  font-size: 0.8rem;
-}
-
-.commentcard-account {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-}
-.commentcard-comment {
-  margin: 3% 0;
-  font-size: 0.9rem;
-}
-
-.commentcard-icons-container {
-  margin: 3% 0;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 14%;
-}
-
-.commentcard-icon-container {
-  display: flex;
-  align-items: center;
-}
-.commentcard-icon {
-  font-size: 1.3em !important;
-  margin-right: 5px;
-}
-
-.commentcard-likes-dislikes-amount {
-  color: black;
-  font-size: 0.9rem;
+  width: 90%;
+  min-height: 220px;
+  margin: 4% 0;
 }

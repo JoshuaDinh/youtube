@@ -2,19 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./searchbar.css";
 import logo from "../../images/logo.png";
 import SearchIcon from "@material-ui/icons/Search";
-import HomeIcon from "@material-ui/icons/Home";
-import MenuIcon from "@material-ui/icons/Menu";
-import { Link } from "react-router-dom";
 import { loginUrl } from "../../GoogleAuth";
 import { Avatar } from "@material-ui/core";
 
-export const Searchbar = ({
-  input,
-  setInput,
-  setSearchVideo,
-  ToggleSidebars,
-  token,
-}) => {
+export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
   const submitSearch = (e) => {
     e.preventDefault(e);
     setSearchVideo(input);
@@ -28,13 +19,7 @@ export const Searchbar = ({
           submitSearch(e);
         }}
       >
-        <div className="searchbar-icons-left-container">
-          <MenuIcon
-            onClick={() => ToggleSidebars()}
-            className="searchbar-menu-icon"
-          />
-          <img className="youtube-logo" src={logo} alt="youtube-logo" />
-        </div>
+        <img className="youtube-logo" src={logo} alt="youtube-logo" />
         <div className="searchbar-input-container">
           <input
             className="searchbar-input"
@@ -48,23 +33,17 @@ export const Searchbar = ({
               setSearchVideo(input);
             }}
           >
-            {" "}
             <SearchIcon className="searchbar-search-icon" />
           </div>
         </div>
-        <div className="searchbar-icons-right-container">
-          <Link className="router-link" to="/Home">
-            {" "}
-            <HomeIcon className="searchbar-home-icon " />
-          </Link>{" "}
-          {token ? (
-            <Avatar className="searchbar-avatar-icon" />
-          ) : (
-            <a href={loginUrl} className="searchbar-login">
-              Log In
-            </a>
-          )}
-        </div>
+
+        {token.length > 1 ? (
+          <Avatar className="searchbar-avatar-icon" />
+        ) : (
+          <a href={loginUrl} className="searchbar-login">
+            Sign In
+          </a>
+        )}
       </form>
     </header>
   );

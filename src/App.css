@@ -4,60 +4,22 @@
   padding: 0;
 }
 body {
-  overflow-x: hidden;
-  background: rgba(65, 63, 63, 0.3);
-  width: 100vw;
-  height: 100%;
-}
-.router-link {
-  color: white;
-  text-decoration: none;
+  overflow: hidden;
+  background: rgba(240, 234, 234, 0.5);
 }
 
 .App {
+  overflow: hidden;
   height: 100vh;
-  width: 100vw;
-}
-.app-fixed-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.app-content {
-  display: flex;
   width: 100%;
-  height: 82.5%;
-}
-
-.app-home {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  width: 100%;
-  margin-left: 5%;
-}
-
-.app-watch {
-}
-
-@media only screen and (max-width: 1200px) {
-  .app-home {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media only screen and (max-width: 900px) {
-  .app-home {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
-  }
-}
-@media only screen and (max-width: 700px) {
-  .app-home {
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 30px;
-    justify-content: center;
-    margin-left: 20%;
-  }
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.45fr 1fr 0.5fr 1fr 1fr;
+  grid-template-areas:
+    "searchbar searchbar searchbar searchbar searchbar "
+    "suggestions  videoplayer videoplayer videoplayer  comments"
+    "suggestions  videoplayer videoplayer videoplayer  comments"
+    "suggestions  videoplayer videoplayer videoplayer  comments"
+    "suggestions  addcomment addcomment addcomment  comments";
+  grid-gap: 10px;
 }

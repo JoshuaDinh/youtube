@@ -3,10 +3,11 @@
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   width: 100%;
-  height: 10%;
-  display: flex;
+  grid-area: searchbar;
+  /* height: 10%; */
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
   color: black;
   -webkit-box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
   box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
@@ -33,30 +34,6 @@
   outline: none;
 }
 
-.searchbar-icons-left-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: white;
-  width: 10%;
-}
-.searchbar-icons-right-container {
-  display: flex;
-  justify-content: space-evenly;
-  color: white;
-  width: 10%;
-  margin-right: 2%;
-}
-
-.searchbar-home-icon {
-  font-size: 2.5em !important;
-  cursor: pointer;
-}
-.searchbar-menu-icon {
-  font-size: 2rem !important;
-  cursor: pointer;
-}
-
 .searchbar-search-icon {
   font-size: 2rem !important;
   cursor: pointer;
@@ -64,6 +41,7 @@
 }
 .searchbar-avatar-icon {
   cursor: pointer;
+  margin-right: 2%;
 }
 .searchbar-home-icon:hover,
 .searchbar-login:hover {
@@ -72,7 +50,7 @@
 
 .youtube-logo {
   height: 3.5em;
-  margin-left: 4%;
+  margin-left: 2%;
 }
 
 .searchbar-login {
@@ -81,4 +59,27 @@
   cursor: pointer;
   text-decoration: none;
   color: whitesmoke;
+  margin-right: 2%;
+  padding: 6px;
+  border: 1px solid transparent;
+  animation: border 1s infinite;
+}
+
+.searchbar-login:hover {
+  border: 1px solid white;
+}
+
+@keyframes border {
+  25% {
+    border-top: 1px solid white;
+  }
+  50% {
+    border-right: 1px solid white;
+  }
+  75% {
+    border-bottom: 1px solid white;
+  }
+  100% {
+    border-left: 1px solid white;
+  }
 }
