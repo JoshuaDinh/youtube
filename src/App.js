@@ -46,31 +46,29 @@ const App = () => {
   //   fetchData();
   // }, [searchVideo]);
 
-  console.log(videoId);
-
   // Get selected video data for display
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchVideoById = await axios.get(
-        "https://www.googleapis.com/youtube/v3/videos",
-        {
-          params: {
-            part: "snippet,contentDetails,statistics",
-            id: videoId,
-            key: API_KEY,
-            maxResults: 1,
-          },
-        }
-      );
-      fetchVideoById.data.items.map((data) => {
-        setSelectedVideoData(data.snippet);
-        setSelectedVideoStats(data.statistics);
-      });
-    };
-    if (videoId) {
-      fetchData();
-    }
-  }, [videoId]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const fetchVideoById = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/videos",
+  //       {
+  //         params: {
+  //           part: "snippet,contentDetails,statistics",
+  //           id: videoId,
+  //           key: API_KEY,
+  //           maxResults: 1,
+  //         },
+  //       }
+  //     );
+  //     fetchVideoById.data.items.map((data) => {
+  //       setSelectedVideoData(data.snippet);
+  //       setSelectedVideoStats(data.statistics);
+  //     });
+  //   };
+  //   if (videoId) {
+  //     fetchData();
+  //   }
+  // }, [videoId]);
 
   return (
     <Router>
