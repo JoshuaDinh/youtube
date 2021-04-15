@@ -20,55 +20,57 @@ const App = () => {
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
-  // useEffect(() => {
-  //   const _token = getTokenFromUrl();
-  //   if (_token) {
-  //     setToken(_token);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const _token = getTokenFromUrl();
+    if (_token) {
+      setToken(_token);
+    }
+  }, []);
 
   // search video database for results of input
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const searchVideos = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           q: input,
-  //           key: API_KEY,
-  //           maxResults: 6,
-  //         },
-  //       }
-  //     );
-  //     setSearchResults(searchVideos.data.items);
-  //   };
-  //   fetchData();
-  // }, [searchVideo]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const searchVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            q: input,
+            key: API_KEY,
+            maxResults: 6,
+          },
+        }
+      );
+      setSearchResults(searchVideos.data.items);
+    };
+    fetchData();
+  }, [searchVideo]);
+
+  console.log(videoId);
 
   // Get selected video data for display
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const fetchVideoById = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/videos",
-  //       {
-  //         params: {
-  //           part: "snippet,contentDetails,statistics",
-  //           id: videoId,
-  //           key: API_KEY,
-  //           maxResults: 1,
-  //         },
-  //       }
-  //     );
-  //     fetchVideoById.data.items.map((data) => {
-  //       setSelectedVideoData(data.snippet);
-  //       setSelectedVideoStats(data.statistics);
-  //     });
-  //   };
-  //   if (videoId) {
-  //     fetchData();
-  //   }
-  // }, [videoId]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchVideoById = await axios.get(
+        "https://www.googleapis.com/youtube/v3/videos",
+        {
+          params: {
+            part: "snippet,contentDetails,statistics",
+            id: videoId,
+            key: API_KEY,
+            maxResults: 1,
+          },
+        }
+      );
+      fetchVideoById.data.items.map((data) => {
+        setSelectedVideoData(data.snippet);
+        setSelectedVideoStats(data.statistics);
+      });
+    };
+    if (videoId) {
+      fetchData();
+    }
+  }, [videoId]);
 
   return (
     <Router>

@@ -34,7 +34,9 @@ export const Comments = ({ videoId }) => {
       );
       setComments(fetchComments.data.items);
     };
-    fetchData();
+    if (videoId) {
+      fetchData();
+    }
   }, [videoId]);
   console.log(comments);
   return (
