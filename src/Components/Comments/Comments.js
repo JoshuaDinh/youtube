@@ -42,6 +42,10 @@ export const Comments = ({ videoId }) => {
   return (
     <div className="comments">
       <h3 className="comments-header">Comments</h3>
+      {/* Displays error message if comments are unavailable */}
+      {comments.length <= 0 && (
+        <h3 className="comments-header">No Results / Comments Unavailable</h3>
+      )}
       {comments.map((comment) => {
         return (
           <Comment
