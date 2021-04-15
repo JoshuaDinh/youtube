@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
+  overflow: scroll;
   height: 100%;
   grid-area: suggestions;
   background: rgb(8, 8, 8);

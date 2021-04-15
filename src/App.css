@@ -23,3 +23,6 @@ body {
     "suggestions  addcomment addcomment addcomment  comments";
   grid-gap: 10px;
 }
+::-webkit-scrollbar {
+  width: 0px;
+}

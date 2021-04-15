@@ -4,8 +4,6 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import { Avatar } from "@material-ui/core";
 import VisibilityIcon from "@material-ui/icons/Visibility";
-import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from "@material-ui/icons/Remove";
 
 const VideoDetails = ({ videoId, selectedVideoData, selectedVideoStats }) => {
   return (

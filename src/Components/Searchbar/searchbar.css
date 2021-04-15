@@ -4,10 +4,6 @@
   border-bottom: 1px solid white;
   width: 100%;
   grid-area: searchbar;
-  /* height: 10%; */
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
   color: black;
   -webkit-box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
   box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
@@ -62,7 +58,7 @@
   margin-right: 2%;
   padding: 6px;
   border: 1px solid transparent;
-  animation: border 1s infinite;
+  animation: border 1s infinite alternate-reverse;
 }
 
 .searchbar-login:hover {
@@ -70,16 +66,19 @@
 }
 
 @keyframes border {
-  25% {
+  20% {
     border-top: 1px solid white;
   }
-  50% {
+  40% {
     border-right: 1px solid white;
   }
-  75% {
+  60% {
     border-bottom: 1px solid white;
   }
-  100% {
+  80% {
     border-left: 1px solid white;
+  }
+  100% {
+    border: 1px solid transparent;
   }
 }
