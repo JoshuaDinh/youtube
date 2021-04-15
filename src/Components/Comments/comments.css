@@ -15,6 +15,11 @@
   border-radius: 5px;
 }
 
+.comments-header {
+  color: whitesmoke;
+  margin: 2% 0;
+}
+
 .comment-author {
   display: flex;
   align-items: center;

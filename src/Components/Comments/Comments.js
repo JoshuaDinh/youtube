@@ -41,6 +41,7 @@ export const Comments = ({ videoId }) => {
   console.log(comments);
   return (
     <div className="comments">
+      <h3 className="comments-header">Comments</h3>
       {comments.map((comment) => {
         return (
           <Comment
