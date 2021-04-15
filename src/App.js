@@ -20,31 +20,31 @@ const App = () => {
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
-  useEffect(() => {
-    const _token = getTokenFromUrl();
-    if (_token) {
-      setToken(_token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const _token = getTokenFromUrl();
+  //   if (_token) {
+  //     setToken(_token);
+  //   }
+  // }, []);
 
   // search video database for results of input
-  useEffect(() => {
-    const fetchData = async () => {
-      const searchVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: input,
-            key: API_KEY,
-            maxResults: 6,
-          },
-        }
-      );
-      setSearchResults(searchVideos.data.items);
-    };
-    fetchData();
-  }, [searchVideo]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const searchVideos = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           q: input,
+  //           key: API_KEY,
+  //           maxResults: 6,
+  //         },
+  //       }
+  //     );
+  //     setSearchResults(searchVideos.data.items);
+  //   };
+  //   fetchData();
+  // }, [searchVideo]);
 
   console.log(videoId);
 
@@ -90,7 +90,7 @@ const App = () => {
               selectedVideoData={selectedVideoData}
               selectedVideoStats={selectedVideoStats}
             />
-            <Comments />
+            <Comments videoId={videoId} />
             <VideoSuggestions
               searchResults={searchResults}
               setVideoId={setVideoId}
