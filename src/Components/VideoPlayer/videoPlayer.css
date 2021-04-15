@@ -17,7 +17,8 @@
 }
 .video-details-stats {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 1% 0;
   width: 100%;
 }
 
@@ -41,14 +42,15 @@
 }
 
 .video-details-info {
-  margin-top: 2%;
+  margin: 2%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .video-details-description {
-  font-size: 0.8rem;
-  margin-top: 2%;
+  font-size: 0.9rem;
+  letter-spacing: 0.06rem;
+  margin: 2%;
 }
 
 @keyframes bounce {
