@@ -1,7 +1,6 @@
 import React from "react";
 import "./videoSuggestions.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
-import jslogo from "../../images/js-logo.png";
 
 const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
   return (

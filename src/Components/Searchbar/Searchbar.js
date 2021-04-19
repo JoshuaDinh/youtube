@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./searchbar.css";
 import logo from "../../images/logo.png";
 import SearchIcon from "@material-ui/icons/Search";

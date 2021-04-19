@@ -16,6 +16,7 @@
   border: 2px solid rgb(255, 255, 255);
   cursor: pointer;
   position: relative;
+  border-radius: 5px;
 }
 
 .video-card-overlay {
@@ -37,13 +38,28 @@
   text-align: center;
   font-size: 1.2rem;
 }
+
 .video-card-play-icon {
-  font-size: 4em !important;
-  color: rgb(161, 159, 159);
+  font-size: 5em !important;
+  color: whitesmoke;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.video-card-play-icon:hover {
+  animation: delayView 2s ease-in forwards;
+  animation-delay: 1s;
+}
+
+@keyframes delayView {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .video-card-img {

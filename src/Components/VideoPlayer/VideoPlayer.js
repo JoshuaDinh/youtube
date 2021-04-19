@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./videoPlayer.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
