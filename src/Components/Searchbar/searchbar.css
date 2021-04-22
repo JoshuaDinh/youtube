@@ -21,7 +21,7 @@
   width: 40%;
   display: flex;
   align-items: center;
-  border: 1px solid white;
+  border: 1px solid whitesmoke;
   color: white;
 }
 .searchbar-input {
@@ -62,21 +62,21 @@
 }
 
 .searchbar-login:hover {
-  border: 1px solid white;
+  border: 1px solid #ff073a;
 }
 
 @keyframes border {
   20% {
-    border-top: 1px solid white;
+    border-top: 1px solid #ff073a;
   }
   40% {
-    border-right: 1px solid white;
+    border-right: 1px solid #ff073a;
   }
   60% {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #ff073a;
   }
   80% {
-    border-left: 1px solid white;
+    border-left: 1px solid #ff073a;
   }
   100% {
     border: 1px solid transparent;

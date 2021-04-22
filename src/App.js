@@ -28,21 +28,24 @@ const App = () => {
 
   // search video database for results of input
   useEffect(() => {
-    const fetchData = async () => {
-      const searchVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: input,
-            key: API_KEY,
-            maxResults: 6,
-          },
-        }
-      );
-      setSearchResults(searchVideos.data.items);
-    };
-    fetchData();
+    const timer = setTimeout(() => {
+      const fetchData = async () => {
+        const searchVideos = await axios.get(
+          "https://www.googleapis.com/youtube/v3/search",
+          {
+            params: {
+              part: "snippet",
+              q: input,
+              key: API_KEY,
+              maxResults: 6,
+            },
+          }
+        );
+        setSearchResults(searchVideos.data.items);
+      };
+      fetchData();
+    }, 1500);
+    return () => clearTimeout(timer);
   }, [searchVideo, input]);
 
   console.log(videoId);

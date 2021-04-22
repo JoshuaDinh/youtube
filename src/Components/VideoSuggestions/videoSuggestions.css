@@ -13,7 +13,7 @@
 .video-card {
   max-width: 197px;
   margin: 4% 0;
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid #ff073a;
   cursor: pointer;
   position: relative;
   border-radius: 5px;
@@ -27,6 +27,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
 }
 
 .video-card-overlay:hover {
@@ -37,6 +38,7 @@
   color: white;
   text-align: center;
   font-size: 1.2rem;
+  border-radius: 5px;
 }
 
 .video-card-play-icon {
@@ -68,4 +70,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
