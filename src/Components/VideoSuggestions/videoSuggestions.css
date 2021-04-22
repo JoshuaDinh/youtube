@@ -13,10 +13,14 @@
 .video-card {
   max-width: 197px;
   margin: 4% 0;
-  border: 1px solid #ff073a;
   cursor: pointer;
   position: relative;
   border-radius: 5px;
+  border: 2px solid transparent;
+}
+
+.video-card:hover {
+  border: 2px solid #ff073a;
 }
 
 .video-card-overlay {

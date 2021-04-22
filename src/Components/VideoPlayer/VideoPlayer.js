@@ -5,7 +5,7 @@ import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import { Avatar } from "@material-ui/core";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 
-const VideoDetails = ({ videoId, selectedVideoData, selectedVideoStats }) => {
+const VideoDetails = ({ selectedVideoData, selectedVideoStats }) => {
   return (
     <div className="video-details">
       <div className="video-details-stats">
@@ -18,18 +18,19 @@ const VideoDetails = ({ videoId, selectedVideoData, selectedVideoStats }) => {
           <div />
         </div>
         <div className="video-details-icon">
-          <ThumbUpIcon />
+          <ThumbUpIcon className="video-details-likes" />
           {selectedVideoStats.likeCount}
-          <ThumbDownIcon /> {selectedVideoStats.dislikeCount}
-          <VisibilityIcon />
+          <ThumbDownIcon className="video-details-dislikes" />{" "}
+          {selectedVideoStats.dislikeCount}
+          <VisibilityIcon className="video-details-views" />
           {selectedVideoStats.viewCount}
         </div>
       </div>
-      <div className="video-details-description-container">
+      {/* <div className="video-details-description-container">
         <div className="video-details-description">
           {selectedVideoData.description}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

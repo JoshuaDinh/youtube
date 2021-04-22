@@ -12,8 +12,12 @@
   color: white;
   width: 90%;
   margin: 4%;
-  border: 1px solid #ff073a;
   border-radius: 5px;
+  border: 2px solid transparent;
+}
+
+.comment:hover {
+  border: 2px solid #ff073a;
 }
 
 .comments-header {

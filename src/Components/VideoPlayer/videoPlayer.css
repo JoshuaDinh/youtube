@@ -30,6 +30,17 @@
   cursor: pointer;
 }
 
+.video-details-likes {
+  color: green;
+}
+
+.video-details-dislikes {
+  color: red;
+}
+
+.video-details-views {
+}
+
 .video-details-account {
   display: flex;
   align-items: center;
