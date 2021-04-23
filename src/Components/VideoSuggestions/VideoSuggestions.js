@@ -1,6 +1,7 @@
 import React from "react";
 import "./videoSuggestions.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
+import Switch from "@material-ui/core/Switch";
 
 const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
   return (
@@ -17,6 +18,11 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
 export const VideoSuggestions = ({ searchResults, setVideoId }) => {
   return (
     <div className="video-suggestions">
+      <div className="video-suggestions-header-container">
+        <h2 className="video-suggestions-header">Up Next</h2>
+        <h2 className="video-suggestions-header">Auto Play:</h2>
+        <Switch />
+      </div>
       {searchResults.map((data) => {
         return (
           <VideoCard
