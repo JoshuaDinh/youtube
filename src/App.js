@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Searchbar } from "./Components/Searchbar/Searchbar";
+import Sidebar from "./Components/Sidebar/Sidebar";
 import { VideoPlayer } from "./Components/VideoPlayer/VideoPlayer";
 import { Comments } from "./Components/Comments/Comments";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -76,6 +77,7 @@ const App = () => {
 
   return (
     <Router>
+      <Sidebar />
       <Switch>
         <Route path="/">
           <div className="App">
@@ -87,16 +89,16 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <VideoPlayer
+            {/* <VideoPlayer
               videoId={videoId}
               selectedVideoData={selectedVideoData}
               selectedVideoStats={selectedVideoStats}
-            />
-            <Comments videoId={videoId} />
+            /> */}
+            {/* <Comments videoId={videoId} />
             <VideoSuggestions
               searchResults={searchResults}
               setVideoId={setVideoId}
-            />
+            /> */}
           </div>
         </Route>
       </Switch>

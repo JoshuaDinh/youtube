@@ -1,12 +1,11 @@
 .searchbar {
-  background: rgb(8, 8, 8);
+  background: whitesmoke;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  width: 100%;
   grid-area: searchbar;
   color: black;
-  -webkit-box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
-  box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
+  /* -webkit-box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
+  box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68); */
 }
 
 .searchbar-form {
@@ -15,33 +14,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: none;
 }
 
 .searchbar-input-container {
-  width: 40%;
+  width: 50%;
   display: flex;
   align-items: center;
-  border: 1px solid whitesmoke;
-  color: white;
+  background: rgb(226, 226, 226, 0.7);
 }
 .searchbar-input {
   width: 90%;
-  padding: 10px;
+  padding: 1%;
   outline: none;
+  border: none;
+  border-right: 1px solid grey;
+  background: rgb(226, 226, 226, 0.7);
+}
+
+.searchbar-search-icon-container {
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .searchbar-search-icon {
-  font-size: 2rem !important;
+  font-size: 1.7rem !important;
   cursor: pointer;
   text-decoration: none;
+  color: grey;
 }
 .searchbar-avatar-icon {
   cursor: pointer;
   margin-right: 2%;
-}
-.searchbar-home-icon:hover,
-.searchbar-login:hover {
-  border-bottom: 1px solid whitesmoke;
 }
 
 .youtube-logo {
@@ -54,9 +60,9 @@
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  color: whitesmoke;
   margin-right: 2%;
   padding: 6px;
+  color: rgb(124, 124, 124);
   border: 1px solid transparent;
   animation: border 1s infinite alternate-reverse;
 }

@@ -19,7 +19,6 @@ export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
           submitSearch(e);
         }}
       >
-        <img className="youtube-logo" src={logo} alt="youtube-logo" />
         <div className="searchbar-input-container">
           <input
             className="searchbar-input"
@@ -28,7 +27,7 @@ export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
             onChange={(e) => setInput(e.target.value)}
           ></input>
           <div
-            className="router-link"
+            className="searchbar-search-icon-container"
             onClick={(input) => {
               setSearchVideo(input);
             }}

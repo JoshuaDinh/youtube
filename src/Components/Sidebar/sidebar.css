@@ -1,0 +1,39 @@
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 5%;
+  background: whitesmoke;
+}
+
+.youtube-icon {
+  width: 100%;
+  height: 4em;
+  object-fit: contain;
+}
+.sidebar-section-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-first-section,
+.sidebar-second-section {
+  width: 100%;
+  min-height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sidebar-icon {
+  font-size: 2em !important;
+  color: grey;
+  cursor: pointer;
+}
+.sidebar-icon:hover {
+  color: red;
+}

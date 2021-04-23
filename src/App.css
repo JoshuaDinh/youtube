@@ -9,9 +9,11 @@ body {
 }
 
 .App {
+  position: relative;
+  left: 5%;
   overflow: hidden;
   height: 100vh;
-  width: 100%;
+  width: 94%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.45fr 1fr 0.5fr 1fr 1fr;
@@ -22,6 +24,7 @@ body {
     "suggestions  videoplayer videoplayer videoplayer  comments"
     "suggestions  addcomment addcomment addcomment  comments";
   grid-gap: 10px;
+  border-left: 1px solid grey;
 }
 ::-webkit-scrollbar {
   width: 0px;
