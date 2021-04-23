@@ -89,16 +89,15 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            {/* <VideoPlayer
+            <VideoPlayer
               videoId={videoId}
               selectedVideoData={selectedVideoData}
               selectedVideoStats={selectedVideoStats}
-            /> */}
-            {/* <Comments videoId={videoId} />
+            />
             <VideoSuggestions
               searchResults={searchResults}
               setVideoId={setVideoId}
-            /> */}
+            />
           </div>
         </Route>
       </Switch>

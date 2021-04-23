@@ -2,9 +2,6 @@
   grid-area: comments;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: rgb(8, 8, 8);
-  overflow-y: scroll;
 }
 
 .comment {
@@ -16,12 +13,7 @@
   border: 2px solid transparent;
 }
 
-.comment:hover {
-  border: 2px solid #ff073a;
-}
-
 .comments-header {
-  color: whitesmoke;
   margin: 2% 0;
   text-align: center;
 }
@@ -29,7 +21,6 @@
 .comment-author {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 3%;
   border-bottom: 1px solid black;
   border-radius: 5px;
@@ -42,7 +33,6 @@
 }
 
 .comment-text {
-  background: rgb(216, 210, 210);
   overflow: hidden;
   color: black;
   font-size: 0.8rem;

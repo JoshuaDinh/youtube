@@ -1,5 +1,6 @@
 .video-player {
   grid-area: videoplayer;
+  padding: 1% 2%;
 }
 
 .video-player-iframe {
@@ -17,7 +18,6 @@
 }
 .video-details-stats {
   display: flex;
-  justify-content: center;
   margin: 1% 0;
   width: 100%;
 }
@@ -55,12 +55,12 @@
 .video-details-info {
   margin: 2%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 90%;
 }
 
 .video-details-description {
   font-size: 0.9rem;
-  letter-spacing: 0.06rem;
   margin: 2%;
 }
 

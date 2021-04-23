@@ -4,25 +4,24 @@
   padding: 0;
 }
 body {
-  overflow: hidden;
   background: rgba(240, 234, 234, 0.5);
 }
 
 .App {
   position: relative;
   left: 5%;
-  overflow: hidden;
   height: 100vh;
+  overflow: scroll;
   width: 94%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.45fr 1fr 0.5fr 1fr 1fr;
   grid-template-areas:
-    "searchbar searchbar searchbar searchbar searchbar "
-    "suggestions  videoplayer videoplayer videoplayer  comments"
-    "suggestions  videoplayer videoplayer videoplayer  comments"
-    "suggestions  videoplayer videoplayer videoplayer  comments"
-    "suggestions  addcomment addcomment addcomment  comments";
+    "searchbar searchbar searchbar searchbar  "
+    "videoplayer  videoplayer videoplayer suggestions  "
+    "videoplayer  videoplayer videoplayer suggestions  "
+    "videoplayer  videoplayer videoplayer suggestions  "
+    "comments comments comments suggestions  ";
   grid-gap: 10px;
   border-left: 1px solid grey;
 }

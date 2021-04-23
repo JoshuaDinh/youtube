@@ -1,5 +1,6 @@
 import React from "react";
 import "./videoPlayer.css";
+import { Comments } from "../Comments/Comments";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import { Avatar } from "@material-ui/core";
@@ -57,7 +58,8 @@ export const VideoPlayer = ({
           selectedVideoData={selectedVideoData}
           selectedVideoStats={selectedVideoStats}
         />
-      }
+      }{" "}
+      <Comments videoId={videoId} />
     </div>
   );
 };

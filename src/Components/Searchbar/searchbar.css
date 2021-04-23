@@ -4,13 +4,13 @@
   border-bottom: 1px solid white;
   grid-area: searchbar;
   color: black;
-  /* -webkit-box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
-  box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68); */
+  -webkit-box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
+  box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
 }
 
 .searchbar-form {
   height: 100%;
-  width: 100%;
+  margin-left: 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;

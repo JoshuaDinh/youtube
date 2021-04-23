@@ -5,7 +5,8 @@
   overflow: scroll;
   height: 100%;
   grid-area: suggestions;
-  background: rgb(8, 8, 8);
+  background: whitesmoke;
+  margin: 2% 2%;
 }
 
 /* ----------VideoCard---------- */
