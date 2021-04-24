@@ -4,7 +4,8 @@
   align-items: center;
   grid-area: suggestions;
   background: whitesmoke;
-  margin: 2% 2%;
+  margin: 2%;
+  overflow-y: scroll;
 }
 .video-suggestions-header-container {
   width: 100%;
@@ -21,6 +22,7 @@
 /* ----------VideoCard---------- */
 
 .video-card {
+  width: 80%;
   margin: 4% 0;
   cursor: pointer;
   position: relative;
@@ -35,7 +37,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 5px;
 }
 
@@ -45,9 +47,8 @@
 
 .video-card-title {
   color: white;
-
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   border-radius: 5px;
 }
 
@@ -61,7 +62,7 @@
   opacity: 0;
 }
 .video-card-play-icon:hover {
-  animation: delayView 2s ease-in forwards;
+  animation: delayView 1s ease-in forwards;
   animation-delay: 1s;
 }
 

@@ -39,6 +39,7 @@
 }
 
 .video-details-views {
+  color: grey;
 }
 
 .video-details-account {
@@ -46,6 +47,7 @@
   align-items: center;
   justify-content: space-between;
   font-weight: bolder;
+  width: 20%;
 }
 
 .video-details-avatar {

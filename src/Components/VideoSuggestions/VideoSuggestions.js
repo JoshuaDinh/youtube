@@ -19,8 +19,8 @@ export const VideoSuggestions = ({ searchResults, setVideoId }) => {
   return (
     <div className="video-suggestions">
       <div className="video-suggestions-header-container">
-        <h2 className="video-suggestions-header">Up Next</h2>
-        <h2 className="video-suggestions-header">Auto Play:</h2>
+        <h4 className="video-suggestions-header">Up Next</h4>
+        <h4 className="video-suggestions-header">Auto Play:</h4>
         <Switch />
       </div>
       {searchResults.map((data) => {

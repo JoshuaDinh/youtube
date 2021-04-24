@@ -29,7 +29,7 @@
   outline: none;
   border: none;
   border-right: 1px solid grey;
-  background: rgb(226, 226, 226, 0.7);
+  background-color: transparent;
 }
 
 .searchbar-search-icon-container {

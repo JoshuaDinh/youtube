@@ -11,7 +11,7 @@ body {
   position: relative;
   left: 5%;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
   width: 94%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
