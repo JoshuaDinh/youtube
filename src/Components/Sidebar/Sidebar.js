@@ -8,6 +8,7 @@ import HistoryIcon from "@material-ui/icons/History";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const Sidebar = () => {
   return (
@@ -24,6 +25,7 @@ const Sidebar = () => {
           <ThumbUpAltIcon className="sidebar-icon" />
           <PlaylistPlayIcon className="sidebar-icon" />
           <AccountCircleIcon className="sidebar-icon" />
+          <SettingsIcon className="sidebar-icon" />
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ import logo from "../../images/logo.png";
 import SearchIcon from "@material-ui/icons/Search";
 import { loginUrl } from "../../GoogleAuth";
 import { Avatar } from "@material-ui/core";
+import VideoCallIcon from "@material-ui/icons/VideoCall";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
   const submitSearch = (e) => {
@@ -35,14 +37,17 @@ export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
             <SearchIcon className="searchbar-search-icon" />
           </div>
         </div>
-
-        {token.length > 1 ? (
-          <Avatar className="searchbar-avatar-icon" />
-        ) : (
-          <a href={loginUrl} className="searchbar-login">
-            Sign In
-          </a>
-        )}
+        <div className="searchbar-icon-container">
+          {token.length > 1 ? (
+            <Avatar className="searchbar-avatar-icon" />
+          ) : (
+            <a href={loginUrl} className="searchbar-login">
+              Sign In
+            </a>
+          )}
+          <VideoCallIcon className="searchbar-video-icon" />
+          <MoreVertIcon className="searchbar-vert-icon" />
+        </div>
       </form>
     </header>
   );
