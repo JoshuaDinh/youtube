@@ -4,6 +4,7 @@ import { Searchbar } from "./Components/Searchbar/Searchbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import { VideoPlayer } from "./Components/VideoPlayer/VideoPlayer";
 import { Comments } from "./Components/Comments/Comments";
+import Rows from "./Components/Rows/Rows";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { API_KEY } from "./requests";
@@ -98,6 +99,7 @@ const App = () => {
               searchResults={searchResults}
               setVideoId={setVideoId}
             />
+            <Rows />
           </div>
         </Route>
       </Switch>
