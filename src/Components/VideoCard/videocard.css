@@ -1,0 +1,64 @@
+/* ----------VideoCard---------- */
+
+.video-card {
+  width: 80%;
+  margin: 4% 0;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  border: 2px solid transparent;
+}
+
+.video-card-overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+
+.video-card-overlay:hover {
+  opacity: 1;
+}
+
+.video-card-title {
+  color: white;
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 5px;
+}
+
+.video-card-play-icon {
+  font-size: 5em !important;
+  color: whitesmoke;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.video-card-play-icon:hover {
+  animation: delayView 1s ease-in forwards;
+  animation-delay: 1s;
+}
+
+@keyframes delayView {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.video-card-img {
+  object-fit: contain;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}

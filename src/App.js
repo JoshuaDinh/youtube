@@ -80,7 +80,7 @@ const App = () => {
     <Router>
       <Sidebar />
       <Switch>
-        <Route path="/">
+        <Route path="/watch">
           <div className="App">
             <Searchbar
               input={input}
@@ -98,6 +98,18 @@ const App = () => {
             <VideoSuggestions
               searchResults={searchResults}
               setVideoId={setVideoId}
+            />
+          </div>
+        </Route>
+        <Route path="/">
+          <div className="App">
+            <Searchbar
+              input={input}
+              setInput={setInput}
+              searchVideo={searchVideo}
+              setSearchVideo={setSearchVideo}
+              token={token}
+              setToken={setToken}
             />
             <Rows />
           </div>
