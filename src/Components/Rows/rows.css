@@ -1,3 +1,5 @@
-.rows {
-  color: red;
+.row-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
 }

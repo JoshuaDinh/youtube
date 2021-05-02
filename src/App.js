@@ -21,12 +21,12 @@ const App = () => {
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
-  useEffect(() => {
-    const _token = getTokenFromUrl();
-    if (_token) {
-      setToken(_token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const _token = getTokenFromUrl();
+  //   if (_token) {
+  //     setToken(_token);
+  //   }
+  // }, []);
 
   // search video database for results of input
   useEffect(() => {
@@ -45,7 +45,7 @@ const App = () => {
         );
         setSearchResults(searchVideos.data.items);
       };
-      fetchData();
+      // fetchData();
     }, 1500);
     return () => clearTimeout(timer);
   }, [searchVideo, input]);
@@ -72,7 +72,7 @@ const App = () => {
       });
     };
     if (videoId) {
-      fetchData();
+      // fetchData();
     }
   }, [videoId]);
 
