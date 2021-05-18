@@ -7,7 +7,7 @@
 .comment {
   background: rgb(224, 224, 224, 0.8);
   color: white;
-  width: 90%;
+  width: 100%;
   margin: 4% 0;
   border-radius: 5px;
   border: 2px solid transparent;
@@ -20,9 +20,8 @@
 .comment-author {
   display: flex;
   align-items: center;
-  padding: 3%;
-  border-bottom: 1px solid black;
-  border-radius: 5px;
+  padding: 2%;
+  border-bottom: 1px solid darkgrey;
 }
 
 .comment-author-name {

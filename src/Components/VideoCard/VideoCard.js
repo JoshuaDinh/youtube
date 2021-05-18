@@ -6,10 +6,19 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
   return (
     <div onClick={() => setVideoId(videoId)} className="video-card">
       <div className="video-card-overlay">
-        <p className="video-card-title">{title}</p>
         <PlayCircleOutlineIcon className="video-card-play-icon" />
       </div>
-      <img className="video-card-img" src={thumbnail} alt="#" />
+      {/* Does NOT display video if thumbnail is corrupted or missing */}
+      <div className="video-card-information">
+        {thumbnail && (
+          <img
+            className="video-card-img"
+            src={thumbnail}
+            alt="thumbnail unavailable"
+          />
+        )}
+        <p className="video-card-title">{title}</p>
+      </div>
     </div>
   );
 };

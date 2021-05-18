@@ -1,38 +1,7 @@
 import React from "react";
 import "./videoSuggestions.css";
 import Switch from "@material-ui/core/Switch";
-import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
-
-// const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
-//   return (
-//     <div onClick={() => setVideoId(videoId)} className="video-card">
-//       <div className="video-card-overlay">
-//         <p className="video-card-title">{title}</p>
-//         <PlayCircleOutlineIcon className="video-card-play-icon" />
-//       </div>
-//       <img className="video-card-img" src={thumbnail} alt="#" />
-//     </div>
-//   );
-// };
-
-const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
-  return (
-    <div onClick={() => setVideoId(videoId)} className="video-card">
-      <div className="video-card-overlay">
-        <PlayCircleOutlineIcon className="video-card-play-icon" />
-      </div>
-      {/* Does NOT display video if thumbnail is corrupted or missing */}
-      {thumbnail && (
-        <img
-          className="video-card-img"
-          src={thumbnail}
-          alt="thumbnail unavailable"
-        />
-      )}
-      <p className="video-card-title">{title}</p>
-    </div>
-  );
-};
+import VideoCard from "../VideoCard/VideoCard";
 
 export const VideoSuggestions = ({ relatedVideos, setVideoId }) => {
   return (
