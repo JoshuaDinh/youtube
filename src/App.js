@@ -17,6 +17,7 @@ const App = () => {
   const [selectedVideoData, setSelectedVideoData] = useState("");
   const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [relatedVideos, setRelatedVideos] = useState([]);
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
@@ -29,25 +30,44 @@ const App = () => {
 
   // search video database for results of input
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const fetchData = async () => {
-        const searchVideos = await axios.get(
-          "https://www.googleapis.com/youtube/v3/search",
-          {
-            params: {
-              part: "snippet",
-              q: input,
-              key: API_KEY,
-              maxResults: 6,
-            },
-          }
-        );
-        setSearchResults(searchVideos.data.items);
-      };
-      fetchData();
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, [searchVideo, input]);
+    const fetchData = async () => {
+      const relatedVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            relatedToVideoId: "4UZrsTqkcW4",
+            type: "video",
+            key: API_KEY,
+            maxResults: 6,
+          },
+        }
+      );
+      setRelatedVideos(relatedVideos.data.items);
+    };
+    fetchData();
+  }, [videoId]);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     const fetchData = async () => {
+  //       const searchVideos = await axios.get(
+  //         "https://www.googleapis.com/youtube/v3/search",
+  //         {
+  //           params: {
+  //             part: "snippet",
+  //             q: input,
+  //             key: API_KEY,
+  //             maxResults: 6,
+  //           },
+  //         }
+  //       );
+  //       setSearchResults(searchVideos.data.items);
+  //     };
+  //     fetchData();
+  //   }, 1500);
+  //   return () => clearTimeout(timer);
+  // }, [searchVideo, input]);
 
   console.log(videoId);
 
@@ -95,9 +115,9 @@ const App = () => {
               selectedVideoStats={selectedVideoStats}
             />
             <VideoSuggestions
-              searchResults={searchResults}
+              relatedVideos={relatedVideos}
               setVideoId={setVideoId}
-            />{" "}
+            />
           </div>
         </Route>
       </Switch>

@@ -58,19 +58,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* .video-card-play-icon:hover {
-  animation: delayView 1s ease-in forwards;
-  animation-delay: 1s;
-}
-
-@keyframes delayView {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
 
 .video-card-img {
   object-fit: contain;
