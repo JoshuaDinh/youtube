@@ -47,7 +47,7 @@ export const VideoSuggestions = ({ relatedVideos, setVideoId }) => {
           <VideoCard
             setVideoId={setVideoId}
             videoId={data.id.videoId}
-            title={data?.snippet?.title}
+            title={data.snippet?.title}
             thumbnail={data.snippet?.thumbnails?.medium.url}
           />
         );
