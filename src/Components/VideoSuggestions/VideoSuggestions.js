@@ -3,14 +3,26 @@ import "./videoSuggestions.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import Switch from "@material-ui/core/Switch";
 
+// const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
+//   return (
+//     <div onClick={() => setVideoId(videoId)} className="video-card">
+//       <div className="video-card-overlay">
+//         <p className="video-card-title">{title}</p>
+//         <PlayCircleOutlineIcon className="video-card-play-icon" />
+//       </div>
+//       <img className="video-card-img" src={thumbnail} alt="#" />
+//     </div>
+//   );
+// };
+
 const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
   return (
     <div onClick={() => setVideoId(videoId)} className="video-card">
       <div className="video-card-overlay">
-        <p className="video-card-title">{title}</p>
         <PlayCircleOutlineIcon className="video-card-play-icon" />
       </div>
       <img className="video-card-img" src={thumbnail} alt="#" />
+      <p className="video-card-title">{title}</p>
     </div>
   );
 };

@@ -29,9 +29,6 @@
   border: 1px solid transparent;
   border-radius: 5px;
 }
-.video-card:hover {
-  border: 1px solid red;
-}
 
 .video-card-overlay {
   opacity: 0;
@@ -39,7 +36,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 5px;
 }
@@ -49,9 +46,8 @@
 }
 
 .video-card-title {
-  color: white;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   border-radius: 5px;
 }
 
@@ -62,9 +58,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
 }
-.video-card-play-icon:hover {
+/* .video-card-play-icon:hover {
   animation: delayView 1s ease-in forwards;
   animation-delay: 1s;
 }
@@ -76,7 +71,7 @@
   100% {
     opacity: 1;
   }
-}
+} */
 
 .video-card-img {
   object-fit: contain;
