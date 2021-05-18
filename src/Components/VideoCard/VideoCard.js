@@ -2,22 +2,22 @@ import React from "react";
 import "./videocard.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 
-const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
+const VideoCard = ({ title, thumbnail, setVideoId, videoId, channel }) => {
   return (
     <div onClick={() => setVideoId(videoId)} className="video-card">
       <div className="video-card-overlay">
         <PlayCircleOutlineIcon className="video-card-play-icon" />
       </div>
-      {/* Does NOT display video if thumbnail is corrupted or missing */}
+
+      <img
+        className="video-card-img"
+        src={thumbnail}
+        alt="thumbnail unavailable"
+      />
+
       <div className="video-card-information">
-        {thumbnail && (
-          <img
-            className="video-card-img"
-            src={thumbnail}
-            alt="thumbnail unavailable"
-          />
-        )}
         <p className="video-card-title">{title}</p>
+        <p className="video-card-channel">-{channel}</p>
       </div>
     </div>
   );

@@ -11,14 +11,18 @@ export const VideoSuggestions = ({ relatedVideos, setVideoId }) => {
         <h4 className="video-suggestions-header">Auto Play:</h4>
         <Switch />
       </div>
+      {/* Does NOT display VideoCard if thumbnail is corrupted or missing  */}
       {relatedVideos.map((data) => {
         return (
-          <VideoCard
-            setVideoId={setVideoId}
-            videoId={data.id.videoId}
-            title={data.snippet?.title}
-            thumbnail={data.snippet?.thumbnails?.medium.url}
-          />
+          data.snippet?.thumbnails && (
+            <VideoCard
+              setVideoId={setVideoId}
+              videoId={data.id.videoId}
+              title={data.snippet?.title}
+              thumbnail={data.snippet?.thumbnails?.medium.url}
+              channel={data.snippet?.channelTitle}
+            />
+          )
         );
       })}
     </div>
