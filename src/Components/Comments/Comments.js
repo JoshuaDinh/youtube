@@ -38,7 +38,7 @@ export const Comments = ({ videoId }) => {
       fetchData();
     }
   }, [videoId]);
-  console.log(comments);
+
   return (
     <div className="comments">
       <h3 className="comments-header">Comments</h3>

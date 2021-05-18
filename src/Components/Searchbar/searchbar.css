@@ -49,13 +49,16 @@
 
 .searchbar-video-icon {
   color: red;
-  font-size: 2.5em !important;
+  font-size: 2em !important;
   cursor: pointer;
 }
 .searchbar-vert-icon {
   color: grey;
-  font-size: 2em !important;
+  font-size: 1.6em !important;
   cursor: pointer;
+}
+.searchbar-vert-icon:hover {
+  color: red;
 }
 
 .searchbar-search-icon {
@@ -64,14 +67,10 @@
   text-decoration: none;
   color: grey;
 }
+
 .searchbar-avatar-icon {
   cursor: pointer;
   margin-right: 2%;
-}
-
-.youtube-logo {
-  height: 3.5em;
-  margin-left: 2%;
 }
 
 .searchbar-login {
@@ -83,7 +82,7 @@
   padding: 6px;
   color: rgb(124, 124, 124);
   border: 1px solid transparent;
-  animation: border 1s infinite alternate-reverse;
+  animation: border 1s infinite ease-out alternate-reverse;
 }
 
 .searchbar-login:hover {

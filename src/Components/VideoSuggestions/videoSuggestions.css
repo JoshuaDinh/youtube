@@ -26,8 +26,11 @@
   margin: 4% 0;
   cursor: pointer;
   position: relative;
+  border: 1px solid transparent;
   border-radius: 5px;
-  border: 2px solid transparent;
+}
+.video-card:hover {
+  border: 1px solid red;
 }
 
 .video-card-overlay {

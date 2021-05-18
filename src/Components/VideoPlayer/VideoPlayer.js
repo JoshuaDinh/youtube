@@ -16,15 +16,22 @@ const VideoDetails = ({ selectedVideoData, selectedVideoStats }) => {
         <div className="video-details-account">
           <Avatar className="video-details-avatar" />
           <p>{selectedVideoData.channelTitle}</p>
+          <div className="video-details-subscribe">Subscribe</div>
           <div />
         </div>
-        <div className="video-details-icon">
-          <ThumbUpIcon className="video-details-likes" />
-          {selectedVideoStats.likeCount}
-          <ThumbDownIcon className="video-details-dislikes" />{" "}
-          {selectedVideoStats.dislikeCount}
-          <VisibilityIcon className="video-details-views" />
-          {selectedVideoStats.viewCount}
+        <div className="video-details-icon-container">
+          <div className="video-details-likes">
+            <ThumbUpIcon className="video-details-icon" />
+            {selectedVideoStats.likeCount}
+          </div>
+          <div className="video-details-dislikes">
+            <ThumbDownIcon className="video-details-icon" />
+            {selectedVideoStats.dislikeCount}
+          </div>
+          <div className="video-details-views">
+            <VisibilityIcon className="video-details-icon" />
+            {selectedVideoStats.viewCount}
+          </div>
         </div>
       </div>
       {/* <div className="video-details-description-container">
@@ -58,7 +65,7 @@ export const VideoPlayer = ({
           selectedVideoData={selectedVideoData}
           selectedVideoStats={selectedVideoStats}
         />
-      }{" "}
+      }
       <Comments videoId={videoId} />
     </div>
   );

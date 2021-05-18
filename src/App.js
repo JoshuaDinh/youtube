@@ -97,7 +97,7 @@ const App = () => {
             <VideoSuggestions
               searchResults={searchResults}
               setVideoId={setVideoId}
-            />
+            />{" "}
           </div>
         </Route>
       </Switch>
