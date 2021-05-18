@@ -1,9 +1,9 @@
 import React from "react";
-import "./videoSuggestions.css";
+import "./relatedVideoRow.css";
 import Switch from "@material-ui/core/Switch";
 import VideoCard from "../VideoCard/VideoCard";
 
-export const VideoSuggestions = ({ relatedVideos, setVideoId }) => {
+export const RelatedVideoRow = ({ relatedVideos, setVideoId }) => {
   return (
     <div className="video-suggestions">
       <div className="video-suggestions-header-container">

@@ -2,7 +2,6 @@
 
 .video-card {
   display: flex;
-
   margin: 4% 0;
   cursor: pointer;
   position: relative;

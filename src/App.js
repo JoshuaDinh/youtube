@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { API_KEY } from "./requests";
 import { getTokenFromUrl } from "./GoogleAuth";
-import { VideoSuggestions } from "./Components/VideoSuggestions/VideoSuggestions";
+import { RelatedVideoRow } from "./Components/RelatedVideoRow/RelatedVideoRow";
 
 const App = () => {
   const [input, setInput] = useState("Javascript");
@@ -46,31 +46,29 @@ const App = () => {
       );
       setRelatedVideos(relatedVideos.data.items);
     };
-    fetchData();
+    // fetchData();
   }, [videoId]);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     const fetchData = async () => {
-  //       const searchVideos = await axios.get(
-  //         "https://www.googleapis.com/youtube/v3/search",
-  //         {
-  //           params: {
-  //             part: "snippet",
-  //             q: input,
-  //             key: API_KEY,
-  //             maxResults: 6,
-  //           },
-  //         }
-  //       );
-  //       setSearchResults(searchVideos.data.items);
-  //     };
-  //     fetchData();
-  //   }, 1500);
-  //   return () => clearTimeout(timer);
-  // }, [searchVideo, input]);
-
-  // console.log(videoId);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const fetchData = async () => {
+        const searchVideos = await axios.get(
+          "https://www.googleapis.com/youtube/v3/search",
+          {
+            params: {
+              part: "snippet",
+              q: input,
+              key: API_KEY,
+              maxResults: 6,
+            },
+          }
+        );
+        setSearchResults(searchVideos.data.items);
+      };
+      fetchData();
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [searchVideo, input]);
 
   // Get selected video data for display
   useEffect(() => {
@@ -92,7 +90,7 @@ const App = () => {
       });
     };
     if (videoId) {
-      fetchData();
+      // fetchData();
     }
   }, [videoId]);
 
@@ -115,7 +113,7 @@ const App = () => {
               selectedVideoData={selectedVideoData}
               selectedVideoStats={selectedVideoStats}
             />
-            <VideoSuggestions
+            <RelatedVideoRow
               relatedVideos={relatedVideos}
               setVideoId={setVideoId}
             />
@@ -131,7 +129,7 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <Rows />
+            <Rows setVideoId={setVideoId} searchResults={searchResults} />
           </div>
         </Route>
       </Switch>
