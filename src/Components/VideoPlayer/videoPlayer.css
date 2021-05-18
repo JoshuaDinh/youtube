@@ -84,6 +84,11 @@
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.video-details-subscribe:hover {
+  border: 1px solid grey;
 }
 
 @keyframes bounce {
