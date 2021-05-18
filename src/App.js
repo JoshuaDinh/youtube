@@ -4,6 +4,7 @@ import { Searchbar } from "./Components/Searchbar/Searchbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import { VideoPlayer } from "./Components/VideoPlayer/VideoPlayer";
 import { Comments } from "./Components/Comments/Comments";
+import Rows from "./Components/Rows/Rows";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { API_KEY } from "./requests";
@@ -21,15 +22,16 @@ const App = () => {
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
-  useEffect(() => {
-    const _token = getTokenFromUrl();
-    if (_token) {
-      setToken(_token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const _token = getTokenFromUrl();
+  //   if (_token) {
+  //     setToken(_token);
+  //   }
+  // }, []);
 
   // search video database for results of input
   useEffect(() => {
+<<<<<<< HEAD
     const fetchData = async () => {
       const relatedVideos = await axios.get(
         "https://www.googleapis.com/youtube/v3/search",
@@ -68,6 +70,27 @@ const App = () => {
   //   }, 1500);
   //   return () => clearTimeout(timer);
   // }, [searchVideo, input]);
+=======
+    const timer = setTimeout(() => {
+      const fetchData = async () => {
+        const searchVideos = await axios.get(
+          "https://www.googleapis.com/youtube/v3/search",
+          {
+            params: {
+              part: "snippet",
+              q: input,
+              key: API_KEY,
+              maxResults: 6,
+            },
+          }
+        );
+        setSearchResults(searchVideos.data.items);
+      };
+      // fetchData();
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [searchVideo, input]);
+>>>>>>> d50ab875a761d118628722db6af7c4e841c84e28
 
   console.log(videoId);
 
@@ -91,7 +114,7 @@ const App = () => {
       });
     };
     if (videoId) {
-      fetchData();
+      // fetchData();
     }
   }, [videoId]);
 
@@ -99,7 +122,7 @@ const App = () => {
     <Router>
       <Sidebar />
       <Switch>
-        <Route path="/">
+        <Route path="/watch">
           <div className="App">
             <Searchbar
               input={input}
@@ -118,6 +141,19 @@ const App = () => {
               relatedVideos={relatedVideos}
               setVideoId={setVideoId}
             />
+          </div>
+        </Route>
+        <Route path="/">
+          <div className="App">
+            <Searchbar
+              input={input}
+              setInput={setInput}
+              searchVideo={searchVideo}
+              setSearchVideo={setSearchVideo}
+              token={token}
+              setToken={setToken}
+            />
+            <Rows />
           </div>
         </Route>
       </Switch>
