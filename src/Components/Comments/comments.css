@@ -7,10 +7,7 @@
 .comment {
   background: rgb(224, 224, 224, 0.8);
   color: white;
-<<<<<<< HEAD
   width: 90%;
-=======
->>>>>>> d50ab875a761d118628722db6af7c4e841c84e28
   margin: 4% 0;
   border-radius: 5px;
   border: 2px solid transparent;
@@ -29,12 +26,8 @@
 }
 
 .comment-author-name {
-<<<<<<< HEAD
   margin-left: 10px;
-  text-align: center;
-=======
   width: 100%;
->>>>>>> d50ab875a761d118628722db6af7c4e841c84e28
   color: black;
   margin-left: 15px;
   font-size: 1.1rem;

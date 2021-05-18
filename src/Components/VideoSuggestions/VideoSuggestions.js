@@ -1,8 +1,7 @@
 import React from "react";
 import "./videoSuggestions.css";
 import Switch from "@material-ui/core/Switch";
-<<<<<<< HEAD
-import logo from "../../images/logo.png";
+import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 
 // const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
 //   return (
@@ -34,9 +33,6 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
     </div>
   );
 };
-=======
-import VideoCard from "../VideoCard/VideoCard";
->>>>>>> d50ab875a761d118628722db6af7c4e841c84e28
 
 export const VideoSuggestions = ({ relatedVideos, setVideoId }) => {
   return (

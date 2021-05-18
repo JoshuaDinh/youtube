@@ -29,9 +29,8 @@ const App = () => {
   //   }
   // }, []);
 
-  // search video database for results of input
+  // Get related videos to selected video ID
   useEffect(() => {
-<<<<<<< HEAD
     const fetchData = async () => {
       const relatedVideos = await axios.get(
         "https://www.googleapis.com/youtube/v3/search",
@@ -70,29 +69,8 @@ const App = () => {
   //   }, 1500);
   //   return () => clearTimeout(timer);
   // }, [searchVideo, input]);
-=======
-    const timer = setTimeout(() => {
-      const fetchData = async () => {
-        const searchVideos = await axios.get(
-          "https://www.googleapis.com/youtube/v3/search",
-          {
-            params: {
-              part: "snippet",
-              q: input,
-              key: API_KEY,
-              maxResults: 6,
-            },
-          }
-        );
-        setSearchResults(searchVideos.data.items);
-      };
-      // fetchData();
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, [searchVideo, input]);
->>>>>>> d50ab875a761d118628722db6af7c4e841c84e28
 
-  console.log(videoId);
+  // console.log(videoId);
 
   // Get selected video data for display
   useEffect(() => {
@@ -114,7 +92,7 @@ const App = () => {
       });
     };
     if (videoId) {
-      // fetchData();
+      fetchData();
     }
   }, [videoId]);
 
