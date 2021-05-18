@@ -1,6 +1,7 @@
 .video-player {
   grid-area: videoplayer;
-  padding: 1% 2%;
+  padding: 1% 4%;
+  margin-top: 3%;
 }
 
 .video-player-iframe {
