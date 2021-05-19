@@ -46,7 +46,7 @@ const App = () => {
       );
       setRelatedVideos(relatedVideos.data.items);
     };
-    fetchData();
+    // fetchData();
   }, [videoId]);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const App = () => {
               part: "snippet",
               q: input,
               key: API_KEY,
-              maxResults: 6,
+              maxResults: 3,
             },
           }
         );
@@ -99,7 +99,7 @@ const App = () => {
       <Sidebar />
       <Switch>
         <Route path="/watch">
-          <div className="App">
+          <div className="Watch">
             <Searchbar
               input={input}
               setInput={setInput}
@@ -129,7 +129,16 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <Rows setVideoId={setVideoId} searchResults={searchResults} />
+            <Rows
+              title={"Javascript"}
+              setVideoId={setVideoId}
+              searchResults={searchResults}
+            />
+            <Rows
+              title={"typescript"}
+              setVideoId={setVideoId}
+              searchResults={searchResults}
+            />
           </div>
         </Route>
       </Switch>

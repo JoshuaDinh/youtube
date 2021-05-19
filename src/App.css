@@ -13,6 +13,16 @@ body {
   height: 100vh;
   overflow-y: scroll;
   width: 94%;
+
+  /* border-left: 1px solid grey; */
+}
+
+.Watch {
+  position: relative;
+  left: 5%;
+  height: 100vh;
+  overflow-y: scroll;
+  width: 94%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.45fr 1fr 0.5fr 1fr 1fr;
@@ -25,6 +35,7 @@ body {
   grid-gap: 10px;
   border-left: 1px solid grey;
 }
+
 ::-webkit-scrollbar {
   width: 0px;
 }

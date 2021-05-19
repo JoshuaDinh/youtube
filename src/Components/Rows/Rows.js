@@ -1,17 +1,17 @@
 import React from "react";
 import "./rows.css";
-import RelatedVideoCard from "../RelatedVideoCard/RelatedVideoCard";
+import VideoCard from "../VideoCard/VideoCard";
 
 const Rows = ({ searchResults, setVideoId }) => {
   return (
     <div className="rows">
       <h5>Javascript</h5>
       <div className="row-container">
-        {searchResults.map((data) => {
+        {searchResults.slice(0, 3).map((data) => {
           return (
             data.snippet?.thumbnails && (
-              <RelatedVideoCard
-                rows
+              <VideoCard
+                searchResults={searchResults}
                 setVideoId={setVideoId}
                 videoId={data.id.videoId}
                 title={data.snippet?.title}
