@@ -1,6 +1,6 @@
 import React from "react";
 import "./rows.css";
-import VideoCard from "../VideoCard/VideoCard";
+import RelatedVideoCard from "../RelatedVideoCard/RelatedVideoCard";
 
 const Rows = ({ searchResults, setVideoId }) => {
   return (
@@ -10,7 +10,7 @@ const Rows = ({ searchResults, setVideoId }) => {
         {searchResults.map((data) => {
           return (
             data.snippet?.thumbnails && (
-              <VideoCard
+              <RelatedVideoCard
                 rows
                 setVideoId={setVideoId}
                 videoId={data.id.videoId}

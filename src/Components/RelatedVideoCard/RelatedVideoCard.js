@@ -1,14 +1,13 @@
 import React from "react";
-import "./videocard.css";
+import "./relatedVideoCard.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 
-const VideoCard = ({
+const RelatedVideoCard = ({
   title,
   thumbnail,
   setVideoId,
   videoId,
   channel,
-  rows,
 }) => {
   return (
     <div onClick={() => setVideoId(videoId)} className="video-card">
@@ -27,4 +26,4 @@ const VideoCard = ({
     </div>
   );
 };
-export default VideoCard;
+export default RelatedVideoCard;

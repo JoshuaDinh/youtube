@@ -1,9 +1,9 @@
 import React from "react";
-import "./relatedVideoRow.css";
+import "./relatedVideos.css";
 import Switch from "@material-ui/core/Switch";
-import VideoCard from "../VideoCard/VideoCard";
+import RelatedVideoCard from "../RelatedVideoCard/RelatedVideoCard";
 
-export const RelatedVideoRow = ({ relatedVideos, setVideoId }) => {
+export const RelatedVideos = ({ relatedVideos, setVideoId }) => {
   return (
     <div className="video-suggestions">
       <div className="video-suggestions-header-container">
@@ -15,7 +15,7 @@ export const RelatedVideoRow = ({ relatedVideos, setVideoId }) => {
       {relatedVideos.map((data) => {
         return (
           data.snippet?.thumbnails && (
-            <VideoCard
+            <RelatedVideoCard
               setVideoId={setVideoId}
               videoId={data.id.videoId}
               title={data.snippet?.title}

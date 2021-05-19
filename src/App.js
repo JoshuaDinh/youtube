@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { API_KEY } from "./requests";
 import { getTokenFromUrl } from "./GoogleAuth";
-import { RelatedVideoRow } from "./Components/RelatedVideoRow/RelatedVideoRow";
+import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
 
 const App = () => {
   const [input, setInput] = useState("Javascript");
@@ -113,7 +113,7 @@ const App = () => {
               selectedVideoData={selectedVideoData}
               selectedVideoStats={selectedVideoStats}
             />
-            <RelatedVideoRow
+            <RelatedVideos
               relatedVideos={relatedVideos}
               setVideoId={setVideoId}
             />
