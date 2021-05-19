@@ -46,7 +46,7 @@ const App = () => {
       );
       setRelatedVideos(relatedVideos.data.items);
     };
-    // fetchData();
+    fetchData();
   }, [videoId]);
 
   useEffect(() => {
@@ -90,7 +90,7 @@ const App = () => {
       });
     };
     if (videoId) {
-      // fetchData();
+      fetchData();
     }
   }, [videoId]);
 

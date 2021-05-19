@@ -18,9 +18,11 @@
 }
 
 .searchbar-input-container {
-  width: 50%;
+  width: 71%;
   display: flex;
   align-items: center;
+  border-radius: 5px;
+
   background: rgb(226, 226, 226, 0.7);
 }
 
