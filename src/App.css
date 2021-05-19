@@ -13,7 +13,7 @@ body {
   height: 100vh;
   overflow-y: scroll;
   width: 94%;
-  /* border-left: 1px solid grey; */
+  border-left: 1px solid lightgrey;
 }
 
 .Watch {

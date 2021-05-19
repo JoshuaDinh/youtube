@@ -14,10 +14,10 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId, channel }) => {
           src={thumbnail}
           alt="thumbnail unavailable"
         />
-        <div className="video-card-information">
-          <p className="video-card-title">{title}</p>
-          <p className="video-card-channel">-{channel}</p>
-        </div>
+      </div>
+      <div className="video-card-information">
+        <p className="video-card-title">{title}</p>
+        <p className="video-card-channel">-{channel}</p>
       </div>
     </div>
   );

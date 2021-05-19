@@ -6,7 +6,7 @@ const Rows = ({ searchResults, setVideoId, title }) => {
   return (
     <div className="rows">
       <h5 className="rows-title">{title}</h5>
-      {searchResults.slice(0, 3).map((data) => {
+      {searchResults.map((data) => {
         return (
           data.snippet?.thumbnails && (
             <VideoCard

@@ -59,7 +59,7 @@ const App = () => {
               part: "snippet",
               q: input,
               key: API_KEY,
-              maxResults: 3,
+              maxResults: 4,
             },
           }
         );
@@ -130,17 +130,17 @@ const App = () => {
               setToken={setToken}
             />
             <Rows
+              title={"React"}
+              setVideoId={setVideoId}
+              searchResults={searchResults}
+            />
+            <Rows
               title={"Javascript"}
               setVideoId={setVideoId}
               searchResults={searchResults}
             />
             <Rows
-              title={"typescript"}
-              setVideoId={setVideoId}
-              searchResults={searchResults}
-            />
-            <Rows
-              title={"React"}
+              title={"Typescript"}
               setVideoId={setVideoId}
               searchResults={searchResults}
             />
