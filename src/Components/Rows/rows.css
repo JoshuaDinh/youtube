@@ -1,6 +1,13 @@
-.row-container {
+.rows {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 94vw;
+  margin-top: 5%;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
+.rows-title {
+  font-size: 1.4rem;
+  color: rgb(83, 83, 83);
 }

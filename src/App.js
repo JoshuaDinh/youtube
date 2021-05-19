@@ -139,6 +139,11 @@ const App = () => {
               setVideoId={setVideoId}
               searchResults={searchResults}
             />
+            <Rows
+              title={"React"}
+              setVideoId={setVideoId}
+              searchResults={searchResults}
+            />
           </div>
         </Route>
       </Switch>
