@@ -5,15 +5,7 @@ import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 const VideoCard = ({ title, thumbnail, setVideoId, videoId, channel }) => {
   return (
     <div className="video-card">
-      <img
-        className="video-card-img"
-        src={thumbnail}
-        alt="thumbnail unavailable"
-      />
-      <div className="video-card-information">
-        <p className="video-card-title">{title}</p>
-        <p className="video-card-channel">-{channel}</p>
-      </div>
+      <img src={thumbnail} alt="#" className="video-thumbnail" />
     </div>
   );
 };

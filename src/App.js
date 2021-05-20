@@ -60,13 +60,13 @@ const App = () => {
               part: "snippet",
               q: input,
               key: API_KEY,
-              maxResults: 3,
+              maxResults: 4,
             },
           }
         );
         setSearchResults(searchVideos.data.items);
       };
-      // fetchData();
+      fetchData();
     }, 1500);
     return () => clearTimeout(timer);
   }, [searchVideo, input]);
@@ -131,6 +131,22 @@ const App = () => {
               setToken={setToken}
             />
             <Trending />
+
+            <Rows
+              title={"Trending"}
+              setVideoId={setVideoId}
+              searchResults={searchResults}
+            />
+            <Rows
+              title={"React"}
+              setVideoId={setVideoId}
+              searchResults={searchResults}
+            />
+            <Rows
+              title={"Javascript"}
+              setVideoId={setVideoId}
+              searchResults={searchResults}
+            />
           </div>
         </Route>
       </Switch>
@@ -140,11 +156,6 @@ const App = () => {
 
 export default App;
 
-// <Rows
-// title={"React"}
-// setVideoId={setVideoId}
-// searchResults={searchResults}
-// />
 // <Rows
 // title={"Javascript"}
 // setVideoId={setVideoId}
