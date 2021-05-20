@@ -10,6 +10,7 @@ import axios from "axios";
 import { API_KEY } from "./requests";
 import { getTokenFromUrl } from "./GoogleAuth";
 import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
+import Trending from "./Components/Trending/Trending";
 
 const App = () => {
   const [input, setInput] = useState("Javascript");
@@ -59,13 +60,13 @@ const App = () => {
               part: "snippet",
               q: input,
               key: API_KEY,
-              maxResults: 4,
+              maxResults: 3,
             },
           }
         );
         setSearchResults(searchVideos.data.items);
       };
-      fetchData();
+      // fetchData();
     }, 1500);
     return () => clearTimeout(timer);
   }, [searchVideo, input]);
@@ -90,7 +91,7 @@ const App = () => {
       });
     };
     if (videoId) {
-      fetchData();
+      // fetchData();
     }
   }, [videoId]);
 
@@ -129,21 +130,7 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <Rows
-              title={"React"}
-              setVideoId={setVideoId}
-              searchResults={searchResults}
-            />
-            <Rows
-              title={"Javascript"}
-              setVideoId={setVideoId}
-              searchResults={searchResults}
-            />
-            <Rows
-              title={"Typescript"}
-              setVideoId={setVideoId}
-              searchResults={searchResults}
-            />
+            <Trending />
           </div>
         </Route>
       </Switch>
@@ -152,3 +139,19 @@ const App = () => {
 };
 
 export default App;
+
+// <Rows
+// title={"React"}
+// setVideoId={setVideoId}
+// searchResults={searchResults}
+// />
+// <Rows
+// title={"Javascript"}
+// setVideoId={setVideoId}
+// searchResults={searchResults}
+// />
+// <Rows
+// title={"Typescript"}
+// setVideoId={setVideoId}
+// searchResults={searchResults}
+// />

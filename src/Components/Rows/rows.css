@@ -1,14 +1,24 @@
 .rows {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.rows-card-container {
+  display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 5%;
+  margin: 1% 0;
+
+  width: 100%;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   padding: 25px;
 }
 
 .rows-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: rgb(83, 83, 83);
 }
