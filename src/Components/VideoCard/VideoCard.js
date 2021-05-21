@@ -6,6 +6,10 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId, channel }) => {
   return (
     <div className="video-card">
       <img src={thumbnail} alt="#" className="video-thumbnail" />
+      <div className="video-card-information">
+        <p className="video-card-title">{title}</p>
+        <p className="video-card-channel">-{channel}</p>
+      </div>
     </div>
   );
 };

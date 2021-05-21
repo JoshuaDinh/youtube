@@ -131,19 +131,8 @@ const App = () => {
               setToken={setToken}
             />
             <Trending />
-
             <Rows
               title={"Trending"}
-              setVideoId={setVideoId}
-              searchResults={searchResults}
-            />
-            <Rows
-              title={"React"}
-              setVideoId={setVideoId}
-              searchResults={searchResults}
-            />
-            <Rows
-              title={"Javascript"}
               setVideoId={setVideoId}
               searchResults={searchResults}
             />
