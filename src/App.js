@@ -13,6 +13,7 @@ import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
 import Trending from "./Components/IframeBanner/IframeBanner";
 import SearchedVideoList from "./Components/SearchedVideoList/SearchedVideoList";
 import IframeBanner from "./Components/IframeBanner/IframeBanner";
+import { CompassCalibrationOutlined } from "@material-ui/icons";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -160,10 +161,10 @@ const App = () => {
       });
     };
     if (videoId) {
-      // fetchData();
+      fetchData();
     }
   }, [videoId]);
-
+  console.log(videoId);
   return (
     <Router>
       <Sidebar />
