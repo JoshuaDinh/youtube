@@ -11,15 +11,17 @@ import { API_KEY } from "./requests";
 import { getTokenFromUrl } from "./GoogleAuth";
 import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
 import Trending from "./Components/Trending/Trending";
+import SearchedVideoList from "./Components/SearchedVideoList/SearchedVideoList";
 
 const App = () => {
-  const [input, setInput] = useState("Javascript");
+  const [input, setInput] = useState("");
   const [searchVideo, setSearchVideo] = useState("");
   const [videoId, setVideoId] = useState("4UZrsTqkcW4");
   const [selectedVideoData, setSelectedVideoData] = useState("");
   const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [relatedVideos, setRelatedVideos] = useState([]);
+  const [techVideos, setTechVideos] = useState([]);
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
@@ -50,6 +52,7 @@ const App = () => {
     // fetchData();
   }, [videoId]);
 
+  // Search Videos based on user input
   useEffect(() => {
     const timer = setTimeout(() => {
       const fetchData = async () => {
@@ -58,18 +61,41 @@ const App = () => {
           {
             params: {
               part: "snippet",
+              type: "video",
               q: input,
               key: API_KEY,
-              maxResults: 4,
+              maxResults: 12,
             },
           }
         );
         setSearchResults(searchVideos.data.items);
       };
-      fetchData();
+      if (input) {
+        // fetchData();
+      }
     }, 1500);
     return () => clearTimeout(timer);
   }, [searchVideo, input]);
+
+  // Search Videos for homepage display
+  useEffect(() => {
+    const fetchData = async () => {
+      const techVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            q: "React.js",
+            type: "video",
+            key: API_KEY,
+            maxResults: 7,
+          },
+        }
+      );
+      setTechVideos(techVideos.data.items);
+    };
+    fetchData();
+  }, []);
 
   // Get selected video data for display
   useEffect(() => {
@@ -130,12 +156,22 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <Trending />
-            <Rows
-              title={"Trending"}
-              setVideoId={setVideoId}
-              searchResults={searchResults}
-            />
+            {searchResults.length > 3 ? (
+              <SearchedVideoList
+                searchResults={searchResults}
+                title="title"
+                thumbnail=""
+              />
+            ) : (
+              <>
+                <Trending techVideos={techVideos} />
+                <Rows
+                  title={"Trending"}
+                  setVideoId={setVideoId}
+                  searchResults={searchResults}
+                />
+              </>
+            )}
           </div>
         </Route>
       </Switch>

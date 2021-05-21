@@ -2,8 +2,9 @@ import React from "react";
 import "./trending.css";
 import TrendingVideoCard from "../Trending/TrendingVideoCard";
 
-const Trending = () => {
-  const videoSrc = `https://www.youtube.com/embed/L-03Rc4j_9g`;
+const Trending = ({ techVideos }) => {
+  // Gets first video from api call to display in iframe
+  const videoSrc = `https://www.youtube.com/embed/${techVideos[0]?.id.videoId}`;
 
   return (
     <div className="trending">
@@ -16,12 +17,15 @@ const Trending = () => {
         ></iframe>
       </div>
       <div className="trending-videos-container">
-        <TrendingVideoCard />
-        <TrendingVideoCard />
-        <TrendingVideoCard />
-        <TrendingVideoCard />
-        <TrendingVideoCard />
-        <TrendingVideoCard />
+        {/* Removes first video from api call - video is displayed in iframe above */}
+        {techVideos.slice(1).map((data) => {
+          return (
+            <TrendingVideoCard
+              thumbnail={data.snippet.thumbnails.medium.url}
+              title={data.snippet.title}
+            />
+          );
+        })}
       </div>
     </div>
   );
