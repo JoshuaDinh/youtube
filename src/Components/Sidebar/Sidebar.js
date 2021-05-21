@@ -9,6 +9,7 @@ import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -16,9 +17,15 @@ const Sidebar = () => {
       <img src={youtubeIcon} className="youtube-icon" />
       <div className="sidebar-section-container">
         <div className="sidebar-first-section">
-          <HomeIcon className="sidebar-icon" />
-          <WhatshotIcon className="sidebar-icon" />
-          <SubscriptionsIcon className="sidebar-icon" />
+          <Link to="/">
+            <HomeIcon className="sidebar-icon" />
+          </Link>
+          <Link to="/">
+            <WhatshotIcon className="sidebar-icon" />
+          </Link>
+          <Link to="/">
+            <SubscriptionsIcon className="sidebar-icon" />{" "}
+          </Link>
         </div>
         <div className="sidebar-second-section">
           <HistoryIcon className="sidebar-icon" />
