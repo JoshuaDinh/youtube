@@ -1,17 +1,16 @@
 import React from "react";
 import "./rows.css";
-import TrendingVideoCard from "../Trending/TrendingVideoCard";
+import VideoCard from "../VideoCard/VideoCard";
 
-const Rows = ({ searchResults, setVideoId, title }) => {
+const Rows = ({ videos, setVideoId, title }) => {
   return (
     <div className="rows">
       <h5 className="rows-title">{title}</h5>
       <div className="rows-card-container">
-        {searchResults.map((data) => {
+        {videos.map((data) => {
           return (
             data.snippet?.thumbnails && (
-              <TrendingVideoCard
-                searchResults={searchResults}
+              <VideoCard
                 setVideoId={setVideoId}
                 videoId={data.id.videoId}
                 title={data.snippet?.title}

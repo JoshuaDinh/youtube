@@ -23,6 +23,9 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [relatedVideos, setRelatedVideos] = useState([]);
   const [techVideos, setTechVideos] = useState([]);
+  const [backEndVideos, setBackEndVideos] = useState([]);
+  const [frontEndVideos, setFrontEndVideos] = useState([]);
+  const [FullStackVideos, setFullStackVideos] = useState([]);
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
@@ -78,7 +81,7 @@ const App = () => {
     return () => clearTimeout(timer);
   }, [searchVideo, input]);
 
-  // Search Videos for homepage display
+  // Search Videos for Iframe Banner / HomePage Rows
   useEffect(() => {
     const fetchData = async () => {
       const techVideos = await axios.get(
@@ -93,7 +96,46 @@ const App = () => {
           },
         }
       );
+      const frontEndVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            q: "Front End development",
+            type: "video",
+            key: API_KEY,
+            maxResults: 4,
+          },
+        }
+      );
+      const backEndVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            q: "Back End development",
+            type: "video",
+            key: API_KEY,
+            maxResults: 4,
+          },
+        }
+      );
+      const fullStackVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            q: "Full Stack development",
+            type: "video",
+            key: API_KEY,
+            maxResults: 4,
+          },
+        }
+      );
       setTechVideos(techVideos.data.items);
+      setFrontEndVideos(frontEndVideos.data.items);
+      setBackEndVideos(backEndVideos.data.items);
+      setFullStackVideos(fullStackVideos.data.items);
     };
     fetchData();
   }, []);
@@ -167,9 +209,19 @@ const App = () => {
               <>
                 <IframeBanner techVideos={techVideos} />
                 <Rows
-                  title={"Trending"}
+                  title={"Front End Development"}
                   setVideoId={setVideoId}
-                  searchResults={searchResults}
+                  videos={frontEndVideos}
+                />
+                <Rows
+                  title={"Back End Development"}
+                  setVideoId={setVideoId}
+                  videos={backEndVideos}
+                />
+                <Rows
+                  title={"Full Stack Development"}
+                  setVideoId={setVideoId}
+                  videos={FullStackVideos}
                 />
               </>
             )}
