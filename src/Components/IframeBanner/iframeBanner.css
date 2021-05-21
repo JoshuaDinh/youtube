@@ -1,0 +1,22 @@
+.iframe-banner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iframe-banner-main-video {
+  width: 75%;
+  padding: 5px;
+}
+
+.iframe-banner-main-thumbnail {
+  width: 100%;
+  height: 100%;
+}
+
+.iframe-banner-videos-container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 5px;
+}

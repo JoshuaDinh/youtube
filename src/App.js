@@ -10,8 +10,9 @@ import axios from "axios";
 import { API_KEY } from "./requests";
 import { getTokenFromUrl } from "./GoogleAuth";
 import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
-import Trending from "./Components/Trending/Trending";
+import Trending from "./Components/IframeBanner/IframeBanner";
 import SearchedVideoList from "./Components/SearchedVideoList/SearchedVideoList";
+import IframeBanner from "./Components/IframeBanner/IframeBanner";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -164,7 +165,7 @@ const App = () => {
               />
             ) : (
               <>
-                <Trending techVideos={techVideos} />
+                <IframeBanner techVideos={techVideos} />
                 <Rows
                   title={"Trending"}
                   setVideoId={setVideoId}

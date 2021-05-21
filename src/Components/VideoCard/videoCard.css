@@ -12,9 +12,11 @@
 }
 
 .video-card-title {
+  position: absolute;
+  bottom: 0%;
+  color: white;
   font-size: 1rem;
   font-weight: 700;
-  text-align: center;
 }
 
 .video-thumbnail {
@@ -39,7 +41,4 @@
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.2);
-}
-
-.video-card-image-container {
 }

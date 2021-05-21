@@ -1,26 +1,26 @@
 import React from "react";
-import "./trending.css";
-import TrendingVideoCard from "../Trending/TrendingVideoCard";
+import "./iframeBanner.css";
+import VideoCard from "../VideoCard/VideoCard";
 
-const Trending = ({ techVideos }) => {
+const IframeBanner = ({ techVideos }) => {
   // Gets first video from api call to display in iframe
   const videoSrc = `https://www.youtube.com/embed/${techVideos[0]?.id.videoId}`;
 
   return (
-    <div className="trending">
-      <div className="trending-main-video">
+    <div className="iframe-banner">
+      <div className="iframe-banner-main-video">
         <iframe
           title="videoPlayer"
           autoPlay={1}
           src={videoSrc}
-          className="trending-main-thumbnail"
+          className="iframe-banner-main-thumbnail"
         ></iframe>
       </div>
-      <div className="trending-videos-container">
+      <div className="iframe-banner-videos-container">
         {/* Removes first video from api call - video is displayed in iframe above */}
         {techVideos.slice(1).map((data) => {
           return (
-            <TrendingVideoCard
+            <VideoCard
               thumbnail={data.snippet.thumbnails.medium.url}
               title={data.snippet.title}
             />
@@ -31,4 +31,4 @@ const Trending = ({ techVideos }) => {
   );
 };
 
-export default Trending;
+export default IframeBanner;

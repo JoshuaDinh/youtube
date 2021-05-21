@@ -1,5 +1,5 @@
 import React from "react";
-import TrendingVideoCard from "../Trending/TrendingVideoCard";
+import VideoCard from "../VideoCard/VideoCard";
 import "./searchedVideoList.css";
 
 const SearchedVideoList = ({ searchResults, title, thumbnail }) => {
@@ -7,7 +7,7 @@ const SearchedVideoList = ({ searchResults, title, thumbnail }) => {
     <div className="searched-video-list">
       {searchResults.map((data) => {
         return (
-          <TrendingVideoCard
+          <VideoCard
             title={data.snippet.title}
             thumbnail={data.snippet.thumbnails.medium.url}
           />
