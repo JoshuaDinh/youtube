@@ -3,20 +3,15 @@
   cursor: pointer;
 }
 
-.play-icon {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  color: white;
-  font-size: 2em !important;
-}
-
 .video-card-title {
   position: absolute;
   bottom: 0%;
-  color: white;
-  font-size: 1rem;
+  color: black;
+  font-size: 0.9rem;
   font-weight: 700;
+  min-height: 25%;
+  width: 100%;
+  background: rgb(255, 255, 255, 0.7);
 }
 
 .video-thumbnail {
@@ -31,7 +26,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.2);
 }
 .video-card:hover::before {
   content: "";
