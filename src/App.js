@@ -45,7 +45,7 @@ const App = () => {
         {
           params: {
             part: "snippet",
-            relatedToVideoId: "4UZrsTqkcW4",
+            relatedToVideoId: videoId,
             type: "video",
             key: API_KEY,
             maxResults: 6,
@@ -54,92 +54,94 @@ const App = () => {
       );
       setRelatedVideos(relatedVideos.data.items);
     };
-    // fetchData();
+    if (videoId) {
+      fetchData();
+    }
   }, [videoId]);
 
   // Search Videos based on user input
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const fetchData = async () => {
-        const searchVideos = await axios.get(
-          "https://www.googleapis.com/youtube/v3/search",
-          {
-            params: {
-              part: "snippet",
-              type: "video",
-              q: input,
-              key: API_KEY,
-              maxResults: 12,
-            },
-          }
-        );
-        setSearchResults(searchVideos.data.items);
-      };
-      if (input) {
-        // fetchData();
-      }
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, [searchVideo, input]);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     const fetchData = async () => {
+  //       const searchVideos = await axios.get(
+  //         "https://www.googleapis.com/youtube/v3/search",
+  //         {
+  //           params: {
+  //             part: "snippet",
+  //             type: "video",
+  //             q: input,
+  //             key: API_KEY,
+  //             maxResults: 12,
+  //           },
+  //         }
+  //       );
+  //       setSearchResults(searchVideos.data.items);
+  //     };
+  //     if (input) {
+  //        fetchData();
+  //     }
+  //   }, 1500);
+  //   return () => clearTimeout(timer);
+  // }, [searchVideo, input]);
 
   // Search Videos for Iframe Banner / HomePage Rows
-  useEffect(() => {
-    const fetchData = async () => {
-      const techVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: "React.js",
-            type: "video",
-            key: API_KEY,
-            maxResults: 7,
-          },
-        }
-      );
-      const frontEndVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: "Front End development",
-            type: "video",
-            key: API_KEY,
-            maxResults: 4,
-          },
-        }
-      );
-      const backEndVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: "Back End development",
-            type: "video",
-            key: API_KEY,
-            maxResults: 4,
-          },
-        }
-      );
-      const fullStackVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: "Full Stack development",
-            type: "video",
-            key: API_KEY,
-            maxResults: 4,
-          },
-        }
-      );
-      setTechVideos(techVideos.data.items);
-      setFrontEndVideos(frontEndVideos.data.items);
-      setBackEndVideos(backEndVideos.data.items);
-      setFullStackVideos(fullStackVideos.data.items);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const techVideos = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           q: "React.js",
+  //           type: "video",
+  //           key: API_KEY,
+  //           maxResults: 7,
+  //         },
+  //       }
+  //     );
+  //     const frontEndVideos = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           q: "Front End development",
+  //           type: "video",
+  //           key: API_KEY,
+  //           maxResults: 4,
+  //         },
+  //       }
+  //     );
+  //     const backEndVideos = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           q: "Back End development",
+  //           type: "video",
+  //           key: API_KEY,
+  //           maxResults: 4,
+  //         },
+  //       }
+  //     );
+  //     const fullStackVideos = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           q: "Full Stack development",
+  //           type: "video",
+  //           key: API_KEY,
+  //           maxResults: 4,
+  //         },
+  //       }
+  //     );
+  //     setTechVideos(techVideos.data.items);
+  //     setFrontEndVideos(frontEndVideos.data.items);
+  //     setBackEndVideos(backEndVideos.data.items);
+  //     setFullStackVideos(fullStackVideos.data.items);
+  //   };
+  //    fetchData();
+  // }, []);
 
   // Get selected video data for display
   useEffect(() => {
