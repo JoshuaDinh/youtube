@@ -5,10 +5,10 @@ import RelatedVideoCard from "../RelatedVideoCard/RelatedVideoCard";
 
 export const RelatedVideos = ({ relatedVideos, setVideoId }) => {
   return (
-    <div className="video-suggestions">
-      <div className="video-suggestions-header-container">
-        <h4 className="video-suggestions-header">Up Next</h4>
-        <h4 className="video-suggestions-header">Auto Play:</h4>
+    <div className="related-video">
+      <div className="related-video-header-container">
+        <h4 className="related-video-header">Up Next</h4>
+        <h4 className="related-video-header">Auto Play:</h4>
         <Switch />
       </div>
       {/* Does NOT display VideoCard if thumbnail is corrupted or missing  */}

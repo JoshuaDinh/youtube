@@ -2,7 +2,7 @@ import React from "react";
 import VideoCard from "../VideoCard/VideoCard";
 import "./searchedVideoList.css";
 
-const SearchedVideoList = ({ searchResults, title, thumbnail }) => {
+const SearchedVideoList = ({ searchResults, setVideoId }) => {
   return (
     <div className="searched-video-list">
       {searchResults.map((data) => {
@@ -10,6 +10,8 @@ const SearchedVideoList = ({ searchResults, title, thumbnail }) => {
           <VideoCard
             title={data.snippet.title}
             thumbnail={data.snippet.thumbnails.medium.url}
+            setVideoId={setVideoId}
+            videoId={data.id.videoId}
           />
         );
       })}

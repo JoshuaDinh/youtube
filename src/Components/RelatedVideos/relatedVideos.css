@@ -1,19 +1,19 @@
-.video-suggestions {
+.related-video {
   display: flex;
   flex-direction: column;
   align-items: center;
   grid-area: suggestions;
   background: whitesmoke;
-  margin-top: 10%;
   overflow-y: scroll;
+  max-height: 75vh;
 }
-.video-suggestions-header-container {
+.related-video-header-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.video-suggestions-header {
+.related-video-header {
   width: 100%;
   color: grey;
 }

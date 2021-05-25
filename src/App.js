@@ -18,7 +18,7 @@ import { CompassCalibrationOutlined } from "@material-ui/icons";
 const App = () => {
   const [input, setInput] = useState("");
   const [searchVideo, setSearchVideo] = useState("");
-  const [videoId, setVideoId] = useState("4UZrsTqkcW4");
+  const [videoId, setVideoId] = useState("");
   const [selectedVideoData, setSelectedVideoData] = useState("");
   const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -60,29 +60,29 @@ const App = () => {
   }, [videoId]);
 
   // Search Videos based on user input
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     const fetchData = async () => {
-  //       const searchVideos = await axios.get(
-  //         "https://www.googleapis.com/youtube/v3/search",
-  //         {
-  //           params: {
-  //             part: "snippet",
-  //             type: "video",
-  //             q: input,
-  //             key: API_KEY,
-  //             maxResults: 12,
-  //           },
-  //         }
-  //       );
-  //       setSearchResults(searchVideos.data.items);
-  //     };
-  //     if (input) {
-  //        fetchData();
-  //     }
-  //   }, 1500);
-  //   return () => clearTimeout(timer);
-  // }, [searchVideo, input]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const fetchData = async () => {
+        const searchVideos = await axios.get(
+          "https://www.googleapis.com/youtube/v3/search",
+          {
+            params: {
+              part: "snippet",
+              type: "video",
+              q: input,
+              key: API_KEY,
+              maxResults: 4,
+            },
+          }
+        );
+        setSearchResults(searchVideos.data.items);
+      };
+      if (input) {
+        fetchData();
+      }
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [searchVideo, input]);
 
   // Search Videos for Iframe Banner / HomePage Rows
   // useEffect(() => {
@@ -140,7 +140,7 @@ const App = () => {
   //     setBackEndVideos(backEndVideos.data.items);
   //     setFullStackVideos(fullStackVideos.data.items);
   //   };
-  //    fetchData();
+  //   fetchData();
   // }, []);
 
   // Get selected video data for display
@@ -162,11 +162,10 @@ const App = () => {
         setSelectedVideoStats(data.statistics);
       });
     };
-    if (videoId) {
-      fetchData();
-    }
+    // if (videoId) {
+    fetchData();
+    // }
   }, [videoId]);
-  console.log(videoId);
   return (
     <Router>
       <Sidebar />
@@ -192,6 +191,22 @@ const App = () => {
             />
           </div>
         </Route>
+        <Route path="/searchResults">
+          <div className="App">
+            <Searchbar
+              input={input}
+              setInput={setInput}
+              searchVideo={searchVideo}
+              setSearchVideo={setSearchVideo}
+              token={token}
+              setToken={setToken}
+            />
+            <SearchedVideoList
+              searchResults={searchResults}
+              setVideoId={setVideoId}
+            />
+          </div>
+        </Route>
         <Route path="/">
           <div className="App">
             <Searchbar
@@ -202,32 +217,23 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            {searchResults.length > 3 ? (
-              <SearchedVideoList
-                searchResults={searchResults}
-                title="title"
-                thumbnail=""
-              />
-            ) : (
-              <>
-                <IframeBanner techVideos={techVideos} />
-                <Rows
-                  title={"Front End Development"}
-                  setVideoId={setVideoId}
-                  videos={frontEndVideos}
-                />
-                <Rows
-                  title={"Back End Development"}
-                  setVideoId={setVideoId}
-                  videos={backEndVideos}
-                />
-                <Rows
-                  title={"Full Stack Development"}
-                  setVideoId={setVideoId}
-                  videos={FullStackVideos}
-                />
-              </>
-            )}
+
+            <IframeBanner techVideos={techVideos} />
+            <Rows
+              title={"Front End Development"}
+              setVideoId={setVideoId}
+              videos={frontEndVideos}
+            />
+            <Rows
+              title={"Back End Development"}
+              setVideoId={setVideoId}
+              videos={backEndVideos}
+            />
+            <Rows
+              title={"Full Stack Development"}
+              setVideoId={setVideoId}
+              videos={FullStackVideos}
+            />
           </div>
         </Route>
       </Switch>

@@ -1,12 +1,11 @@
 import React from "react";
 import "./searchbar.css";
-import logo from "../../images/logo.png";
 import SearchIcon from "@material-ui/icons/Search";
 import { loginUrl } from "../../GoogleAuth";
 import { Avatar } from "@material-ui/core";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-
+import { Link } from "react-router-dom";
 export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
   const submitSearch = (e) => {
     e.preventDefault(e);
@@ -34,7 +33,9 @@ export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
               setSearchVideo(input);
             }}
           >
-            <SearchIcon className="searchbar-search-icon" />
+            <Link to="/searchResults">
+              <SearchIcon className="searchbar-search-icon" />{" "}
+            </Link>
           </div>
         </div>
         <div className="searchbar-icon-container">

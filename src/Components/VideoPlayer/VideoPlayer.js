@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./videoPlayer.css";
 import { Comments } from "../Comments/Comments";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
