@@ -1,0 +1,13 @@
+.authorized-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #adadad;
+  background-image: linear-gradient(315deg, #adadad 0%, red 74%);
+  border-radius: 25px;
+  height: 15vh;
+  width: 40%;
+  margin: 15px 25px;
+  color: white;
+  font-weight: bolder;
+}
