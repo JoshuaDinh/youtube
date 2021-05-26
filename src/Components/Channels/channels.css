@@ -9,7 +9,12 @@
   margin-right: 25px;
   border: 1px solid grey;
   padding: 5px;
+  cursor: pointer;
   object-fit: cover;
+}
+
+.channel-avatar:hover {
+  border: 1px solid red;
 }
 
 .channels-span {

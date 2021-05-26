@@ -4,9 +4,9 @@ import "./channels.css";
 const Channels = ({ profileImg }) => {
   return (
     <div className="channels">
-      <h5>
+      <h4>
         Popular <span className="channels-span">Channels </span> :
-      </h5>
+      </h4>
       <img
         src="https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s88-c-k-c0x00ffffff-no-rj"
         className="channel-avatar"
