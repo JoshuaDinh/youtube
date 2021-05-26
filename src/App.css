@@ -38,3 +38,11 @@ body {
 ::-webkit-scrollbar {
   width: 0px;
 }
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5% 0;
+}

@@ -7,7 +7,7 @@ const Rows = ({ videos, setVideoId, title }) => {
     <div className="rows">
       <h5 className="rows-title">{title}</h5>
       <div className="rows-card-container">
-        {videos.map((data) => {
+        {videos.slice(7).map((data) => {
           return (
             data.snippet?.thumbnails && (
               <VideoCard

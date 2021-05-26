@@ -1,20 +1,21 @@
 .rows {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 3%;
+  margin: 2% 0;
 }
 
 .rows-card-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 35px;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
-  border-top: 1px solid lightgrey;
-  padding: 25px;
+  padding: 10px;
 }
 
 .rows-title {
   font-size: 1.6rem;
   color: rgb(83, 83, 83);
+  margin: 2% 1%;
 }

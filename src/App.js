@@ -14,7 +14,8 @@ import Trending from "./Components/IframeBanner/IframeBanner";
 import SearchedVideoList from "./Components/SearchedVideoList/SearchedVideoList";
 import IframeBanner from "./Components/IframeBanner/IframeBanner";
 import { CompassCalibrationOutlined } from "@material-ui/icons";
-import AuthorizedUser from "./Components/AuthorizedUser/AuthorizedUser";
+import Welcome from "./Components/Welcome/Welcome";
+import Channels from "./Components/Channels/Channels";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -25,18 +26,17 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [relatedVideos, setRelatedVideos] = useState([]);
   const [techVideos, setTechVideos] = useState([]);
-  const [backEndVideos, setBackEndVideos] = useState([]);
-  const [frontEndVideos, setFrontEndVideos] = useState([]);
-  const [FullStackVideos, setFullStackVideos] = useState([]);
+  const [channels, setChannels] = useState([]);
+
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
-  // useEffect(() => {
-  //   const _token = getTokenFromUrl();
-  //   if (_token) {
-  //     setToken(_token);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const _token = getTokenFromUrl();
+    if (_token) {
+      setToken(_token);
+    }
+  }, []);
 
   // Get related videos to selected video ID
   // useEffect(() => {
@@ -85,65 +85,6 @@ const App = () => {
   //   return () => clearTimeout(timer);
   // }, [searchVideo, input]);
 
-  // Search Videos for Iframe Banner / HomePage Rows
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const techVideos = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           q: "React.js",
-  //           type: "video",
-  //           key: API_KEY,
-  //           maxResults: 7,
-  //         },
-  //       }
-  //     );
-  //     const frontEndVideos = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           q: "Front End development",
-  //           type: "video",
-  //           key: API_KEY,
-  //           maxResults: 4,
-  //         },
-  //       }
-  //     );
-  //     const backEndVideos = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           q: "Back End development",
-  //           type: "video",
-  //           key: API_KEY,
-  //           maxResults: 4,
-  //         },
-  //       }
-  //     );
-  //     const fullStackVideos = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           q: "Full Stack development",
-  //           type: "video",
-  //           key: API_KEY,
-  //           maxResults: 4,
-  //         },
-  //       }
-  //     );
-  //     setTechVideos(techVideos.data.items);
-  //     setFrontEndVideos(frontEndVideos.data.items);
-  //     setBackEndVideos(backEndVideos.data.items);
-  //     setFullStackVideos(fullStackVideos.data.items);
-  //   };
-  //   fetchData();
-  // }, []);
-
   // Get selected video data for display
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -167,6 +108,46 @@ const App = () => {
   // fetchData();
   // }
   // }, [videoId]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const techVideos = await axios.get(
+  //       "https:www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           q: "React.js",
+  //           type: "video",
+  //           key: API_KEY,
+  //           maxResults: 23,
+  //         },
+  //       }
+  //     );
+
+  //     setTechVideos(techVideos.data.items);
+  //   };
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const channelsById = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/channels",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           key: API_KEY,
+  //           id: "1ofGXYJ1pTI4tmmMjX5Rog",
+  //         },
+  //       }
+  //     );
+  //     setChannels(channelsById.data.items[0].snippet);
+  //   };
+  //   fetchData();
+  // }, []);
+
+  // console.log(channels.thumbnails?.high?.url);
+
   return (
     <Router>
       <Sidebar />
@@ -218,15 +199,22 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <AuthorizedUser />
+            <div className="app-header">
+              <Welcome />
+              <Channels
+                profileImg={
+                  "nifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s88-c-k-c0x00ffffff-no-rj"
+                }
+              />
+            </div>
 
             <IframeBanner techVideos={techVideos} />
             <Rows
-              title={"Front End Development"}
+              title={"React Developer Videos :"}
               setVideoId={setVideoId}
-              videos={frontEndVideos}
+              videos={techVideos}
             />
-            <Rows
+            {/* <Rows
               title={"Back End Development"}
               setVideoId={setVideoId}
               videos={backEndVideos}
@@ -235,7 +223,7 @@ const App = () => {
               title={"Full Stack Development"}
               setVideoId={setVideoId}
               videos={FullStackVideos}
-            />
+            /> */}
           </div>
         </Route>
       </Switch>

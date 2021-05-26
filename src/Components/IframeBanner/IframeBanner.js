@@ -18,7 +18,7 @@ const IframeBanner = ({ techVideos }) => {
       </div>
       <div className="iframe-banner-videos-container">
         {/* Removes first video from api call - video is displayed in iframe above */}
-        {techVideos.slice(1).map((data) => {
+        {techVideos.slice(1, 7).map((data) => {
           return (
             <VideoCard
               thumbnail={data.snippet.thumbnails.medium.url}

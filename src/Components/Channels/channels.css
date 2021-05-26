@@ -1,0 +1,17 @@
+.channels {
+  display: flex;
+}
+
+.channel-avatar {
+  width: 5em !important;
+  height: 5em !important;
+  border-radius: 5em;
+  margin-right: 25px;
+  border: 1px solid grey;
+  padding: 5px;
+  object-fit: cover;
+}
+
+.channels-span {
+  color: red;
+}
