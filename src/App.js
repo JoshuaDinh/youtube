@@ -15,7 +15,7 @@ import SearchedVideoList from "./Components/SearchedVideoList/SearchedVideoList"
 import IframeBanner from "./Components/IframeBanner/IframeBanner";
 import { CompassCalibrationOutlined } from "@material-ui/icons";
 import Welcome from "./Components/Welcome/Welcome";
-import Channels from "./Components/Channels/Channels";
+import PopularChannels from "./Components/PopularChannels/PopularChannels";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -109,25 +109,25 @@ const App = () => {
   // }
   // }, [videoId]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const techVideos = await axios.get(
-        "https:www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            q: "React.js",
-            type: "video",
-            key: API_KEY,
-            maxResults: 23,
-          },
-        }
-      );
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const techVideos = await axios.get(
+  //       "https:www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           q: "React.js",
+  //           type: "video",
+  //           key: API_KEY,
+  //           maxResults: 23,
+  //         },
+  //       }
+  //     );
 
-      setTechVideos(techVideos.data.items);
-    };
-    fetchData();
-  }, []);
+  //     setTechVideos(techVideos.data.items);
+  //   };
+  //   fetchData();
+  // }, []);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -201,11 +201,7 @@ const App = () => {
             />
             <div className="app-header">
               <Welcome />
-              <Channels
-                profileImg={
-                  "nifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s88-c-k-c0x00ffffff-no-rj"
-                }
-              />
+              <PopularChannels />
             </div>
 
             <IframeBanner techVideos={techVideos} />

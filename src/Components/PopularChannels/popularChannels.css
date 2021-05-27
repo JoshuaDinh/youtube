@@ -1,10 +1,11 @@
-.channels {
+.popular-channels {
   display: flex;
+  min-width: 60%;
 }
 
-.channel-avatar {
-  width: 5em !important;
-  height: 5em !important;
+.popular-channel-avatar {
+  box-sizing: border-box;
+  width: 5em;
   border-radius: 5em;
   margin-right: 25px;
   border: 1px solid grey;
@@ -13,10 +14,10 @@
   object-fit: cover;
 }
 
-.channel-avatar:hover {
+.popular-channel-avatar:hover {
   border: 1px solid red;
 }
 
-.channels-span {
+.popular-channels-span {
   color: red;
 }
