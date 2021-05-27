@@ -11,11 +11,14 @@ import { API_KEY } from "./requests";
 import { getTokenFromUrl } from "./GoogleAuth";
 import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
 import Trending from "./Components/IframeBanner/IframeBanner";
-import SearchedVideoList from "./Components/SearchedVideoList/SearchedVideoList";
 import IframeBanner from "./Components/IframeBanner/IframeBanner";
+import VideoList from "./Components/VideoList/VideoList";
+
 import { CompassCalibrationOutlined } from "@material-ui/icons";
 import Welcome from "./Components/Welcome/Welcome";
 import PopularChannels from "./Components/PopularChannels/PopularChannels";
+import ChannelBanner from "./Components/ChannelBanner/ChannelBanner";
+import ChannelSection from "./Components/ChannelSection/ChannelSection";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -152,6 +155,20 @@ const App = () => {
     <Router>
       <Sidebar />
       <Switch>
+        <Route path="/Channels">
+          <div className="App">
+            <Searchbar
+              input={input}
+              setInput={setInput}
+              searchVideo={searchVideo}
+              setSearchVideo={setSearchVideo}
+              token={token}
+              setToken={setToken}
+            />
+            <ChannelSection />
+            <VideoList videos={techVideos} setVideoId={setVideoId} />
+          </div>
+        </Route>
         <Route path="/watch">
           <div className="Watch">
             <Searchbar
@@ -183,10 +200,7 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <SearchedVideoList
-              searchResults={searchResults}
-              setVideoId={setVideoId}
-            />
+            <VideoList searchResults={searchResults} setVideoId={setVideoId} />
           </div>
         </Route>
         <Route path="/">

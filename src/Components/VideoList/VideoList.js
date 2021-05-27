@@ -1,11 +1,11 @@
 import React from "react";
 import VideoCard from "../VideoCard/VideoCard";
-import "./searchedVideoList.css";
+import "./videoList.css";
 
-const SearchedVideoList = ({ searchResults, setVideoId }) => {
+const VideoList = ({ videos, setVideoId }) => {
   return (
-    <div className="searched-video-list">
-      {searchResults.map((data) => {
+    <div className="video-list">
+      {videos.map((data) => {
         return (
           <VideoCard
             title={data.snippet.title}
@@ -19,4 +19,4 @@ const SearchedVideoList = ({ searchResults, setVideoId }) => {
   );
 };
 
-export default SearchedVideoList;
+export default VideoList;
