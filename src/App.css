@@ -35,6 +35,11 @@ body {
   border-left: 1px solid grey;
 }
 
+.channel {
+  background: rgb(212, 212, 212);
+  padding: 3%;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }

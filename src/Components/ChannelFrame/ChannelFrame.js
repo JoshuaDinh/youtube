@@ -11,7 +11,17 @@ const ChannelFrame = () => {
         title="videoPlayer"
         autoPlay={1}
         src={videoSrc}
-      />{" "}
+      />
+      <div className="channel-frame-info">
+        <h5 className="channel-frame-title">Brad Traversy Media</h5>
+        <p className="channel-frame-views"> Views - 4 months ago</p>
+        <p className="channel-frame-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa facilis
+          facere nam explicabo vel commodi assumenda sequi. Qui praesentium,
+          delectus minus saepe, deserunt earum veniam totam cupiditate
+          reiciendis tempora libero.
+        </p>
+      </div>
     </div>
   );
 };

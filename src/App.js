@@ -113,25 +113,25 @@ const App = () => {
   // }
   // }, [videoId]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const techVideos = await axios.get(
-  //       "https:www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           q: "React.js",
-  //           type: "video",
-  //           key: API_KEY,
-  //           maxResults: 23,
-  //         },
-  //       }
-  //     );
+  useEffect(() => {
+    const fetchData = async () => {
+      const techVideos = await axios.get(
+        "https:www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            q: "React.js",
+            type: "video",
+            key: API_KEY,
+            maxResults: 23,
+          },
+        }
+      );
 
-  //     setTechVideos(techVideos.data.items);
-  //   };
-  //   fetchData();
-  // }, []);
+      setTechVideos(techVideos.data.items);
+    };
+    fetchData();
+  }, []);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -167,8 +167,10 @@ const App = () => {
               setToken={setToken}
             />
             <ChannelSection />
-            <ChannelFrame />
-            <VideoList videos={techVideos} setVideoId={setVideoId} />
+            <div className="channel">
+              <ChannelFrame />
+              <VideoList videos={techVideos} setVideoId={setVideoId} />
+            </div>
           </div>
         </Route>
         <Route path="/watch">

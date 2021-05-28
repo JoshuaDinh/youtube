@@ -1,4 +1,30 @@
+.channel-frame {
+  display: flex;
+  margin-bottom: 5%;
+}
 .channel-iframe-player {
   width: 40%;
   height: 35vh;
+}
+
+.channel-frame-info {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin-left: 25px;
+}
+
+.channel-frame-title {
+  font-size: 1.5rem;
+}
+
+.channel-frame-views {
+  font-size: 0.9rem;
+  color: rgb(59, 59, 59);
+  margin: 3% 0;
+}
+
+.channel-frame-description {
+  line-height: 1.5rem;
+  font-size: 0.9rem;
 }
