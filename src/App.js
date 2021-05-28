@@ -19,6 +19,7 @@ import Welcome from "./Components/Welcome/Welcome";
 import PopularChannels from "./Components/PopularChannels/PopularChannels";
 import ChannelBanner from "./Components/ChannelBanner/ChannelBanner";
 import ChannelSection from "./Components/ChannelSection/ChannelSection";
+import ChannelFrame from "./Components/ChannelFrame/ChannelFrame";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -166,6 +167,7 @@ const App = () => {
               setToken={setToken}
             />
             <ChannelSection />
+            <ChannelFrame />
             <VideoList videos={techVideos} setVideoId={setVideoId} />
           </div>
         </Route>
