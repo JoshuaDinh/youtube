@@ -43,75 +43,75 @@ const App = () => {
   }, []);
 
   // Get related videos to selected video ID
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const relatedVideos = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           relatedToVideoId: videoId,
-  //           type: "video",
-  //           key: API_KEY,
-  //           maxResults: 6,
-  //         },
-  //       }
-  //     );
-  //     setRelatedVideos(relatedVideos.data.items);
-  //   };
-  //   if (videoId) {
-  //     fetchData();
-  //   }
-  // }, [videoId]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const relatedVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            relatedToVideoId: videoId,
+            type: "video",
+            key: API_KEY,
+            maxResults: 6,
+          },
+        }
+      );
+      setRelatedVideos(relatedVideos.data.items);
+    };
+    if (videoId) {
+      fetchData();
+    }
+  }, [videoId]);
 
   // Search Videos based on user input
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     const fetchData = async () => {
-  //       const searchVideos = await axios.get(
-  //         "https://www.googleapis.com/youtube/v3/search",
-  //         {
-  //           params: {
-  //             part: "snippet",
-  //             type: "video",
-  //             q: input,
-  //             key: API_KEY,
-  //             maxResults: 4,
-  //           },
-  //         }
-  //       );
-  //       setSearchResults(searchVideos.data.items);
-  //     };
-  //     if (input) {
-  //       fetchData();
-  //     }
-  //   }, 1500);
-  //   return () => clearTimeout(timer);
-  // }, [searchVideo, input]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const fetchData = async () => {
+        const searchVideos = await axios.get(
+          "https://www.googleapis.com/youtube/v3/search",
+          {
+            params: {
+              part: "snippet",
+              type: "video",
+              q: input,
+              key: API_KEY,
+              maxResults: 4,
+            },
+          }
+        );
+        setSearchResults(searchVideos.data.items);
+      };
+      if (input) {
+        fetchData();
+      }
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [searchVideo, input]);
 
   // Get selected video data for display
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const fetchVideoById = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/videos",
-  //       {
-  //         params: {
-  //           part: "snippet,contentDetails,statistics",
-  //           id: videoId,
-  //           key: API_KEY,
-  //           maxResults: 1,
-  //         },
-  //       }
-  //     );
-  //     fetchVideoById.data.items.map((data) => {
-  //       setSelectedVideoData(data.snippet);
-  //       setSelectedVideoStats(data.statistics);
-  //     });
-  //   };
-  // if (videoId) {
-  // fetchData();
-  // }
-  // }, [videoId]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchVideoById = await axios.get(
+        "https://www.googleapis.com/youtube/v3/videos",
+        {
+          params: {
+            part: "snippet,contentDetails,statistics",
+            id: videoId,
+            key: API_KEY,
+            maxResults: 1,
+          },
+        }
+      );
+      fetchVideoById.data.items.map((data) => {
+        setSelectedVideoData(data.snippet);
+        setSelectedVideoStats(data.statistics);
+      });
+    };
+    if (videoId) {
+      fetchData();
+    }
+  }, [videoId]);
 
   useEffect(() => {
     const fetchData = async () => {

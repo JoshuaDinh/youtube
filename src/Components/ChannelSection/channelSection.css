@@ -1,8 +1,9 @@
 .channel-section {
   display: flex;
   align-items: center;
-  border-top: 2px solid grey;
-  border-bottom: 2px solid grey;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  background: whitesmoke;
 }
 .channel-section-header {
   display: flex;

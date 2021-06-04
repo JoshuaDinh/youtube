@@ -5,7 +5,7 @@ const PopularChannels = ({ profileImg }) => {
   return (
     <div className="popular-channels">
       <h4>
-        Popular <span className="popular-Channels-span">popularChannels </span>:
+        Popular <span className="popular-channels-span">Channels </span>:
       </h4>
       <img
         src="https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s88-c-k-c0x00ffffff-no-rj"
