@@ -34,11 +34,6 @@ const VideoDetails = ({ selectedVideoData, selectedVideoStats }) => {
           </div>
         </div>
       </div>
-      {/* <div className="video-details-description-container">
-        <div className="video-details-description">
-          {selectedVideoData.description}
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -228,16 +228,6 @@ const App = () => {
               setVideoId={setVideoId}
               videos={techVideos}
             />
-            {/* <Rows
-              title={"Back End Development"}
-              setVideoId={setVideoId}
-              videos={backEndVideos}
-            />
-            <Rows
-              title={"Full Stack Development"}
-              setVideoId={setVideoId}
-              videos={FullStackVideos}
-            /> */}
           </div>
         </Route>
       </Switch>
