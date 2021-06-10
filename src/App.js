@@ -13,8 +13,6 @@ import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
 import Trending from "./Components/IframeBanner/IframeBanner";
 import IframeBanner from "./Components/IframeBanner/IframeBanner";
 import VideoList from "./Components/VideoList/VideoList";
-
-import { CompassCalibrationOutlined } from "@material-ui/icons";
 import Welcome from "./Components/Welcome/Welcome";
 import PopularChannels from "./Components/PopularChannels/PopularChannels";
 import ChannelBanner from "./Components/ChannelBanner/ChannelBanner";
