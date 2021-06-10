@@ -47,7 +47,7 @@ const PopularChannel = [
   />,
 ];
 
-const PopularChannels = ({ setChannel }) => {
+const PopularChannels = ({ setChannelId }) => {
   return (
     <div className="popular-channels">
       <h4>
@@ -56,7 +56,7 @@ const PopularChannels = ({ setChannel }) => {
       {PopularChannel.map((channel) => {
         return (
           <Link to="channel" className="channel-link">
-            <div onClick={() => setChannel(channel.props)}> {channel}</div>
+            <div onClick={() => setChannelId(channel.props.id)}> {channel}</div>
           </Link>
         );
       })}

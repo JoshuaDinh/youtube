@@ -29,7 +29,8 @@ const App = () => {
   const [relatedVideos, setRelatedVideos] = useState([]);
   const [techVideos, setTechVideos] = useState([]);
   const [channels, setChannels] = useState([]);
-  const [channel, setChannel] = useState([]);
+  const [channelVideos, setChannelVideos] = useState([]);
+  const [channelId, setChannelId] = useState("");
 
   const [token, setToken] = useState([]);
 
@@ -40,6 +41,28 @@ const App = () => {
       setToken(_token);
     }
   }, []);
+
+  // Get Related Videos based off of ChannelId
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const channelVideos = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+          params: {
+            part: "snippet",
+            channelId: channelId,
+            key: API_KEY,
+            maxResults: 25,
+          },
+        }
+      );
+      setChannelVideos(channelVideos.data.items);
+    };
+    if (channelId) {
+      fetchData();
+    }
+  }, [channelId]);
 
   // Get related videos to selected video ID
   // useEffect(() => {
@@ -165,10 +188,10 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <ChannelSection channel={channel} />
+            <ChannelSection />
             <div className="channel">
-              <ChannelFrame channel={channel} />
-              <VideoList videos={techVideos} setVideoId={setVideoId} />
+              <ChannelFrame />
+              <VideoList videos={channelVideos} setVideoId={setVideoId} />
             </div>
           </div>
         </Route>
@@ -203,7 +226,7 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <VideoList searchResults={searchResults} setVideoId={setVideoId} />
+            <VideoList videos={searchResults} setVideoId={setVideoId} />
           </div>
         </Route>
         <Route path="/">
@@ -218,7 +241,7 @@ const App = () => {
             />
             <div className="app-header">
               <Welcome />
-              <PopularChannels setChannel={setChannel} />
+              <PopularChannels setChannelId={setChannelId} />
             </div>
 
             <IframeBanner techVideos={techVideos} />
