@@ -43,46 +43,46 @@ const App = () => {
   }, []);
 
   // Get Videos by ChannelId
-  useEffect(() => {
-    const fetchData = async () => {
-      const channelVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            channelId: channelId,
-            key: API_KEY,
-            maxResults: 25,
-          },
-        }
-      );
-      setChannelVideos(channelVideos.data.items);
-    };
-    if (channelId) {
-      fetchData();
-    }
-  }, [channelId]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const channelVideos = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           channelId: channelId,
+  //           key: API_KEY,
+  //           maxResults: 25,
+  //         },
+  //       }
+  //     );
+  //     setChannelVideos(channelVideos.data.items);
+  //   };
+  //   if (channelId) {
+  //     fetchData();
+  //   }
+  // }, [channelId]);
 
   // Get information by ChannelId
-  useEffect(() => {
-    const fetchData = async () => {
-      const channelVideos = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search",
-        {
-          params: {
-            part: "snippet",
-            channelId: channelId,
-            key: API_KEY,
-            maxResults: 25,
-          },
-        }
-      );
-      setChannelVideos(channelVideos.data.items);
-    };
-    if (channelId) {
-      fetchData();
-    }
-  }, [channelId]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const channelVideos = await axios.get(
+  //       "https://www.googleapis.com/youtube/v3/search",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           channelId: channelId,
+  //           key: API_KEY,
+  //           maxResults: 25,
+  //         },
+  //       }
+  //     );
+  //     setChannelVideos(channelVideos.data.items);
+  //   };
+  //   if (channelId) {
+  //     fetchData();
+  //   }
+  // }, [channelId]);
 
   // Get related videos to selected video ID
   // useEffect(() => {
@@ -161,7 +161,7 @@ const App = () => {
         "https:www.googleapis.com/youtube/v3/search",
         {
           params: {
-            part: "snippet",
+            part: "snippet, contentDetails",
             q: "React.js",
             type: "video",
             key: API_KEY,
@@ -174,6 +174,7 @@ const App = () => {
     };
     fetchData();
   }, []);
+  console.log(channelId);
 
   // useEffect(() => {
   //   const fetchData = async () => {
