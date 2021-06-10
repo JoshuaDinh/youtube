@@ -1,7 +1,7 @@
 import React from "react";
 import "./channelFrame.css";
 
-const ChannelFrame = () => {
+const ChannelFrame = ({ channel }) => {
   const videoSrc = `https://www.youtube.com/embed/s_LDtEkcdNM`;
 
   return (
@@ -13,7 +13,7 @@ const ChannelFrame = () => {
         src={videoSrc}
       />
       <div className="channel-frame-info">
-        <h5 className="channel-frame-title">Brad Traversy Media</h5>
+        <h5 className="channel-frame-title">{channel.name}</h5>
         <p className="channel-frame-views"> Views - 4 months ago</p>
         <p className="channel-frame-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa facilis

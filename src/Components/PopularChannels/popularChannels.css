@@ -1,11 +1,10 @@
 .popular-channels {
   display: flex;
   justify-content: space-between;
-  min-width: 60%;
 }
 
 .popular-channel-avatar {
-  width: 10%;
+  width: 60%;
   border-radius: 50%;
   margin-right: 25px;
   border: 1px solid grey;
@@ -20,4 +19,9 @@
 
 .popular-channels-span {
   color: red;
+}
+
+.channel-link {
+  width: 100%;
+  height: 100%;
 }
