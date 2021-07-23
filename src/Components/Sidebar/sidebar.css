@@ -27,9 +27,6 @@
   color: grey;
   cursor: pointer;
 }
-.sidebar-icon:hover {
-  color: red;
-}
 
 .link {
   display: flex;
@@ -47,5 +44,9 @@
 
 .link:hover {
   background-image: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  color: whitesmoke;
+}
+
+.link:hover .sidebar-icon {
   color: whitesmoke;
 }

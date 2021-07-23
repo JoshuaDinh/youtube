@@ -1,42 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./searchbar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import { loginUrl } from "../../GoogleAuth";
 import { Avatar } from "@material-ui/core";
-import VideoCallIcon from "@material-ui/icons/VideoCall";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Link } from "react-router-dom";
-export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
-  const submitSearch = (e) => {
-    e.preventDefault(e);
-    setSearchVideo(input);
-  };
+import axios from "axios";
+import { API_KEY } from "../../requests";
 
+export const Searchbar = ({ token, setSearchResults }) => {
+  const [input, setInput] = useState("");
+  const [query, setQuery] = useState("");
+
+  // Search Videos based on user input
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const searchVideos = await axios.get(
+  //         "https://www.googleapis.com/youtube/v3/search",
+  //         {
+  //           params: {
+  //             part: "snippet",
+  //             type: "video",
+  //             q: query,
+  //             key: API_KEY,
+  //             maxResults: 8,
+  //           },
+  //         }
+  //       );
+  //       setSearchResults(searchVideos.data.items);
+  //     } catch (err) {
+  //       alert(err);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [query]);
+
+  // Wait untill user stops typing before setting query
+  useEffect(() => {
+    const timer = setTimeout(() => setQuery(input), 1500);
+    return () => clearTimeout(timer);
+  }, [input]);
+
+  console.log(query);
   return (
     <header className="searchbar">
-      <form
-        className="searchbar-form"
-        onSubmit={(e) => {
-          submitSearch(e);
-        }}
-      >
+      <form className="searchbar-form">
         <div className="searchbar-input-container">
           <input
             className="searchbar-input"
             placeholder="Search.."
             type="text"
             onChange={(e) => setInput(e.target.value)}
+            name={input}
           ></input>
-          <div
-            className="searchbar-search-icon-container"
-            onClick={(input) => {
-              setSearchVideo(input);
-            }}
-          >
-            <Link to="/searchResults">
-              <SearchIcon className="searchbar-search-icon" />{" "}
-            </Link>
-          </div>
+          <Link to="/searchResults">
+            <SearchIcon className="searchbar-search-icon" />
+          </Link>
         </div>
         <div className="searchbar-icon-container">
           {token.length > 1 ? (
@@ -46,8 +65,6 @@ export const Searchbar = ({ input, setInput, setSearchVideo, token }) => {
               Sign In
             </a>
           )}
-          <VideoCallIcon className="searchbar-video-icon" />
-          <MoreVertIcon className="searchbar-vert-icon" />
         </div>
       </form>
     </header>

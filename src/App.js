@@ -18,9 +18,9 @@ import PopularChannels from "./Components/PopularChannels/PopularChannels";
 import ChannelBanner from "./Components/ChannelBanner/ChannelBanner";
 import ChannelSection from "./Components/ChannelSection/ChannelSection";
 import ChannelFrame from "./Components/ChannelFrame/ChannelFrame";
+import VideoDetails from "./Components/VideoDetails/VideoDetails";
 
 const App = () => {
-  const [input, setInput] = useState("");
   const [searchVideo, setSearchVideo] = useState("");
   const [videoId, setVideoId] = useState("");
   const [selectedVideoData, setSelectedVideoData] = useState("");
@@ -28,9 +28,9 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [relatedVideos, setRelatedVideos] = useState([]);
   const [techVideos, setTechVideos] = useState([]);
-  const [channels, setChannels] = useState([]);
-  const [channelVideos, setChannelVideos] = useState([]);
-  const [channelId, setChannelId] = useState("");
+  // const [channels, setChannels] = useState([]);
+  // const [channelVideos, setChannelVideos] = useState([]);
+  // const [channelId, setChannelId] = useState("");
 
   const [token, setToken] = useState([]);
 
@@ -106,87 +106,57 @@ const App = () => {
   //   }
   // }, [videoId]);
 
-  // Search Videos based on user input
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const fetchData = async () => {
-        try {
-          const searchVideos = await axios.get(
-            "https://www.googleapis.com/youtube/v3/search",
-            {
-              params: {
-                part: "snippet",
-                type: "video",
-                q: input,
-                key: API_KEY,
-                maxResults: 8,
-              },
-            }
-          );
-          setSearchResults(searchVideos.data.items);
-        } catch (err) {
-          alert(err);
-        }
-      };
-      if (input) {
-        fetchData();
-      }
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, [searchVideo, input]);
-
   // Get selected video data for display
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchVideoById = await axios.get(
-          "https://www.googleapis.com/youtube/v3/videos",
-          {
-            params: {
-              part: "snippet,contentDetails,statistics",
-              id: videoId,
-              key: API_KEY,
-              maxResults: 1,
-            },
-          }
-        );
-        fetchVideoById.data.items.map((data) => {
-          setSelectedVideoData(data.snippet);
-          setSelectedVideoStats(data.statistics);
-        });
-      } catch (err) {
-        alert(err);
-      }
-    };
-    if (videoId) {
-      fetchData();
-    }
-  }, [videoId]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const fetchVideoById = await axios.get(
+  //         "https://www.googleapis.com/youtube/v3/videos",
+  //         {
+  //           params: {
+  //             part: "snippet,contentDetails,statistics",
+  //             id: videoId,
+  //             key: API_KEY,
+  //             maxResults: 1,
+  //           },
+  //         }
+  //       );
+  //       fetchVideoById.data.items.map((data) => {
+  //         setSelectedVideoData(data.snippet);
+  //         setSelectedVideoStats(data.statistics);
+  //       });
+  //     } catch (err) {
+  //       alert(err);
+  //     }
+  //   };
+  //   if (videoId) {
+  //     fetchData();
+  //   }
+  // }, [videoId]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const techVideos = await axios.get(
-          "https:www.googleapis.com/youtube/v3/search",
-          {
-            params: {
-              part: "snippet",
-              q: "React.js",
-              type: "video",
-              key: API_KEY,
-              maxResults: 23,
-            },
-          }
-        );
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const techVideos = await axios.get(
+  //         "https:www.googleapis.com/youtube/v3/search",
+  //         {
+  //           params: {
+  //             part: "snippet",
+  //             q: "React.js",
+  //             type: "video",
+  //             key: API_KEY,
+  //             maxResults: 23,
+  //           },
+  //         }
+  //       );
 
-        setTechVideos(techVideos.data.items);
-      } catch (err) {
-        alert(err);
-      }
-    };
-    fetchData();
-  }, []);
-  console.log(channelId);
+  //       setTechVideos(techVideos.data.items);
+  //     } catch (err) {
+  //       alert(err);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -209,83 +179,59 @@ const App = () => {
 
   return (
     <Router>
-      <Sidebar />
-      <Switch>
-        <Route path="/channel">
-          <div className="App">
-            <Searchbar
-              input={input}
-              setInput={setInput}
-              searchVideo={searchVideo}
-              setSearchVideo={setSearchVideo}
-              token={token}
-              setToken={setToken}
-            />
+      <Sidebar />{" "}
+      <div className="App">
+        <Searchbar
+          setSearchResults={setSearchResults}
+          token={token}
+          setToken={setToken}
+        />
+        <Switch>
+          <Route path="/channel">
             {/* <ChannelSection />
             <div className="channel">
               <ChannelFrame />
               <VideoList videos={channelVideos} setVideoId={setVideoId} />
             </div> */}
-          </div>
-        </Route>
-        <Route path="/watch">
-          <div className="Watch">
-            <Searchbar
-              input={input}
-              setInput={setInput}
-              searchVideo={searchVideo}
-              setSearchVideo={setSearchVideo}
-              token={token}
-              setToken={setToken}
-            />
-            <VideoPlayer
-              videoId={videoId}
-              selectedVideoData={selectedVideoData}
-              selectedVideoStats={selectedVideoStats}
-            />
-            <RelatedVideos
-              relatedVideos={relatedVideos}
-              setVideoId={setVideoId}
-            />
-          </div>
-        </Route>
-        <Route path="/searchResults">
-          <div className="App">
-            <Searchbar
-              input={input}
-              setInput={setInput}
-              searchVideo={searchVideo}
-              setSearchVideo={setSearchVideo}
-              token={token}
-              setToken={setToken}
-            />
-            <VideoList videos={searchResults} setVideoId={setVideoId} />
-          </div>
-        </Route>
-        <Route path="/">
-          <div className="App">
-            <Searchbar
-              input={input}
-              setInput={setInput}
-              searchVideo={searchVideo}
-              setSearchVideo={setSearchVideo}
-              token={token}
-              setToken={setToken}
-            />
-            {/* <div className="app-header">
+          </Route>
+          <Route path="/watch">
+            <div className="Watch">
+              <div className="watch-left-container">
+                <VideoPlayer videoId={videoId} />
+                <VideoDetails
+                  selectedVideoData={selectedVideoData}
+                  selectedVideoStats={selectedVideoStats}
+                />
+                <Comments videoId={videoId} />
+              </div>
+              <RelatedVideos
+                relatedVideos={relatedVideos}
+                setVideoId={setVideoId}
+              />
+            </div>
+          </Route>
+          <Route path="/searchResults">
+            <div className="App">
+              <VideoList videos={searchResults} setVideoId={setVideoId} />
+            </div>
+          </Route>
+          <Route path="/">
+            <>
+              {/* <div className="app-header">
               <Welcome />
               <PopularChannels setChannelId={setChannelId} />
             </div> */}
 
-            <IframeBanner techVideos={techVideos} />
-            <Rows
-              title={"React Developer Videos :"}
-              setVideoId={setVideoId}
-              videos={techVideos}
-            />
-          </div>
-        </Route>
-      </Switch>
+              <IframeBanner techVideos={techVideos} />
+              <Rows
+                title={"React Developer Videos :"}
+                setVideoId={setVideoId}
+                videos={techVideos}
+              />
+            </>
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 };

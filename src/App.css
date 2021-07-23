@@ -22,21 +22,12 @@ body {
 
 .Watch {
   position: relative;
-  left: 12%;
-  height: 100vh;
-  overflow-y: scroll;
-  width: 88%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.45fr 1fr 0.5fr 1fr 1fr;
-  grid-template-areas:
-    "searchbar searchbar searchbar searchbar  "
-    "videoplayer  videoplayer videoplayer suggestions  "
-    "videoplayer  videoplayer videoplayer suggestions  "
-    "videoplayer  videoplayer videoplayer suggestions  "
-    "comments comments comments suggestions  ";
-  grid-gap: 10px;
-  background: white;
+  display: flex;
+}
+
+.watch-left-container {
+  min-height: 50vh;
+  flex: 0.85;
 }
 
 .channel {
