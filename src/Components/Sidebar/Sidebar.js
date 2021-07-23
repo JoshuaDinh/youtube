@@ -22,7 +22,6 @@ const Sidebar = () => {
     <div className="sidebar">
       <Welcome />
       <div className="sidebar-section-container">
-        {" "}
         <Link to="/" className="link">
           <HomeIcon className="sidebar-icon" /> <span>Home</span>
         </Link>

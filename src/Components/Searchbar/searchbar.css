@@ -22,13 +22,14 @@
 .searchbar-input-container {
   width: 71%;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 10px;
   background: rgb(226, 226, 226, 0.7);
 }
 
 .searchbar-input {
-  width: 100%;
+  width: 95%;
   padding: 1.5%;
   outline: none;
   border: none;
