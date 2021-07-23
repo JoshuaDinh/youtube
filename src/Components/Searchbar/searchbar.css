@@ -1,16 +1,12 @@
 .searchbar {
-  min-height: 9vh;
-  background: whitesmoke;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  /* margin-bottom: 3%; */
+  min-height: 10vh;
+  background: white;
   grid-area: searchbar;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: black;
-  -webkit-box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
-  box-shadow: 5px 5px 21px -5px rgba(0, 0, 0, 0.68);
+  border: 1px solid rgb(233, 230, 230);
 }
 
 .searchbar-form {
@@ -27,8 +23,7 @@
   width: 71%;
   display: flex;
   align-items: center;
-  border-radius: 5px;
-
+  border-radius: 10px;
   background: rgb(226, 226, 226, 0.7);
 }
 
@@ -88,31 +83,7 @@
   cursor: pointer;
   text-decoration: none;
   padding: 0.5rem;
-  width: 35%;
   color: rgb(124, 124, 124);
-  border: 1px solid transparent;
-  border-radius: 25px;
-  animation: border 1s infinite ease-out alternate-reverse;
-}
-
-.searchbar-login:hover {
   border: 1px solid #ff073a;
-}
-
-@keyframes border {
-  20% {
-    border-top: 1px solid #ff073a;
-  }
-  40% {
-    border-right: 1px solid #ff073a;
-  }
-  60% {
-    border-bottom: 1px solid #ff073a;
-  }
-  80% {
-    border-left: 1px solid #ff073a;
-  }
-  100% {
-    border: 1px solid transparent;
-  }
+  border-radius: 25px;
 }
