@@ -26,7 +26,7 @@ body {
 }
 
 .watch-left-container {
-  min-height: 50vh;
+  max-height: 65vh;
   flex: 0.85;
 }
 

@@ -46,19 +46,47 @@ export const Comments = ({ videoId }) => {
       {comments.length <= 0 && (
         <h3 className="comments-header">No Results / Comments Unavailable</h3>
       )}
-      {comments.map((comment) => {
-        return (
+      {comments.length > 1 ? (
+        comments.map((comment) => {
+          return (
+            <Comment
+              author={comment.snippet.topLevelComment.snippet.authorDisplayName}
+              profileImage={
+                comment.snippet.topLevelComment.snippet.authorProfileImageUrl
+              }
+              text={comment.snippet.topLevelComment.snippet.textOriginal}
+              likes={comment.snippet.topLevelComment.snippet.likeCount}
+            />
+          );
+        })
+      ) : (
+        <>
           <Comment
-            author={comment.snippet.topLevelComment.snippet.authorDisplayName}
-            profileImage={
-              comment.snippet.topLevelComment.snippet.authorProfileImageUrl
-            }
-            text={comment.snippet.topLevelComment.snippet.textOriginal}
-            likes={comment.snippet.topLevelComment.snippet.likeCount}
+            author="Demo Display Name"
+            profileImage=""
+            text="Great video! cant wait to see more!"
+            likes=""
           />
-        );
-      })}
-      {/* <Comment text="In academic writing, most paragraphs include at least three sentences, though rarely more than ten. So, how many paragraphs are enough, and how many are too many? For historical writing, there should be between four and six paragraphs in a two-page paper, or six and twelve in a five-page essay. In academic writing, most paragraphs include at least three sentences, though rarely more than ten. So, how many paragraphs are enough, and how many are too many? For historical writing, there should be between four and six paragraphs in a two-page paper, or six and twelve in a five-page essay. In academic writing, most paragraphs include at least three sentences, though rarely more than ten. So, how many paragraphs are enough, and how many are too many? For historical writing, there should be between four and six paragraphs in a two-page paper, or six and twelve in a five-page essay." /> */}
+          <Comment
+            author="Demo Display Name"
+            profileImage=""
+            text="Great video! cant wait to see more!"
+            likes=""
+          />
+          <Comment
+            author="Demo Display Name"
+            profileImage=""
+            text="Great video! cant wait to see more!"
+            likes=""
+          />
+          <Comment
+            author="Demo Display Name"
+            profileImage=""
+            text="Great video! cant wait to see more!"
+            likes=""
+          />
+        </>
+      )}
     </div>
   );
 };
