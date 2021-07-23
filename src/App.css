@@ -17,16 +17,15 @@ body {
   height: 100vh;
   overflow-y: scroll;
   width: 88%;
-  background: rgb(212, 212, 212);
   background: white;
 }
 
 .Watch {
   position: relative;
-  left: 5%;
+  left: 12%;
   height: 100vh;
   overflow-y: scroll;
-  width: 94%;
+  width: 88%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.45fr 1fr 0.5fr 1fr 1fr;
@@ -37,9 +36,7 @@ body {
     "videoplayer  videoplayer videoplayer suggestions  "
     "comments comments comments suggestions  ";
   grid-gap: 10px;
-  background: rgb(212, 212, 212);
-
-  border-left: 1px solid grey;
+  background: white;
 }
 
 .channel {
