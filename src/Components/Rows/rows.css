@@ -1,17 +1,13 @@
 .rows {
   display: flex;
   flex-direction: column;
-  margin: 2% 0;
 }
 
 .rows-card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 35px;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
+  grid-gap: 40px;
+  padding: 2%;
 }
 
 .rows-title {

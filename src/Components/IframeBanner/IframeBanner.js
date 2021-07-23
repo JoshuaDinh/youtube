@@ -16,17 +16,17 @@ const IframeBanner = ({ techVideos }) => {
           className="iframe-banner-main-thumbnail"
         ></iframe>
       </div>
-      <div className="iframe-banner-videos-container">
-        {/* Removes first video from api call - video is displayed in iframe above */}
-        {techVideos.slice(1, 7).map((data) => {
+      {/* <div className="iframe-banner-videos-container"> */}
+      {/* Removes first video from api call - video is displayed in iframe above */}
+      {/* {techVideos.slice(1, 5).map((data) => {
           return (
             <VideoCard
               thumbnail={data.snippet.thumbnails.medium.url}
               title={data.snippet.title}
             />
           );
-        })}
-      </div>
+        })} */}
+      {/* </div> */}
     </div>
   );
 };

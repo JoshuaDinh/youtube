@@ -35,12 +35,12 @@ const App = () => {
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
-  useEffect(() => {
-    const _token = getTokenFromUrl();
-    if (_token) {
-      setToken(_token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const _token = getTokenFromUrl();
+  //   if (_token) {
+  //     setToken(_token);
+  //   }
+  // }, []);
 
   // Get Videos by ChannelId
   // useEffect(() => {
@@ -161,7 +161,7 @@ const App = () => {
         "https:www.googleapis.com/youtube/v3/search",
         {
           params: {
-            part: "snippet, contentDetails",
+            part: "snippet",
             q: "React.js",
             type: "video",
             key: API_KEY,
@@ -209,11 +209,11 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <ChannelSection />
+            {/* <ChannelSection />
             <div className="channel">
               <ChannelFrame />
               <VideoList videos={channelVideos} setVideoId={setVideoId} />
-            </div>
+            </div> */}
           </div>
         </Route>
         <Route path="/watch">
@@ -260,10 +260,10 @@ const App = () => {
               token={token}
               setToken={setToken}
             />
-            <div className="app-header">
+            {/* <div className="app-header">
               <Welcome />
               <PopularChannels setChannelId={setChannelId} />
-            </div>
+            </div> */}
 
             <IframeBanner techVideos={techVideos} />
             <Rows

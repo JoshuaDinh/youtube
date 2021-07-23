@@ -2,24 +2,26 @@ import React, { useState } from "react";
 import "./videoCard.css";
 import { Link } from "react-router-dom";
 const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
-  const [activeTitle, setActiveTitle] = useState(false);
   return (
-    <Link
-      to="/watch"
-      className="video-card"
-      onClick={() => setVideoId(videoId)}
-      onMouseEnter={() => setActiveTitle(!activeTitle)}
-      onMouseLeave={() => setActiveTitle(!activeTitle)}
-    >
-      <img src={thumbnail} alt="#" className="video-thumbnail" />
-      <p
-        className={`video-card-title ${
-          activeTitle && "video-card-title-active"
-        }`}
-      >
-        {title}
-      </p>
-    </Link>
+    <div className="video-card">
+      <img src={thumbnail} alt="#" className="video-thumbnail" />{" "}
+      <div className="card-info">
+        <p className="video-card-title ">{title}</p>
+      </div>
+    </div>
   );
 };
 export default VideoCard;
+// const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
+//   return (
+//     <Link
+//       to="/watch"
+//       className="video-card"
+//       onClick={() => setVideoId(videoId)}
+//     >
+//       <img src={thumbnail} alt="#" className="video-thumbnail" />
+//       <p className="video-card-title ">{title}</p>
+//     </Link>
+//   );
+// };
+// export default VideoCard;

@@ -8,14 +8,15 @@
 
 body {
   background: rgba(240, 234, 234, 0.5);
+  background: whitesmoke;
 }
 
 .App {
   position: relative;
-  left: 5%;
+  left: 12%;
   height: 100vh;
   overflow-y: scroll;
-  width: 94%;
+  width: 88%;
   border-left: 1px solid lightgrey;
   background: rgb(212, 212, 212);
 }

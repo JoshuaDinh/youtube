@@ -1,6 +1,5 @@
 import React from "react";
 import "./channelSection.css";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 const ChannelSection = ({}) => {
   return (
