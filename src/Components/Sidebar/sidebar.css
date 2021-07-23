@@ -22,6 +22,13 @@
   justify-content: space-evenly;
 }
 
+.sidebar-section-container > p {
+  font-size: 1.4rem;
+  background: -webkit-linear-gradient(rgb(105, 2, 2), red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .sidebar-icon {
   font-size: 1.9em !important;
   color: grey;
