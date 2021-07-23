@@ -9,7 +9,7 @@ import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Welcome from "../Welcome/Welcome";
 
 import StorageIcon from "@material-ui/icons/Storage";
@@ -22,26 +22,43 @@ const Sidebar = () => {
     <div className="sidebar">
       <Welcome />
       <div className="sidebar-section-container">
-        <Link to="/" className="link">
+        <NavLink
+          exact={true}
+          activeClassName="is-active"
+          to="/"
+          className="NavLink"
+        >
           <HomeIcon className="sidebar-icon" /> <span>Home</span>
-        </Link>
+        </NavLink>
         <p>Catagories</p>
-        <Link to="/" className="link">
+        <NavLink to="/frontend" className="NavLink" activeClassName="is-active">
           <HttpIcon className="sidebar-icon" /> <span>Front-End</span>
-        </Link>
-        <Link to="/" className="link">
+        </NavLink>
+        <NavLink to="/backend" className="NavLink" activeClassName="is-active">
           <HttpIcon className="sidebar-icon" /> <span>Back-End</span>
-        </Link>
-        <Link className="link">
+        </NavLink>
+        <NavLink
+          to="/databases"
+          className="NavLink"
+          activeClassName="is-active"
+        >
           <StorageIcon className="sidebar-icon" /> <span>Databases</span>
-        </Link>
-        <Link className="link">
+        </NavLink>
+        <NavLink
+          to="/ fullstack"
+          className="NavLink"
+          activeClassName="is-active"
+        >
           <VerticalSplitIcon className="sidebar-icon" /> <span>Full-Stack</span>
-        </Link>
-        <Link className="link">
+        </NavLink>
+        <NavLink
+          to="/websecurity"
+          className="NavLink"
+          activeClassName="is-active"
+        >
           <SecurityIcon className="sidebar-icon" />
           <span>Web Security</span>
-        </Link>
+        </NavLink>
       </div>
     </div>
   );
@@ -50,38 +67,38 @@ const Sidebar = () => {
 export default Sidebar;
 
 {
-  /* <Link className="link">
+  /* <NavLink className="NavLink">
           <PlaylistPlayIcon className="sidebar-icon" />
           <span>Playlists</span>
-        </Link> */
+        </NavLink> */
 }
 {
-  /* <Link className="link">
+  /* <NavLink className="NavLink">
           <ThumbUpAltIcon className="sidebar-icon" /> <span>Likes</span>
-        </Link> */
+        </NavLink> */
 }
 {
-  /* <Link className="link">
+  /* <NavLink className="NavLink">
           <HistoryIcon className="sidebar-icon" /> <span>History</span>
-        </Link> */
+        </NavLink> */
 }
 {
-  /* <Link to="/" className="link">
+  /* <NavLink to="/" className="NavLink">
           <WhatshotIcon className="sidebar-icon" /> <span>Whats Hot</span>
-        </Link> */
+        </NavLink> */
 }
 {
-  /* <Link to="/" className="link">
+  /* <NavLink to="/" className="NavLink">
           <SubscriptionsIcon className="sidebar-icon" />{" "}
           <span>Subscriptions</span>
-        </Link> */
+        </NavLink> */
 }
 
 {
-  /* <Link className="link">
+  /* <NavLink className="NavLink">
 <AccountCircleIcon className="sidebar-icon" /> <span>Account</span>
-</Link>
-<Link className="link">
+</NavLink>
+<NavLink className="NavLink">
 <SettingsIcon className="sidebar-icon" /> <span>Settings</span>
-</Link> */
+</NavLink> */
 }
