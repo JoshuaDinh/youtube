@@ -10,30 +10,40 @@ import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { Link } from "react-router-dom";
+import Welcome from "../Welcome/Welcome";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <img src={youtubeIcon} className="youtube-icon" />
+      {/* <img src={youtubeIcon} className="youtube-icon" /> */}
+      <Welcome />
       <div className="sidebar-section-container">
-        <div className="sidebar-first-section">
-          <Link to="/">
-            <HomeIcon className="sidebar-icon" />
-          </Link>
-          <Link to="/">
-            <WhatshotIcon className="sidebar-icon" />
-          </Link>
-          <Link to="/">
-            <SubscriptionsIcon className="sidebar-icon" />{" "}
-          </Link>
-        </div>
-        <div className="sidebar-second-section">
-          <HistoryIcon className="sidebar-icon" />
-          <ThumbUpAltIcon className="sidebar-icon" />
+        <Link to="/" className="link">
+          <HomeIcon className="sidebar-icon" /> <span>Home</span>
+        </Link>
+        <Link to="/" className="link">
+          <WhatshotIcon className="sidebar-icon" /> <span>Whats Hot</span>
+        </Link>
+        <Link to="/" className="link">
+          <SubscriptionsIcon className="sidebar-icon" />{" "}
+          <span>Subscriptions</span>
+        </Link>
+        <Link className="link">
+          <HistoryIcon className="sidebar-icon" /> <span>History</span>
+        </Link>
+        <Link className="link">
+          <ThumbUpAltIcon className="sidebar-icon" /> <span>Likes</span>
+        </Link>
+        <Link className="link">
           <PlaylistPlayIcon className="sidebar-icon" />
-          <AccountCircleIcon className="sidebar-icon" />
-          <SettingsIcon className="sidebar-icon" />
-        </div>
+          <span>Playlists</span>
+        </Link>
+        <Link className="link">
+          <AccountCircleIcon className="sidebar-icon" /> <span>Account</span>
+        </Link>
+        <Link className="link">
+          <SettingsIcon className="sidebar-icon" /> <span>Settings</span>
+        </Link>
       </div>
     </div>
   );

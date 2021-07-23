@@ -17,7 +17,6 @@ body {
   height: 100vh;
   overflow-y: scroll;
   width: 88%;
-  border-left: 1px solid lightgrey;
   background: rgb(212, 212, 212);
 }
 
@@ -51,10 +50,10 @@ body {
   width: 0px;
 }
 
-.app-header {
+/* .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-content: space-evenly;
   margin: 5% 2%;
-}
+} */

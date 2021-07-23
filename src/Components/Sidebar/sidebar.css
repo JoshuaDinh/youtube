@@ -3,10 +3,11 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100vh;
-  width: 8%;
+  width: 12%;
+  padding: 7px;
   background: whitesmoke;
+  border-radius: 50px;
 }
 
 .youtube-icon {
@@ -18,15 +19,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.sidebar-first-section,
-.sidebar-second-section {
-  width: 100%;
-  min-height: 35%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
 }
 
@@ -37,4 +29,23 @@
 }
 .sidebar-icon:hover {
   color: red;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 7vh;
+  width: 100%;
+  color: black;
+  border-radius: 10px;
+}
+.link > span {
+  width: 55%;
+  font-size: 0.9rem;
+}
+
+.link:hover {
+  background-image: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  color: whitesmoke;
 }
