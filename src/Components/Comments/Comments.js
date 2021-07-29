@@ -19,25 +19,25 @@ export const Comment = ({ author, profileImage, text }) => {
 export const Comments = ({ videoId }) => {
   const [comments, setComments] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchComments = await axios.get(
-        "https:www.googleapis.com/youtube/v3/commentThreads",
-        {
-          params: {
-            part: "snippet",
-            videoId: videoId,
-            key: API_KEY,
-            maxResults: 10,
-          },
-        }
-      );
-      setComments(fetchComments.data.items);
-    };
-    if (videoId) {
-      fetchData();
-    }
-  }, [videoId]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const fetchComments = await axios.get(
+  //       "https:www.googleapis.com/youtube/v3/commentThreads",
+  //       {
+  //         params: {
+  //           part: "snippet",
+  //           videoId: videoId,
+  //           key: API_KEY,
+  //           maxResults: 10,
+  //         },
+  //       }
+  //     );
+  //     setComments(fetchComments.data.items);
+  //   };
+  //   if (videoId) {
+  //     fetchData();
+  //   }
+  // }, [videoId]);
 
   return (
     <div className="comments">

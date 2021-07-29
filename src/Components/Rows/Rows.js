@@ -12,7 +12,7 @@ const Rows = ({ videos, setVideoId, title }) => {
             data.snippet?.thumbnails && (
               <VideoCard
                 setVideoId={setVideoId}
-                videoId={data.id.videoId}
+                videoId={data.videoId.videoId}
                 title={data.snippet?.title}
                 thumbnail={data.snippet?.thumbnails?.medium.url}
                 channel={data.snippet?.channelTitle}

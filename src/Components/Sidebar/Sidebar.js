@@ -1,21 +1,13 @@
 import React from "react";
 import "./sidebar.css";
-import youtubeIcon from "../../images/youtubeIcon.png";
 import HomeIcon from "@material-ui/icons/Home";
-import WhatshotIcon from "@material-ui/icons/Whatshot";
-import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
-import HistoryIcon from "@material-ui/icons/History";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
-import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import SettingsIcon from "@material-ui/icons/Settings";
 import { NavLink } from "react-router-dom";
 import Welcome from "../Welcome/Welcome";
-
 import StorageIcon from "@material-ui/icons/Storage";
 import HttpIcon from "@material-ui/icons/Http";
-import SecurityIcon from "@material-ui/icons/Security";
+import WebIcon from "@material-ui/icons/Web";
 import VerticalSplitIcon from "@material-ui/icons/VerticalSplit";
+import LanguageIcon from "@material-ui/icons/Language";
 
 const Sidebar = () => {
   return (
@@ -35,29 +27,25 @@ const Sidebar = () => {
           <HttpIcon className="sidebar-icon" /> <span>Front-End</span>
         </NavLink>
         <NavLink to="/backend" className="NavLink" activeClassName="is-active">
-          <HttpIcon className="sidebar-icon" /> <span>Back-End</span>
+          <LanguageIcon className="sidebar-icon" /> <span>Back-End</span>
+        </NavLink>
+        <NavLink to="/mongo" className="NavLink" activeClassName="is-active">
+          <StorageIcon className="sidebar-icon" /> <span>MongoDB</span>
         </NavLink>
         <NavLink
-          to="/databases"
-          className="NavLink"
-          activeClassName="is-active"
-        >
-          <StorageIcon className="sidebar-icon" /> <span>Databases</span>
-        </NavLink>
-        <NavLink
-          to="/ fullstack"
+          to="/fullStack"
           className="NavLink"
           activeClassName="is-active"
         >
           <VerticalSplitIcon className="sidebar-icon" /> <span>Full-Stack</span>
         </NavLink>
         <NavLink
-          to="/websecurity"
+          to="/javascript"
           className="NavLink"
           activeClassName="is-active"
         >
-          <SecurityIcon className="sidebar-icon" />
-          <span>Web Security</span>
+          <WebIcon className="sidebar-icon" />
+          <span>Javascript</span>
         </NavLink>
       </div>
     </div>
