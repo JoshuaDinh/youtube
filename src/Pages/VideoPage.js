@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Rows from "../Components/Rows/Rows";
 import IframeBanner from "../Components/IframeBanner/IframeBanner";
+import Loading from "../Components/Loading/Loading";
 import axios from "axios";
 
 const VideoPage = ({ setVideoId, endPoint }) => {
@@ -22,6 +23,7 @@ const VideoPage = ({ setVideoId, endPoint }) => {
   }, []);
   return (
     <>
+      {loading && <Loading />}
       <IframeBanner videos={videos} />
       <Rows
         title={"React Developer Videos :"}
