@@ -7,18 +7,14 @@ import { Comments } from "./Components/Comments/Comments";
 import Rows from "./Components/Rows/Rows";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
-import { API_KEY } from "./requests";
-import { getTokenFromUrl } from "./GoogleAuth";
+// import { API_KEY } from "./requests";
+// import { getTokenFromUrl } from "./GoogleAuth";
 import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
-import Trending from "./Components/IframeBanner/IframeBanner";
 import IframeBanner from "./Components/IframeBanner/IframeBanner";
 import VideoList from "./Components/VideoList/VideoList";
-import Welcome from "./Components/Welcome/Welcome";
-import PopularChannels from "./Components/PopularChannels/PopularChannels";
-import ChannelBanner from "./Components/ChannelBanner/ChannelBanner";
-import ChannelSection from "./Components/ChannelSection/ChannelSection";
-import ChannelFrame from "./Components/ChannelFrame/ChannelFrame";
 import VideoDetails from "./Components/VideoDetails/VideoDetails";
+import requests from "./requests";
+import VideoPage from "./Pages/VideoPage";
 
 const App = () => {
   const [searchVideo, setSearchVideo] = useState("");
@@ -93,27 +89,25 @@ const App = () => {
   //   }
   // }, [videoId]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const react = await axios.get("/api/videos/react");
-        setReactVideos(react.data);
-        const javascript = await axios.get("/api/videos/javascript");
-        setJavacriptVideos(javascript.data);
-        const frontEnd = await axios.get("/api/videos/frontend");
-        setFrontEndVideos(frontEnd.data);
-        const backEnd = await axios.get("/api/videos/backend");
-        setBackEndVideos(backEnd.data);
-        const fullStack = await axios.get("/api/videos/fullStack");
-        setFullStackVideos(fullStack.data);
-        const mongo = await axios.get("/api/videos/mongo");
-        setMongoVideos(mongo.data);
-      } catch (err) {
-        alert(err);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const react = await axios.get("/api/videos/react");
+  //       setReactVideos(react.data);
+  //       const javascript = await axios.get("/api/videos/javascript");
+  //       setJavacriptVideos(javascript.data);
+  //       const frontEnd = await axios.get("/api/videos/frontend");
+  //       setFrontEndVideos(frontEnd.data);
+  //       const backEnd = await axios.get("/api/videos/backend");
+  //       setBackEndVideos(backEnd.data);
+  //       const mongo = await axios.get("/api/videos/mongo");
+  //       setMongoVideos(mongo.data);
+  //     } catch (err) {
+  //       alert(err);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <Router>
@@ -149,67 +143,38 @@ const App = () => {
           </Route>
           {/* Video Routes */}
           <Route path="/fullStack">
-            <>
-              <IframeBanner videos={fullStackVideos} />
-              <Rows
-                title={"Full-Stack Developer Videos :"}
-                setVideoId={setVideoId}
-                videos={fullStackVideos}
-              />
-            </>
+            <VideoPage
+              endPoint={requests.fetchFullStack}
+              title="FullStack Developer Videos"
+            />
           </Route>
           <Route path="/backend">
-            <>
-              <IframeBanner videos={backEndVideos} />
-              <Rows
-                title={"Back-End Developer Videos :"}
-                setVideoId={setVideoId}
-                videos={backEndVideos}
-              />
-            </>
+            <VideoPage
+              endPoint={requests.fetchBackEnd}
+              title="BackEnd Developer Videos"
+            />
           </Route>
           <Route path="/frontend">
-            <>
-              <IframeBanner videos={frontEndVideos} />
-              <Rows
-                title={"Front-End Developer Videos :"}
-                setVideoId={setVideoId}
-                videos={frontEndVideos}
-              />
-            </>
+            <VideoPage
+              endPoint={requests.fetchFrontEnd}
+              title="FrontEnd Developer Videos"
+            />
           </Route>
-
           <Route path="/javascript">
-            <>
-              <IframeBanner videos={javascriptVideos} />
-              <Rows
-                title={"Javascript Videos :"}
-                setVideoId={setVideoId}
-                videos={javascriptVideos}
-              />
-            </>
+            <VideoPage
+              endPoint={requests.fetchReact}
+              title="Javascript Videos"
+            />
           </Route>
-
           <Route path="/mongo">
-            <>
-              <IframeBanner videos={mongoVideos} />
-              <Rows
-                title={"MongoDB  Videos :"}
-                setVideoId={setVideoId}
-                videos={mongoVideos}
-              />
-            </>
+            <VideoPage endPoint={requests.fetchMongo} title="MongoDB Videos" />
           </Route>
           {/* HomePage */}
           <Route path="/">
-            <>
-              <IframeBanner videos={reactVideos} />
-              <Rows
-                title={"React Developer Videos :"}
-                setVideoId={setVideoId}
-                videos={reactVideos}
-              />
-            </>
+            <VideoPage
+              endPoint={requests.fetchReact}
+              title="React Developer Videos"
+            />
           </Route>
         </Switch>
       </div>

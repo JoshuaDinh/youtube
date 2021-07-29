@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./rows.css";
 import VideoCard from "../VideoCard/VideoCard";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-const Rows = ({ videos, setVideoId, title }) => {
+const PaginatedRows = ({ videos, setVideoId, title }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [videosPerPage, setVideosPerPage] = useState(4);
+
+  const indexOfLastVideo = currentPage * videosPerPage;
+  const indexOfFirstVideo = indexOfLastVideo - videosPerPage;
+  const currentVideos = videos.slice(indexOfFirstVideo, indexOfLastVideo);
+
+  console.log(currentVideos);
   return (
     <div className="rows">
       <h5 className="rows-title">{title}</h5>
       <div className="rows-card-container">
-        {videos.slice(1).map((data) => {
+        {currentVideos.map((data) => {
           return (
             data.snippet?.thumbnails && (
               <VideoCard
@@ -19,10 +29,10 @@ const Rows = ({ videos, setVideoId, title }) => {
               />
             )
           );
-        })}{" "}
+        })}
       </div>
     </div>
   );
 };
 
-export default Rows;
+export default PaginatedRows;
