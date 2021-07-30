@@ -97,7 +97,7 @@ const App = () => {
         />
         <Switch>
           <Route path="/channel"></Route>
-          <Route path="/watch">
+          <Route path="/watch/:videoId">
             <WatchPage
               videoId={videoId}
               setVideoId={setVideoId}
@@ -110,38 +110,47 @@ const App = () => {
             </div>
           </Route>
           {/* Video Routes */}
-          <Route path="/fullStack">
+          <Route path="/React">
             <VideoPage
-              endPoint={requests.fetchFullStack}
-              title="FullStack Developer Videos"
+              endPoint={requests.React}
+              title="React Videos"
+              setVideoId={setVideoId}
             />
           </Route>
-          <Route path="/backend">
+          <Route path="/Node">
             <VideoPage
-              endPoint={requests.fetchBackEnd}
-              title="BackEnd Developer Videos"
+              endPoint={requests.Node}
+              title="Node.js Videos"
+              setVideoId={setVideoId}
             />
           </Route>
-          <Route path="/frontend">
+          <Route path="/Html-Css">
             <VideoPage
-              endPoint={requests.fetchFrontEnd}
-              title="FrontEnd Developer Videos"
+              endPoint={requests.htmlcss}
+              title="Html & Css  Videos"
+              setVideoId={setVideoId}
             />
           </Route>
-          <Route path="/javascript">
+          <Route path="/Javascript">
             <VideoPage
-              endPoint={requests.fetchReact}
+              endPoint={requests.Javascript}
               title="Javascript Videos"
+              setVideoId={setVideoId}
             />
           </Route>
-          <Route path="/mongo">
-            <VideoPage endPoint={requests.fetchMongo} title="MongoDB Videos" />
+          <Route path="/MongoDB">
+            <VideoPage
+              endPoint={requests.MongoDB}
+              title="MongoDB Videos"
+              setVideoId={setVideoId}
+            />
           </Route>
           {/* HomePage */}
           <Route path="/">
             <VideoPage
-              endPoint={requests.fetchReact}
-              title="React Developer Videos"
+              endPoint={requests.React}
+              title="React.js Videos"
+              setVideoId={setVideoId}
             />
           </Route>
         </Switch>

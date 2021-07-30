@@ -23,29 +23,25 @@ const Sidebar = () => {
           <HomeIcon className="sidebar-icon" /> <span>Home</span>
         </NavLink>
         <p>Catagories</p>
-        <NavLink to="/frontend" className="NavLink" activeClassName="is-active">
-          <HttpIcon className="sidebar-icon" /> <span>Front-End</span>
-        </NavLink>
-        <NavLink to="/backend" className="NavLink" activeClassName="is-active">
-          <LanguageIcon className="sidebar-icon" /> <span>Back-End</span>
-        </NavLink>
-        <NavLink to="/mongo" className="NavLink" activeClassName="is-active">
-          <StorageIcon className="sidebar-icon" /> <span>MongoDB</span>
+        <NavLink to="/html-css" className="NavLink" activeClassName="is-active">
+          <HttpIcon className="sidebar-icon" /> <span>Html & Css</span>
         </NavLink>
         <NavLink
-          to="/fullStack"
-          className="NavLink"
-          activeClassName="is-active"
-        >
-          <VerticalSplitIcon className="sidebar-icon" /> <span>Full-Stack</span>
-        </NavLink>
-        <NavLink
-          to="/javascript"
+          to="/Javascript"
           className="NavLink"
           activeClassName="is-active"
         >
           <WebIcon className="sidebar-icon" />
           <span>Javascript</span>
+        </NavLink>
+        <NavLink to="/React" className="NavLink" activeClassName="is-active">
+          <VerticalSplitIcon className="sidebar-icon" /> <span>React.js</span>
+        </NavLink>
+        <NavLink to="/Node" className="NavLink" activeClassName="is-active">
+          <LanguageIcon className="sidebar-icon" /> <span>Node.js</span>
+        </NavLink>
+        <NavLink to="/MongoDB" className="NavLink" activeClassName="is-active">
+          <StorageIcon className="sidebar-icon" /> <span>MongoDB</span>
         </NavLink>
       </div>
     </div>
