@@ -1,74 +1,40 @@
 const express = require("express");
 const router = express.Router();
-const reactVideos = require("../../models/ReactVideoSchema");
-const frontEndVideos = require("../../models/FrontEndVideoSchema");
-const backEndVideos = require("../../models/BackEndVideoSchema");
-const fullStackVideos = require("../../models/FullStackVideoSchema");
-const javascriptVideos = require("../../models/JavascriptVideoSchema");
-const mongoVideos = require("../../models/MongoVideoSchema");
-const { VideocamOutlined } = require("@material-ui/icons");
+const videos = require("../../models/VideoSchema");
 
-router.get("/react", async (req, res) => {
-  reactVideos.find({}, (err, result) => {
+// Search videos by topic - from params
+// router.get("/React", async (req, res) => {
+//   videos.find({}, (err, result) => {
+//     if (err) {
+//       throw err;
+//     } else {
+//       res.status(200).json(result);
+//     }
+//   });
+// });
+// router.get("/Node", async (req, res) => {
+//   videos.find({}, (err, result) => {
+//     if (err) {
+//       throw err;
+//     } else {
+//       res.status(200).json(result);
+//     }
+//   });
+// });
+
+router.get("/:subject", async (req, res) => {
+  let subject = req.params.subject;
+  videos.find({ topic: subject }, (err, result) => {
     if (err) {
       throw err;
     } else {
-      res.send(result);
+      res.status(200).json(result);
     }
   });
 });
 
-router.get("/frontend", async (req, res) => {
-  frontEndVideos.find({}, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-router.get("/backend", async (req, res) => {
-  backEndVideos.find({}, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-router.get("/fullStack", async (req, res) => {
-  fullStackVideos.find({}, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-router.get("/javascript", async (req, res) => {
-  javascriptVideos.find({}, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-router.get("/mongo", async (req, res) => {
-  mongoVideos.find({}, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-router.get("/find/:videoId", async (req, res) => {
+// Find video ind by id - add other endpoints for additional data here
+router.get("/watch/:videoId", async (req, res) => {
   let videoId = req.params.watchId;
   try {
     let data = await mongoVideos.findOne(

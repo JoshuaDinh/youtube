@@ -1,10 +1,9 @@
 const requests = {
-  fetchJavascript: "api/videos/javascript",
-  fetchReact: "api/videos/react",
-  fetchMongo: "/api/videos/mongo",
-  fetchFrontEnd: "api/videos/frontend",
-  fetchBackEnd: "api/videos/backend",
-  fetchFullStack: "api/videos/fullStack",
+  Javascript: "api/videos/Javascript",
+  React: "api/videos/React",
+  MongoDB: "/api/videos/MongoDB",
+  Node: "api/videos/Node",
+  htmlcss: "api/videos/Html-Css",
 };
 
 export default requests;
