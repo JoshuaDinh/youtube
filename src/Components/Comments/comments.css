@@ -18,12 +18,12 @@
 .comment-author {
   display: flex;
   align-items: center;
-  padding: 2%;
+  padding: 2% 4%;
   border-bottom: 1px solid darkgrey;
 }
 
 .comment-author-name {
-  margin-left: 10px;
+  margin-left: 2%;
   width: 100%;
   color: black;
   margin-left: 15px;
