@@ -4,7 +4,7 @@ import IframeBanner from "../Components/IframeBanner/IframeBanner";
 import Loading from "../Components/Loading/Loading";
 import axios from "axios";
 
-const VideoPage = ({ setVideoId, endPoint }) => {
+const VideoPage = ({ setVideoId, endPoint, title }) => {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -14,22 +14,20 @@ const VideoPage = ({ setVideoId, endPoint }) => {
         setLoading(true);
         const videoData = await axios.get(endPoint);
         setVideos(videoData.data);
-        setLoading(false);
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       } catch (err) {
         alert(err);
       }
     };
     fetchData();
-  }, []);
+  }, [endPoint]);
   return (
     <>
       {loading && <Loading />}
       <IframeBanner videos={videos} />
-      <Rows
-        title={"React Developer Videos :"}
-        setVideoId={setVideoId}
-        videos={videos}
-      />
+      <Rows title={title} setVideoId={setVideoId} videos={videos} />
     </>
   );
 };
