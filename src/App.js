@@ -86,26 +86,6 @@ const App = () => {
   //   }
   // }, [videoId]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const react = await axios.get("/api/videos/react");
-  //       setReactVideos(react.data);
-  //       const javascript = await axios.get("/api/videos/javascript");
-  //       setJavacriptVideos(javascript.data);
-  //       const frontEnd = await axios.get("/api/videos/frontend");
-  //       setFrontEndVideos(frontEnd.data);
-  //       const backEnd = await axios.get("/api/videos/backend");
-  //       setBackEndVideos(backEnd.data);
-  //       const mongo = await axios.get("/api/videos/mongo");
-  //       setMongoVideos(mongo.data);
-  //     } catch (err) {
-  //       alert(err);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
     <Router>
       <Sidebar />
