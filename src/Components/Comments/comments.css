@@ -7,13 +7,12 @@
   background: whitesmoke;
   color: white;
   width: 100%;
-  margin: 4% 0;
   border-radius: 5px;
   border: 2px solid transparent;
 }
 
 .comments-header {
-  margin: 4%;
+  margin: 3% 4%;
 }
 
 .comment-author {

@@ -2,23 +2,20 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Searchbar } from "./Components/Searchbar/Searchbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import { VideoPlayer } from "./Components/VideoPlayer/VideoPlayer";
-import { Comments } from "./Components/Comments/Comments";
 import Rows from "./Components/Rows/Rows";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 // import { API_KEY } from "./requests";
 // import { getTokenFromUrl } from "./GoogleAuth";
-import { RelatedVideos } from "./Components/RelatedVideos/RelatedVideos";
 import IframeBanner from "./Components/IframeBanner/IframeBanner";
 import VideoList from "./Components/VideoList/VideoList";
-import VideoDetails from "./Components/VideoDetails/VideoDetails";
 import requests from "./requests";
 import VideoPage from "./Pages/VideoPage";
+import WatchPage from "./Pages/WatchPage";
 
 const App = () => {
   const [searchVideo, setSearchVideo] = useState("");
-  const [videoId, setVideoId] = useState("");
+  const [videoId, setVideoId] = useState("pWbMrx5rVBE");
   const [selectedVideoData, setSelectedVideoData] = useState("");
   const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -121,20 +118,11 @@ const App = () => {
         <Switch>
           <Route path="/channel"></Route>
           <Route path="/watch">
-            <div className="Watch">
-              <div className="watch-left-container">
-                <VideoPlayer videoId={videoId} />
-                <VideoDetails
-                  selectedVideoData={selectedVideoData}
-                  selectedVideoStats={selectedVideoStats}
-                />
-                <Comments videoId={videoId} />
-              </div>
-              <RelatedVideos
-                relatedVideos={relatedVideos}
-                setVideoId={setVideoId}
-              />
-            </div>
+            <WatchPage
+              videoId={videoId}
+              setVideoId={setVideoId}
+              relatedVideos={relatedVideos}
+            />
           </Route>
           <Route path="/searchResults">
             <div className="App">

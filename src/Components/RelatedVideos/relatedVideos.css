@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  grid-area: suggestions;
+  min-width: 23vw;
   background: rgb(212, 212, 212);
   overflow-y: scroll;
-  max-height: 75vh;
 }
 .related-video-header-container {
   width: 100%;
