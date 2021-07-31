@@ -26,3 +26,29 @@
   padding: 10px;
   border-radius: 10px;
 }
+
+/* Home Iframe */
+
+.home-iframe-banner {
+  display: flex;
+  padding: 2%;
+  min-height: 600px;
+}
+
+.home-iframe-banner-main-video {
+  min-width: 75%;
+  border-radius: 10px;
+  transition: 0.5s ease-out;
+}
+
+.home-iframe-banner-main-video:hover {
+  min-width: 100%;
+  border-radius: 10px;
+}
+
+.home-iframe-grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr;
+  border-radius: 10px;
+}
