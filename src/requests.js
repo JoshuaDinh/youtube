@@ -1,9 +1,10 @@
 const requests = {
-  Javascript: "api/videos/Javascript",
-  React: "api/videos/React",
-  MongoDB: "/api/videos/MongoDB",
-  Node: "api/videos/Node",
-  htmlcss: "api/videos/Html-Css",
+  Javascript: "api/videos/byTopic/Javascript",
+  React: "api/videos/byTopic/React",
+  MongoDB: "/api/videos/byTopic/MongoDB",
+  Node: "api/videos/byTopic/Node",
+  htmlcss: "api/videos/byTopic/Html-Css",
+  allVideos: "api/videos/allVideos",
 };
 
 export default requests;
