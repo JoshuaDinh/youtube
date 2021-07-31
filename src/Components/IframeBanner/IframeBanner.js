@@ -3,9 +3,10 @@ import "./iframeBanner.css";
 import VideoCard from "../VideoCard/VideoCard";
 
 const IframeBanner = ({ videos }) => {
-  // Gets first video from api call to display in iframe
-  const videoSrc = `https://www.youtube.com/embed/${videos[0]?.videoId.videoId}`;
+  // Gets first video from api call to display in iframe  console.log(videos);
+  console.log(videos);
 
+  const videoSrc = `https://www.youtube.com/embed/${videos[0]?.videoId.videoId}`;
   return (
     <div className="iframe-banner">
       <div className="iframe-banner-main-video">
