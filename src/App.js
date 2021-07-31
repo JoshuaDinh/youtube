@@ -12,6 +12,7 @@ import VideoList from "./Components/VideoList/VideoList";
 import requests from "./requests";
 import VideoPage from "./Pages/VideoPage";
 import WatchPage from "./Pages/WatchPage";
+import HomePage from "./Pages/HomePage";
 
 const App = () => {
   const [searchVideo, setSearchVideo] = useState("");
@@ -147,11 +148,7 @@ const App = () => {
           </Route>
           {/* HomePage */}
           <Route path="/">
-            <VideoPage
-              endPoint={requests.React}
-              title="React.js Videos"
-              setVideoId={setVideoId}
-            />
+            <HomePage setVideoId={setVideoId} />
           </Route>
         </Switch>
       </div>
