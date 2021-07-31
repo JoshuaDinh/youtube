@@ -2,7 +2,7 @@ import React from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import "./videoCard.css";
 import { Link } from "react-router-dom";
-const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
+const VideoCard = ({ title, thumbnail, setVideoId, videoId, homepage }) => {
   return (
     <Link
       className="video-card"
@@ -14,9 +14,13 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId }) => {
         <PlayArrowIcon className="play-icon" />
       </div> */}
       <img src={thumbnail} alt="#" className="video-thumbnail" />
-      <div className="card-info">
-        <p className="video-card-title ">{title}</p>
-      </div>
+      {!homepage ? (
+        <div className="card-info">
+          <p className="video-card-title ">{title}</p>
+        </div>
+      ) : (
+        ""
+      )}
     </Link>
   );
 };
