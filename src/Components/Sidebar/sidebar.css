@@ -1,5 +1,4 @@
 .sidebar {
-  grid-area: sidebar;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -45,7 +44,7 @@
 }
 
 .NavLink:hover {
-  background-image: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  background: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
   color: whitesmoke;
 }
 
@@ -54,7 +53,7 @@
 }
 
 .is-active {
-  background-image: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  background: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
   color: whitesmoke;
 }
 
