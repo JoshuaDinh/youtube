@@ -40,7 +40,7 @@ const HomePage = ({ setVideoId }) => {
   return (
     <>
       {loading && <Loading />}
-      <HomeIframeBanner videos={videos[0]?.data} setVideoId={setVideoId} />
+      <HomeIframeBanner setVideoId={setVideoId} />
       <Rows
         title="React Developer Videos"
         setVideoId={setVideoId}
