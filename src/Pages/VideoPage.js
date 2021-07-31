@@ -27,7 +27,12 @@ const VideoPage = ({ setVideoId, endPoint, title }) => {
     <>
       {loading && <Loading />}
       <IframeBanner videos={videos} />
-      <Rows title={title} setVideoId={setVideoId} videos={videos} />
+      <Rows
+        title={title}
+        setVideoId={setVideoId}
+        videos={videos}
+        link={endPoint}
+      />
     </>
   );
 };
