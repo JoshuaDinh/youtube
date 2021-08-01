@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const CommentsSchema = new mongoose.Schema({
   videoId: { type: String },
-  textOriginal: { type: String },
+  comment: { type: String },
   authorDisplayName: { type: String },
   authorProfileImageUrl: { type: String },
   publishedAt: { type: Date, default: Date.now },

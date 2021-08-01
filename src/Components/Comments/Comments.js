@@ -34,7 +34,7 @@ export const Comments = ({ videoId }) => {
 
   return (
     <div className="comments">
-      <CommentInput />
+      <CommentInput videoId={videoId} />
       <h3 className="comments-header">Comments</h3>
       {comments.map((comment) => {
         return (
