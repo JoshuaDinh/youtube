@@ -14,6 +14,7 @@ router.get("/byTopic/:subject", async (req, res) => {
   });
 });
 
+// Retrieve all videos from db
 router.get("/allVideos", async (req, res) => {
   videos.find({}, (err, result) => {
     if (err) {
@@ -24,8 +25,8 @@ router.get("/allVideos", async (req, res) => {
   });
 });
 
-// Find video ind by id - add other endpoints for additional data here
-router.get("/watch/:videoId", async (req, res) => {
+// Find video  by id - add other endpoints for additional data here
+router.get("/view/:videoId", async (req, res) => {
   let videoId = req.params.watchId;
   try {
     let data = await mongoVideos.findOne(
