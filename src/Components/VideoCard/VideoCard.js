@@ -6,7 +6,7 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId, homepage }) => {
   return (
     <Link
       className="video-card"
-      to={`/watch/${videoId}`}
+      to={`/view/${videoId}`}
       className="video-card"
       onClick={() => setVideoId(videoId)}
     >
