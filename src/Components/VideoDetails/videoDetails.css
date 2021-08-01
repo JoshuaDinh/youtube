@@ -7,7 +7,6 @@
 }
 .video-details-title {
   display: flex;
-  margin: 2% 4%;
 }
 
 .video-details-account {
@@ -22,7 +21,7 @@
   align-items: center;
   justify-content: space-between;
   flex: 0.5;
-  margin: 2% 4%;
+  margin: 4% 0;
 
   text-align: center;
 }
@@ -31,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex: 0.75;
+  flex: 0.5;
   color: grey;
   font-weight: bolder;
   cursor: pointer;

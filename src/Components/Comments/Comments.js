@@ -3,6 +3,7 @@ import "./comments.css";
 import axiosConfig from "../../axiosConfig";
 import requests from "../../requests";
 import { Avatar } from "@material-ui/core";
+import CommentInput from "./CommentInput";
 
 export const Comment = ({ author, profileImage, text }) => {
   return (
@@ -33,6 +34,7 @@ export const Comments = ({ videoId }) => {
 
   return (
     <div className="comments">
+      <CommentInput />
       <h3 className="comments-header">Comments</h3>
       {comments.map((comment) => {
         return (
@@ -40,7 +42,6 @@ export const Comments = ({ videoId }) => {
             author={comment.snippet.authorDisplayName}
             profileImage={comment.snippet.authorProfileImageUrl}
             text={comment.snippet.textOriginal}
-            likes={comment.snippet.likeCount}
           />
         );
       })}

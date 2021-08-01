@@ -12,7 +12,7 @@
 }
 
 .comments-header {
-  margin: 2% 4%;
+  /* margin: 2% 4%; */
 }
 
 .comment-author {
@@ -23,7 +23,6 @@
 }
 
 .comment-author-name {
-  margin-left: 2%;
   width: 100%;
   color: black;
   margin-left: 15px;
@@ -36,4 +35,22 @@
   padding: 3%;
   border-radius: 5px;
   border-radius: 5px;
+}
+
+/* Comment Form */
+
+.comment-form {
+  width: 71%;
+  margin: 3% 0;
+}
+
+.comment-input-container > input {
+  padding: 10px;
+  margin: 2% 0;
+}
+
+.comment-text-area {
+  height: 70%;
+  width: 100%;
+  padding: 5%;
 }

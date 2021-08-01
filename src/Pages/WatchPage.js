@@ -20,11 +20,14 @@ const WatchPage = ({ videoId, setVideoId, relatedVideos }) => {
         <VideoPlayer videoId={videoId} />
         <RelatedVideos relatedVideos={relatedVideos} setVideoId={setVideoId} />
       </div>
-      <VideoDetails
-      //   selectedVideoData={selectedVideoData}
-      //   selectedVideoStats={selectedVideoStats}
-      />
-      <Comments videoId={videoId} />
+      <div className="watch-page-information">
+        {" "}
+        <VideoDetails
+        //   selectedVideoData={selectedVideoData}
+        //   selectedVideoStats={selectedVideoStats}
+        />
+        <Comments videoId={videoId} />
+      </div>
     </div>
   );
 };
