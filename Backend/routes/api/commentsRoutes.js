@@ -19,18 +19,18 @@ router.get("/:commentId", (req, res) => {
 // Post New Comment
 router.post("/", async (req, res) => {
   const newComment = new Comments({
-    videoId: req.body.videoId,
-    textOriginal: req.body.textOriginal,
-    authorDisplayName: req.body.authorDisplayName,
-    authorProfileImageUrl: req.body.authorProfileImageUrl,
-    likeCount: req.body.likeCount,
-    dislikeCount: req.body.dislikeCount,
+    videoId: req.body.commentId,
+    comment: req.body.comment,
+    authorDisplayName: req.body.name,
+    // authorProfileImageUrl: req.body.authorProfileImageUrl,
   });
   try {
     const postComment = await newComment.save();
-    res.status(200).json({ msg: "Comment has been saved" });
+    console.log(req.body);
+    res.status(200).send("completed");
   } catch (err) {
     console.error(err);
+    console.log(err);
   }
 });
 

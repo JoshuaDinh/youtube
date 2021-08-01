@@ -6,6 +6,7 @@ const requests = {
   htmlcss: "api/videos/byTopic/Html-Css",
   allVideos: "api/videos/allVideos",
   fetchCommentsById: "api/comments",
+  postComment: "api/comments",
   fetchVideoById: "api/view",
 };
 
