@@ -3,7 +3,6 @@ import Rows from "../Components/Rows/Rows";
 import IframeBanner from "../Components/IframeBanner/IframeBanner";
 import Loading from "../Components/Loading/Loading";
 import axios from "axios";
-
 const VideoPage = ({ setVideoId, endPoint, title }) => {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(false);

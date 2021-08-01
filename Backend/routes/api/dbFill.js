@@ -65,44 +65,46 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/comments", async (req, res) => {
-  try {
-    const response = await axios.get(
-      "https://www.googleapis.com/youtube/v3/commentThreads",
-      {
-        params: {
-          part: "snippet",
-          videoId: "Ke90Tje7VS0",
-          key: process.env.API_KEY,
-          maxResults: 3,
-        },
-      }
-    );
+// Depricated
+// router.post("/comments/:commentId", async (req, res) => {
+//   const commentId = req.params.commentId;
+//   try {
+//     const response = await axios.get(
+//       "https://www.googleapis.com/youtube/v3/commentThreads",
+//       {
+//         params: {
+//           part: "snippet",
+//           videoId: commentId,
+//           key: process.env.API_KEY,
+//           maxResults: 3,
+//         },
+//       }
+//     );
 
-    const data = await response.data.items;
+//     const data = await response.data.items;
 
-    await data.map((item) => {
-      const newComments = new Comments({
-        snippet: {
-          videoId: item.snippet.videoId,
-          textOriginal: item.snippet.topLevelComment.snippet.textOriginal,
-          authorDisplayName:
-            item.snippet.topLevelComment.snippet.authorDisplayName,
-          authorProfileImageUrl:
-            item.snippet.topLevelComment.snippet.authorProfileImageUrl,
-          authorChannelUrl:
-            item.snippet.topLevelComment.snippet.authorChannelUrl,
-          authorChannelId: {
-            value: item.snippet.topLevelComment.snippet.authorChannelId.value,
-          },
-          likeCount: item.snippet.topLevelComment.snippet.likeCount,
-          publishedAt: item.snippet.topLevelComment.snippet.publishedAt,
-        },
-      });
-      Comments.insertMany(newComments);
-    });
-    res.status(200).json(Comments);
-  } catch (err) {}
-});
+//     await data.map((item) => {
+//       const newComments = new Comments({
+//         snippet: {
+//           videoId: item.snippet.videoId,
+//           textOriginal: item.snippet.topLevelComment.snippet.textOriginal,
+//           authorDisplayName:
+//             item.snippet.topLevelComment.snippet.authorDisplayName,
+//           authorProfileImageUrl:
+//             item.snippet.topLevelComment.snippet.authorProfileImageUrl,
+//           authorChannelUrl:
+//             item.snippet.topLevelComment.snippet.authorChannelUrl,
+//           authorChannelId: {
+//             value: item.snippet.topLevelComment.snippet.authorChannelId.value,
+//           },
+//           likeCount: item.snippet.topLevelComment.snippet.likeCount,
+//           publishedAt: item.snippet.topLevelComment.snippet.publishedAt,
+//         },
+//       });
+//       Comments.insertMany(newComments);
+//     });
+//     res.status(200).json(data);
+//   } catch (err) {}
+// });
 
 module.exports = router;

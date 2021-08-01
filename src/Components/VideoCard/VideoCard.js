@@ -6,13 +6,10 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId, homepage }) => {
   return (
     <Link
       className="video-card"
-      to={`/view/${videoId}`}
+      to={`/watch/${videoId}`}
       className="video-card"
       onClick={() => setVideoId(videoId)}
     >
-      {/* <div className="play-container">
-        <PlayArrowIcon className="play-icon" />
-      </div> */}
       <img src={thumbnail} alt="#" className="video-thumbnail" />
       {!homepage ? (
         <div className="card-info">

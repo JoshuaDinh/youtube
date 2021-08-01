@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./comments.css";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import requests from "../../requests";
 import { Avatar } from "@material-ui/core";
 
@@ -21,8 +21,7 @@ export const Comments = ({ videoId }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const fillCommentDB = await axios.get(`${requests.fillCommentDB}/${videoId}`)
-      const response = await axios.get(
+      const response = await axiosConfig.get(
         `${requests.fetchCommentsById}/${videoId}`
       );
       setComments(response.data);
@@ -31,8 +30,6 @@ export const Comments = ({ videoId }) => {
       fetchData();
     }
   }, [videoId]);
-
-  console.log(comments);
 
   return (
     <div className="comments">

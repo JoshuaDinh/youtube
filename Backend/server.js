@@ -25,7 +25,7 @@ app.use(express.json({ extended: false }));
 // routes
 
 app.use("/api/videos", videoRoutes);
-app.use("/api/dbFill", dbFillRoutes);
-app.use("/view/api/comments", commentsRoutes);
+// app.use("/view/api/dbFill", dbFillRoutes);
+app.use("/api/comments", commentsRoutes);
 
 app.listen(port, () => console.log(`app is running on ${port}`));

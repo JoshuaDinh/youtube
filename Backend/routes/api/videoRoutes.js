@@ -26,22 +26,22 @@ router.get("/allVideos", async (req, res) => {
 });
 
 // Find video  by id - add other endpoints for additional data here
-router.get("/view/:videoId", async (req, res) => {
-  let videoId = req.params.watchId;
-  try {
-    let data = await mongoVideos.findOne(
-      { "videoId.videoId": videoId },
-      (err, result) => {
-        if (err) {
-          res.send(err);
-        } else {
-          res.json(result);
-        }
-      }
-    );
-  } catch (err) {
-    res.status(500).send("server error");
-  }
-});
+// router.get("/view/:videoId", async (req, res) => {
+//   let videoId = req.params.watchId;
+//   try {
+//     let data = await mongoVideos.findOne(
+//       { "videoId.videoId": videoId },
+//       (err, result) => {
+//         if (err) {
+//           res.send(err);
+//         } else {
+//           res.json(result);
+//         }
+//       }
+//     );
+//   } catch (err) {
+//     res.status(500).send("server error");
+//   }
+// });
 
 module.exports = router;
