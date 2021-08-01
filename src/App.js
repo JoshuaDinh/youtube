@@ -16,7 +16,7 @@ import HomePage from "./Pages/HomePage";
 
 const App = () => {
   const [searchVideo, setSearchVideo] = useState("");
-  const [videoId, setVideoId] = useState("pWbMrx5rVBE");
+  const [videoId, setVideoId] = useState("Ke90Tje7VS0");
   const [selectedVideoData, setSelectedVideoData] = useState("");
   const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -98,7 +98,7 @@ const App = () => {
         />
         <Switch>
           <Route path="/channel"></Route>
-          <Route path="/watch/:videoId">
+          <Route path="/view/:videoId">
             <WatchPage
               videoId={videoId}
               setVideoId={setVideoId}

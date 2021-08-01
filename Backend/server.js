@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const videoRoutes = require("./routes/api/videoRoutes");
 const dbFillRoutes = require("./routes/api/dbFill");
+const commentsRoutes = require("./routes/api/commentsRoutes");
 
 // check/initialize process.env
 const result = dotenv.config();
@@ -24,6 +25,7 @@ app.use(express.json({ extended: false }));
 // routes
 
 app.use("/api/videos", videoRoutes);
-// app.use("/api/dbFill", dbFillRoutes);
+app.use("/api/dbFill", dbFillRoutes);
+app.use("/view/api/comments", commentsRoutes);
 
 app.listen(port, () => console.log(`app is running on ${port}`));
