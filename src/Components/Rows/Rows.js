@@ -8,7 +8,7 @@ const Rows = ({ videos, setVideoId, title, link, homepage }) => {
   const viewAllBtn = () => {
     if (window.location.pathname === "/") {
       return (
-        <Link to={link}>
+        <Link to={link} className="view-link-wrapper">
           <div className="view-link">View All</div>
         </Link>
       );

@@ -17,9 +17,13 @@
   margin: 1% 2%;
 }
 
-.view-link {
-  width: 7%;
+.view-link-wrapper {
   margin: 0.5% 2%;
+
+  width: 8%;
+}
+.view-link {
+  width: 100%;
   padding: 0.25rem;
   border-radius: 10px;
   background: -webkit-linear-gradient(rgb(105, 2, 2), red);
