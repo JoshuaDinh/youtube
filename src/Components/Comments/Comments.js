@@ -18,7 +18,7 @@ export const Comments = ({ videoId }) => {
       setComments(response.data);
     };
     fetchData();
-  }, [formStatus]);
+  }, [formStatus, videoId]);
 
   return (
     <div className="comments">

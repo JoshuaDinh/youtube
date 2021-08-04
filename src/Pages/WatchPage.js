@@ -9,6 +9,9 @@ import axios from "axios";
 import "./watchPage.css";
 
 const WatchPage = ({ videoId, setVideoId, relatedVideos }) => {
+  useEffect(() => {
+    setVideoId(window.location.pathname.split("/").splice(2));
+  }, []);
   return (
     <div className="watch-page">
       <div className="watch-page-video-container">
@@ -17,7 +20,7 @@ const WatchPage = ({ videoId, setVideoId, relatedVideos }) => {
       </div>
       <div className="watch-page-information">
         <VideoDetails />
-        <Comments videoId={videoId} />
+        <Comments videoId={videoId} setVideoId={setVideoId} />
       </div>
     </div>
   );
