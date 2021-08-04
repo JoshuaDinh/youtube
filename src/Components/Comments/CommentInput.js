@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import FormAlert from "../FormAlert/FormAlert";
 import axiosConfig from "../../axiosConfig";
 import requests from "../../requests";
 import "./comments.css";
 
-const CommentInput = ({ videoId }) => {
+const CommentInput = ({ videoId, setFormStatus, formStatus }) => {
+  const [displayAlert, setDisplayAlert] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     avatar: "",
@@ -11,24 +14,35 @@ const CommentInput = ({ videoId }) => {
     commentId: videoId,
   });
 
-  const { comment, name, avatar, commentId } = formData;
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDisplayAlert(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [formStatus]);
 
-  // Update formData based off of name attributes on input fields
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axiosConfig.post(requests.postComment, formData);
+      setFormStatus(response);
+      setDisplayAlert(true);
+    } catch (err) {
+      alert(err);
+      setDisplayAlert(true);
+    }
+  };
+  // Update formData by name attributes on input
   const updateFormData = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = async (e) => {
+  const clearData = (e) => {
     e.preventDefault();
-
-    try {
-      const response = await axiosConfig.post(requests.postComment, formData);
-    } catch (err) {
-      alert(err);
-    }
   };
 
   return (
-    <form className="comment-form" onSubmit={(e) => onSubmit(e)}>
+    <form className="comment-form" onSubmit={(e) => handleSubmit(e)}>
+      {displayAlert && <FormAlert formStatus={formStatus.data.msg} />}
       <h3>Add Comment:</h3>
       <div className="comment-input-container">
         <div className="comment-input-wrapper">
@@ -36,29 +50,23 @@ const CommentInput = ({ videoId }) => {
             type="text"
             placeholder="Name"
             name="name"
-            value={name}
-            onChange={(e) => updateFormData(e)}
-          />
-          <input
-            type="upload"
-            placeholder="avatar"
-            name="avatar"
-            value={avatar}
+            value={formData.name}
             onChange={(e) => updateFormData(e)}
           />
         </div>
-        <div className="comment-button-container">
-          <button>Cancle</button>
-          <input type="submit" />
+        <div className="comment-button-wrapper">
+          <button className="comment-cancel" onClick={(e) => clearData(e)}>
+            Cancel
+          </button>
+          <input type="submit" className="comment-submit" />
         </div>
       </div>
-
       <input
         className="comment-input"
         placeholder="Add Comment"
         name="comment"
-        value={comment}
-        onChange={updateFormData}
+        value={formData.comment}
+        onChange={(e) => updateFormData(e)}
       />
     </form>
   );
