@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const videos = require("../../models/VideoSchema");
 
-// Get all videos by topic/subject - from params
+// Get all videos by topic/subject
 router.get("/byTopic/:subject", async (req, res) => {
   let subject = req.params.subject;
   try {
@@ -12,6 +12,7 @@ router.get("/byTopic/:subject", async (req, res) => {
     throw err;
   }
 });
+
 // GET all videos from db
 router.get("/allVideos", async (req, res) => {
   try {
@@ -21,6 +22,18 @@ router.get("/allVideos", async (req, res) => {
     throw err;
   }
 });
+
+// GET video by videoId
+router.get("/:videoId", async (req, res) => {
+  const videoId = req.params.videoId;
+  try {
+    const dataById = await videos.findOne({ "videoId.videoId": videoId });
+    res.status(200).json(dataById);
+  } catch (err) {
+    throw err;
+  }
+});
+
 // GET 5 random videos related to topic
 router.get("/relatedVideos/:videoId", async (req, res) => {
   const videoId = req.params.videoId;
