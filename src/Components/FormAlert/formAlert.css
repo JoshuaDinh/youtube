@@ -1,0 +1,15 @@
+.form-alert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 25%;
+  height: 35%;
+  padding: 3%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  color: whitesmoke;
+}
