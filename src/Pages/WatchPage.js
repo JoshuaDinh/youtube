@@ -7,22 +7,23 @@ import requests from "../requests";
 import axios from "axios";
 
 import "./watchPage.css";
+import HomeIframeBanner from "../Components/IframeBanner/HomeIframeBanner";
 
-const WatchPage = ({ videoId, setVideoId, relatedVideos }) => {
+const WatchPage = ({ videoId, setVideoId }) => {
   useEffect(() => {
     setVideoId(window.location.pathname.split("/").splice(2));
   }, []);
   return (
-    <div className="watch-page">
+    <>
       <div className="watch-page-video-container">
         <VideoPlayer videoId={videoId} />
-        <RelatedVideos relatedVideos={relatedVideos} setVideoId={setVideoId} />
+        <RelatedVideos setVideoId={setVideoId} videoId={videoId} />
       </div>
       <div className="watch-page-information">
         <VideoDetails />
         <Comments videoId={videoId} setVideoId={setVideoId} />
       </div>
-    </div>
+    </>
   );
 };
 export default WatchPage;

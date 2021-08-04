@@ -1,11 +1,8 @@
-.watch-page {
-}
-
 .watch-page-video-container {
   display: flex;
   height: 70vh;
 }
 .watch-page-information {
-  width: 74%;
+  width: 100%;
   padding: 1%;
 }
