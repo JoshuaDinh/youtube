@@ -5,7 +5,6 @@ const Comments = require("../../models/CommentsSchema");
 // Get comments by videoId
 router.get("/:commentId", (req, res) => {
   const commentId = req.params.commentId;
-  console.log(commentId);
   try {
     Comments.find({ videoId: commentId }, (err, result) => {
       if (err) throw err;
@@ -13,7 +12,9 @@ router.get("/:commentId", (req, res) => {
         res.status(200).json(result);
       }
     });
-  } catch (err) {}
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 // Post New Comment
@@ -26,11 +27,9 @@ router.post("/", async (req, res) => {
   });
   try {
     const postComment = await newComment.save();
-    console.log(req.body);
-    res.status(200).send("completed");
+    res.status(200).json({ msg: "Comment Submited Succesfully" });
   } catch (err) {
     console.error(err);
-    console.log(err);
   }
 });
 

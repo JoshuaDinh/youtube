@@ -9,11 +9,6 @@ import axios from "axios";
 import "./watchPage.css";
 
 const WatchPage = ({ videoId, setVideoId, relatedVideos }) => {
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = axios.get(`/api/videos/watch/${videoId}`);
-  //   };
-  // }, []);
   return (
     <div className="watch-page">
       <div className="watch-page-video-container">
@@ -21,11 +16,7 @@ const WatchPage = ({ videoId, setVideoId, relatedVideos }) => {
         <RelatedVideos relatedVideos={relatedVideos} setVideoId={setVideoId} />
       </div>
       <div className="watch-page-information">
-        {" "}
-        <VideoDetails
-        //   selectedVideoData={selectedVideoData}
-        //   selectedVideoStats={selectedVideoStats}
-        />
+        <VideoDetails />
         <Comments videoId={videoId} />
       </div>
     </div>

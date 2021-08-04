@@ -5,6 +5,10 @@
   overflow: scroll;
   width: 100%;
 }
+
+.video-details::-webkit-scrollbar {
+  display: none;
+}
 .video-details-title {
   display: flex;
 }
@@ -22,8 +26,8 @@
   justify-content: space-between;
   flex: 0.5;
   margin: 4% 0;
-
   text-align: center;
+  overflow: hidden;
 }
 
 .video-details-icon-container {
