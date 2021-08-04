@@ -20,13 +20,6 @@ const App = () => {
   const [selectedVideoData, setSelectedVideoData] = useState("");
   const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [relatedVideos, setRelatedVideos] = useState([]);
-  const [reactVideos, setReactVideos] = useState([]);
-  const [frontEndVideos, setFrontEndVideos] = useState([]);
-  const [backEndVideos, setBackEndVideos] = useState([]);
-  const [fullStackVideos, setFullStackVideos] = useState([]);
-  const [javascriptVideos, setJavacriptVideos] = useState([]);
-  const [mongoVideos, setMongoVideos] = useState([]);
   const [token, setToken] = useState([]);
 
   // Sets authorization token from Google_OAuth
@@ -36,28 +29,6 @@ const App = () => {
   //     setToken(_token);
   //   }
   // }, []);
-
-  // Get related videos to selected video ID
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const relatedVideos = await axios.get(
-  //       "https://www.googleapis.com/youtube/v3/search",
-  //       {
-  //         params: {
-  //           part: "snippet",
-  //           relatedToVideoId: videoId,
-  //           type: "video",
-  //           key: API_KEY,
-  //           maxResults: 6,
-  //         },
-  //       }
-  //     );
-  //     setRelatedVideos(relatedVideos.data.items);
-  //   };
-  //   if (videoId) {
-  //     fetchData();
-  //   }
-  // }, [videoId]);
 
   // Get selected video data for display
   // useEffect(() => {
@@ -99,11 +70,7 @@ const App = () => {
         <Switch>
           <Route path="/channel"></Route>
           <Route path="/watch/:videoId">
-            <WatchPage
-              videoId={videoId}
-              setVideoId={setVideoId}
-              relatedVideos={relatedVideos}
-            />
+            <WatchPage videoId={videoId} setVideoId={setVideoId} />
           </Route>
           <Route path="/searchResults">
             <div className="App">

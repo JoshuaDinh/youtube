@@ -7,7 +7,8 @@ const requests = {
   allVideos: "api/videos/allVideos",
   fetchCommentsById: "api/comments",
   postComment: "api/comments",
-  fetchVideoById: "api/view",
+  // fetchVideoById: "api/view",
+  fetchRelatedVideos: "api/videos/relatedVideos",
 };
 
 export default requests;

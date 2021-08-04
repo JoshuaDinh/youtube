@@ -2,46 +2,39 @@ const express = require("express");
 const router = express.Router();
 const videos = require("../../models/VideoSchema");
 
-// Search videos by topic - from params
+// Get all videos by topic/subject - from params
 router.get("/byTopic/:subject", async (req, res) => {
   let subject = req.params.subject;
-  videos.find({ topic: subject }, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.status(200).json(result);
-    }
-  });
+  try {
+    const videosByTopic = await videos.find({ topic: subject });
+    res.status(200).json(videosByTopic);
+  } catch (err) {
+    throw err;
+  }
 });
-
-// Retrieve all videos from db
+// GET all videos from db
 router.get("/allVideos", async (req, res) => {
-  videos.find({}, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.status(200).json(result);
-    }
-  });
+  try {
+    const allVideos = await videos.find({});
+    res.status(200).json(allVideos);
+  } catch (err) {
+    throw err;
+  }
 });
-
-// Find video  by id - add other endpoints for additional data here
-// router.get("/view/:videoId", async (req, res) => {
-//   let videoId = req.params.watchId;
-//   try {
-//     let data = await mongoVideos.findOne(
-//       { "videoId.videoId": videoId },
-//       (err, result) => {
-//         if (err) {
-//           res.send(err);
-//         } else {
-//           res.json(result);
-//         }
-//       }
-//     );
-//   } catch (err) {
-//     res.status(500).send("server error");
-//   }
-// });
+// GET 5 random videos related to topic
+router.get("/relatedVideos/:videoId", async (req, res) => {
+  const videoId = req.params.videoId;
+  try {
+    // Find video data - extract video topic - search for related videos by topic
+    const dataById = await videos.findOne({ "videoId.videoId": videoId });
+    const randomVideos = await videos.aggregate([
+      { $match: { topic: dataById.topic } }, // Filter the results by Subject
+      { $sample: { size: 5 } }, // Retrieves 5 documents
+    ]);
+    res.status(200).json(randomVideos);
+  } catch (err) {
+    throw err;
+  }
+});
 
 module.exports = router;

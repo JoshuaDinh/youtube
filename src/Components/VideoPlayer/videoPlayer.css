@@ -1,5 +1,7 @@
 .video-player {
-  min-height: 700px;
+  max-height: 600px;
+  min-width: 75%;
+  padding: 2%;
 }
 
 .video-player-iframe {
