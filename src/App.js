@@ -21,6 +21,7 @@ const App = () => {
   const [selectedVideoStats, setSelectedVideoStats] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [token, setToken] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // Sets authorization token from Google_OAuth
   // useEffect(() => {
@@ -29,34 +30,6 @@ const App = () => {
   //     setToken(_token);
   //   }
   // }, []);
-
-  // Get selected video data for display
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const fetchVideoById = await axios.get(
-  //         "https://www.googleapis.com/youtube/v3/videos",
-  //         {
-  //           params: {
-  //             part: "snippet,contentDetails,statistics",
-  //             id: videoId,
-  //             key: API_KEY,
-  //             maxResults: 1,
-  //           },
-  //         }
-  //       );
-  //       fetchVideoById.data.items.map((data) => {
-  //         setSelectedVideoData(data.snippet);
-  //         setSelectedVideoStats(data.statistics);
-  //       });
-  //     } catch (err) {
-  //       alert(err);
-  //     }
-  //   };
-  //   if (videoId) {
-  //     fetchData();
-  //   }
-  // }, [videoId]);
 
   return (
     <Router>
@@ -70,7 +43,12 @@ const App = () => {
         <Switch>
           <Route path="/channel"></Route>
           <Route path="/watch/:videoId">
-            <WatchPage videoId={videoId} setVideoId={setVideoId} />
+            <WatchPage
+              videoId={videoId}
+              setVideoId={setVideoId}
+              loading={loading}
+              setLoading={setLoading}
+            />
           </Route>
           <Route path="/searchResults">
             <div className="App">
@@ -83,6 +61,8 @@ const App = () => {
               endPoint={requests.React}
               title="React Videos"
               setVideoId={setVideoId}
+              loading={loading}
+              setLoading={setLoading}
             />
           </Route>
           <Route path="/Node">
@@ -90,6 +70,8 @@ const App = () => {
               endPoint={requests.Node}
               title="Node.js Videos"
               setVideoId={setVideoId}
+              loading={loading}
+              setLoading={setLoading}
             />
           </Route>
           <Route path="/Html-Css">
@@ -97,6 +79,8 @@ const App = () => {
               endPoint={requests.htmlcss}
               title="Html & Css  Videos"
               setVideoId={setVideoId}
+              loading={loading}
+              setLoading={setLoading}
             />
           </Route>
           <Route path="/Javascript">
@@ -104,6 +88,8 @@ const App = () => {
               endPoint={requests.Javascript}
               title="Javascript Videos"
               setVideoId={setVideoId}
+              loading={loading}
+              setLoading={setLoading}
             />
           </Route>
           <Route path="/MongoDB">
@@ -111,6 +97,8 @@ const App = () => {
               endPoint={requests.MongoDB}
               title="MongoDB Videos"
               setVideoId={setVideoId}
+              loading={loading}
+              setLoading={setLoading}
             />
           </Route>
           {/* HomePage */}

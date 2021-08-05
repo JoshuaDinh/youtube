@@ -3,9 +3,8 @@ import Rows from "../Components/Rows/Rows";
 import IframeBanner from "../Components/IframeBanner/IframeBanner";
 import Loading from "../Components/Loading/Loading";
 import axios from "axios";
-const VideoPage = ({ setVideoId, endPoint, title }) => {
+const VideoPage = ({ setVideoId, endPoint, title, loading, setLoading }) => {
   const [videos, setVideos] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +14,7 @@ const VideoPage = ({ setVideoId, endPoint, title }) => {
         setVideos(videoData.data);
         const timer = setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 700);
       } catch (err) {
         alert(err);
       }

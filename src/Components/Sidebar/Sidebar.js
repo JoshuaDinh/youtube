@@ -24,7 +24,7 @@ const Sidebar = () => {
         </NavLink>
         <p>Catagories</p>
         <NavLink to="/html-css" className="NavLink" activeClassName="is-active">
-          <HttpIcon className="sidebar-icon" /> <span>Html & Css</span>
+          <HttpIcon className="sidebar-icon" /> <span>Html/Css</span>
         </NavLink>
         <NavLink
           to="/Javascript"

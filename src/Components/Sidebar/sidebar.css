@@ -18,7 +18,6 @@
 
 .sidebar-section-container > p {
   margin-bottom: -30px;
-  font-size: 1.4rem;
   background: -webkit-linear-gradient(rgb(105, 2, 2), red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -37,10 +36,11 @@
   min-height: 7vh;
   width: 100%;
   color: black;
+  font-size: 0.9rem;
   border-radius: 10px;
 }
 .NavLink > span {
-  width: 55%;
+  width: 40%;
 }
 
 .NavLink:hover {

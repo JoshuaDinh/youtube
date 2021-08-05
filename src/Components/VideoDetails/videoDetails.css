@@ -1,9 +1,11 @@
 /* Video-Details */
 .video-details {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   overflow: scroll;
   width: 100%;
+  margin: 2% 0;
+  padding: 2% 1%;
 }
 
 .video-details::-webkit-scrollbar {
@@ -15,44 +17,55 @@
 
 .video-details-account {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bolder;
-}
-
-.video-details-name {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   flex: 0.5;
-  margin: 4% 0;
-  text-align: center;
-  overflow: hidden;
 }
 
 .video-details-icon-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex: 0.5;
+  flex: 0.2;
   color: grey;
   font-weight: bolder;
   cursor: pointer;
+}
+
+.video-details-animate-like {
+  animation: increase 1.5s ease-out;
+}
+.video-details-animate-dislike {
+  animation: increase 1.5s ease-out;
+}
+
+@keyframes increase {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+    color: red;
+  }
 }
 
 .video-details-icon:hover {
   color: red;
 }
 
-.video-details-subscribe {
-  padding: 12px 20px;
-  border-radius: 5px;
-  background-image: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
-  color: white;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: 0.75s ease-out;
+.video-details-description {
+  font-size: 0.9rem;
+  margin: 1% 0;
 }
-.video-details-subscribe:hover {
-  transform: scale(1.16);
+
+.video-details-date {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.video-details-icon-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
 }

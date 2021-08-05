@@ -21,10 +21,9 @@ export const RelatedVideos = ({ setVideoId, videoId }) => {
     fetchData();
   }, [videoId]);
 
-  console.log(relatedVideos.data);
   return (
     <div className="related-video">
-      <h2>Related Videos:</h2>
+      <h4>Related Videos:</h4>
       {relatedVideos?.map((data) => {
         return (
           <RelatedVideoCard

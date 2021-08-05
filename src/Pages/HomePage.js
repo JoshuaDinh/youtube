@@ -45,21 +45,21 @@ const HomePage = ({ setVideoId }) => {
         title="React Developer Videos"
         setVideoId={setVideoId}
         videos={videos[0]?.data}
-        link={requests.React}
+        link={"/React"}
         homepage
       />
       <Rows
         title="Javascript Developer Videos"
         setVideoId={setVideoId}
         videos={videos[1]?.data}
-        link={requests.Javascript}
+        link={"/Javascript"}
         homepage
       />
       <Rows
         title="Node Developer Videos"
         setVideoId={setVideoId}
         videos={videos[2]?.data}
-        link={requests.Node}
+        link={"/Node"}
         homepage
       />
     </>
