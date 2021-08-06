@@ -7,6 +7,7 @@
   background: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
   border-radius: 10px;
   height: 10vh;
+  padding: 3%;
   color: white;
   font-weight: bolder;
 }

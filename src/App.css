@@ -49,3 +49,10 @@ body {
     red
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+@media only screen and (max-width: 1340px) {
+  .App {
+    left: 0;
+    width: 100%;
+  }
+}

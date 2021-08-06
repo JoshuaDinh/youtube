@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./searchbar.css";
 import SearchIcon from "@material-ui/icons/Search";
-import { loginUrl } from "../../GoogleAuth";
-import { Avatar } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link } from "react-router-dom";
+import MobileNav from "../MobileNav/MobileNav";
 
 export const Searchbar = ({ token }) => {
   const [input, setInput] = useState("");
+  const [mobileNav, setMobileNav] = useState(false);
+
+  const toggleMobileNav = () => {
+    setMobileNav(!mobileNav);
+  };
 
   return (
     <header className="searchbar">
@@ -23,7 +28,12 @@ export const Searchbar = ({ token }) => {
             <SearchIcon className="searchbar-search-icon" />
           </Link>
         </div>
-      </form>
+      </form>{" "}
+      <ExpandMoreIcon
+        className="searchbar-mobile-nav-icon"
+        onClick={toggleMobileNav}
+      />
+      {mobileNav && <MobileNav toggleMobileNav={toggleMobileNav} />}
     </header>
   );
 };

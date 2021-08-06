@@ -60,3 +60,9 @@
 .is-active .sidebar-icon {
   color: whitesmoke;
 }
+
+@media only screen and (max-width: 1340px) {
+  .sidebar {
+    display: none;
+  }
+}

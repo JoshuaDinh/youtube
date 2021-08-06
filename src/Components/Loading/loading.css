@@ -53,3 +53,9 @@
     transform: rotate(-1440deg) scale(0.5);
   }
 }
+
+@media only screen and (max-width: 1340px) {
+  .loading-background {
+    width: 100%;
+  }
+}
