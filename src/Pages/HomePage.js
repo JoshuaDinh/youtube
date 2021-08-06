@@ -4,6 +4,7 @@ import HomeIframeBanner from "../Components/IframeBanner/HomeIframeBanner";
 import Loading from "../Components/Loading/Loading";
 import axios from "axios";
 import requests from "../requests";
+import Searchbar from "../Components/Searchbar/Searchbar";
 
 const HomePage = ({ setVideoId }) => {
   const [videos, setVideos] = useState([]);
@@ -38,6 +39,7 @@ const HomePage = ({ setVideoId }) => {
   }, []);
   return (
     <>
+      <Searchbar />
       {loading && <Loading />}
       <HomeIframeBanner setVideoId={setVideoId} />
       <Rows

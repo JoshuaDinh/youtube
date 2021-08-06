@@ -52,3 +52,12 @@
   grid-template-columns: 1fr;
   border-radius: 10px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .home-iframe-grid {
+    display: none;
+  }
+  .home-iframe-banner-main-video {
+    min-width: 100%;
+  }
+}

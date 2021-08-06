@@ -38,6 +38,19 @@ router.get("/allVideos", async (req, res) => {
   }
 });
 
+// Get videos based on search
+router.get("/search_query=:search", async (req, res) => {
+  const search = req.params.search;
+  try {
+    const searchResults = await videos.find({
+      "snippet.title": { $regex: `${search}`, $options: "?i" },
+    });
+    res.status(200).json(searchResults);
+  } catch (err) {
+    throw err;
+  }
+});
+
 // GET video by videoId
 router.get("/:videoId", async (req, res) => {
   const videoId = req.params.videoId;

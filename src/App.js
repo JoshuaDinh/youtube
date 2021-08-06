@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Searchbar } from "./Components/Searchbar/Searchbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import Rows from "./Components/Rows/Rows";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import axios from "axios";
-// import { API_KEY } from "./requests";
-// import { getTokenFromUrl } from "./GoogleAuth";
-import IframeBanner from "./Components/IframeBanner/IframeBanner";
-import VideoList from "./Components/VideoList/VideoList";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import requests from "./requests";
 import VideoPage from "./Pages/VideoPage";
+import ResultsPage from "./Pages/ResultsPage";
 import WatchPage from "./Pages/WatchPage";
 import HomePage from "./Pages/HomePage";
+import Searchbar from "./Components/Searchbar/Searchbar";
 
 const App = () => {
-  const [searchVideo, setSearchVideo] = useState("");
   const [videoId, setVideoId] = useState("");
-  const [selectedVideoData, setSelectedVideoData] = useState("");
-  const [selectedVideoStats, setSelectedVideoStats] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const [token, setToken] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -34,14 +26,8 @@ const App = () => {
   return (
     <Router>
       <Sidebar />
-      <div className="App">
-        <Searchbar
-          setSearchResults={setSearchResults}
-          token={token}
-          setToken={setToken}
-        />
-        <Switch>
-          <Route path="/channel"></Route>
+      <Switch>
+        <div className="App">
           <Route path="/watch/:videoId">
             <WatchPage
               videoId={videoId}
@@ -49,11 +35,6 @@ const App = () => {
               loading={loading}
               setLoading={setLoading}
             />
-          </Route>
-          <Route path="/searchResults">
-            <div className="App">
-              <VideoList videos={searchResults} setVideoId={setVideoId} />
-            </div>
           </Route>
           {/* Video Routes */}
           <Route path="/React">
@@ -101,12 +82,18 @@ const App = () => {
               setLoading={setLoading}
             />
           </Route>
+          <Route
+            path="/search_results=:search"
+            render={(props) => (
+              <ResultsPage setVideoId={setVideoId} props={props} />
+            )}
+          />
           {/* HomePage */}
-          <Route path="/">
+          <Route exact path="/">
             <HomePage setVideoId={setVideoId} />
           </Route>
-        </Switch>
-      </div>
+        </div>
+      </Switch>
     </Router>
   );
 };

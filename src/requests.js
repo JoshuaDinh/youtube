@@ -11,6 +11,7 @@ const requests = {
   fetchRelatedVideos: "api/videos/relatedVideos",
   fetchMixedVideos: "api/videos/byTopic/mix",
   updateVideoDetails: "api/videos",
+  fetchVideosByQuery: "api/videos/search_query=",
 };
 
 export default requests;

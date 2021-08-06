@@ -3,6 +3,7 @@ import Rows from "../Components/Rows/Rows";
 import IframeBanner from "../Components/IframeBanner/IframeBanner";
 import Loading from "../Components/Loading/Loading";
 import axios from "axios";
+import Searchbar from "../Components/Searchbar/Searchbar";
 const VideoPage = ({ setVideoId, endPoint, title, loading, setLoading }) => {
   const [videos, setVideos] = useState([]);
 
@@ -23,6 +24,7 @@ const VideoPage = ({ setVideoId, endPoint, title, loading, setLoading }) => {
   }, [endPoint]);
   return (
     <>
+      <Searchbar />
       {loading && <Loading />}
       <IframeBanner videos={videos} />
       <Rows
