@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import requests from "./requests";
 import VideoPage from "./Pages/VideoPage";
 import ResultsPage from "./Pages/ResultsPage";
@@ -12,22 +16,14 @@ import Searchbar from "./Components/Searchbar/Searchbar";
 
 const App = () => {
   const [videoId, setVideoId] = useState("");
-  const [token, setToken] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  // Sets authorization token from Google_OAuth
-  // useEffect(() => {
-  //   const _token = getTokenFromUrl();
-  //   if (_token) {
-  //     setToken(_token);
-  //   }
-  // }, []);
 
   return (
     <Router>
       <Sidebar />
-      <Switch>
-        <div className="App">
+      <div className="App">
+        <Searchbar />
+        <Switch>
           <Route path="/watch/:videoId">
             <WatchPage
               videoId={videoId}
@@ -82,18 +78,15 @@ const App = () => {
               setLoading={setLoading}
             />
           </Route>
-          <Route
-            path="/search_results=:search"
-            render={(props) => (
-              <ResultsPage setVideoId={setVideoId} props={props} />
-            )}
-          />
+          <Route path="/search_results=:search">
+            <ResultsPage setVideoId={setVideoId} />
+          </Route>
           {/* HomePage */}
           <Route exact path="/">
             <HomePage setVideoId={setVideoId} />
           </Route>
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </Router>
   );
 };

@@ -3,14 +3,14 @@ import "./searchbar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MobileNav from "../MobileNav/MobileNav";
-
-import { Redirect, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Searchbar = () => {
   const [input, setInput] = useState("");
   const [query, setQuery] = useState("");
   const [mobileNav, setMobileNav] = useState(false);
 
+  const history = useHistory();
   const toggleMobileNav = () => {
     setMobileNav(!mobileNav);
   };
@@ -20,14 +20,9 @@ const Searchbar = () => {
   };
 
   if (query) {
-    return (
-      <Redirect
-        to={{
-          pathname: `search_results=${query}`,
-        }}
-      />
-    );
+    history.push("/search_results=" + query);
   }
+  console.log(history);
   return (
     <header className="searchbar">
       <form className="searchbar-form" onSubmit={(e) => handleSubmit(e, input)}>
@@ -39,12 +34,10 @@ const Searchbar = () => {
             onChange={(e) => setInput(e.target.value)}
             name={input}
           ></input>
-          <Link to="/searchResults">
-            <SearchIcon
-              className="searchbar-search-icon"
-              onClick={(e) => handleSubmit(e, input)}
-            />
-          </Link>
+          <SearchIcon
+            className="searchbar-search-icon"
+            onClick={(e) => handleSubmit(e, input)}
+          />
         </div>
       </form>
       <ExpandMoreIcon

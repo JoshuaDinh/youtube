@@ -2,26 +2,25 @@ import React, { useState, useEffect } from "react";
 import "./results.css";
 import requests from "../requests";
 import axiosConfig from "../axiosConfig";
-import Searchbar from "../Components/Searchbar/Searchbar";
 import Rows from "../Components/Rows/Rows";
 
-const ResultsPage = ({ props, setVideoId }) => {
+const ResultsPage = ({ setVideoId }) => {
   const [results, setResults] = useState([]);
-  const { search } = props.match.params;
+
+  const searchParam = window.location.pathname.split("=").slice(1);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axiosConfig.get(
-        `${requests.fetchVideosByQuery}${search}`
+        `${requests.fetchVideosByQuery}${searchParam}`
       );
       setResults(response.data);
     };
     fetchData();
-  }, [search]);
+  }, [searchParam]);
 
   return (
     <>
-      <Searchbar />
       <Rows videos={results} setVideoId={setVideoId} />
     </>
   );

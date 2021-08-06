@@ -7,7 +7,6 @@ import Loading from "../Components/Loading/Loading";
 import requests from "../requests";
 import axiosConfig from "../axiosConfig";
 import "./watchPage.css";
-import Searchbar from "../Components/Searchbar/Searchbar";
 
 const WatchPage = ({ videoId, setVideoId, loading, setLoading }) => {
   const [videoData, setVideoData] = useState({});
@@ -40,7 +39,6 @@ const WatchPage = ({ videoId, setVideoId, loading, setLoading }) => {
 
   return (
     <>
-      <Searchbar />
       <div className="watch-page-video-container">
         {loading && <Loading />}
         <VideoPlayer videoId={videoId} />
