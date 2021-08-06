@@ -18,14 +18,14 @@
 .video-details-account {
   display: flex;
   flex-direction: column;
-  flex: 0.5;
+  flex: 0.75;
 }
 
 .video-details-icon-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex: 0.2;
+  flex: 0.25;
   color: grey;
   font-weight: bolder;
   cursor: pointer;

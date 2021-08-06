@@ -20,34 +20,19 @@ const Rows = ({ videos, setVideoId, title, link, homepage }) => {
       <h5 className="rows-title">{title}</h5>
       {viewAllBtn()}
       <div className="rows-card-container">
-        {/* Determine how many videos to display */}
-        {homepage
-          ? videos?.slice(1, 5).map((data) => {
-              return (
-                data.snippet?.thumbnails && (
-                  <VideoCard
-                    setVideoId={setVideoId}
-                    videoId={data.videoId.videoId}
-                    title={data.snippet?.title}
-                    thumbnail={data.snippet?.thumbnails?.medium.url}
-                    channel={data.snippet?.channelTitle}
-                  />
-                )
-              );
-            })
-          : videos?.slice(1).map((data) => {
-              return (
-                data.snippet?.thumbnails && (
-                  <VideoCard
-                    setVideoId={setVideoId}
-                    videoId={data.videoId.videoId}
-                    title={data.snippet?.title}
-                    thumbnail={data.snippet?.thumbnails?.medium.url}
-                    channel={data.snippet?.channelTitle}
-                  />
-                )
-              );
-            })}
+        {videos?.map((data) => {
+          return (
+            data.snippet?.thumbnails && (
+              <VideoCard
+                setVideoId={setVideoId}
+                videoId={data.videoId.videoId}
+                title={data.snippet?.title}
+                thumbnail={data.snippet?.thumbnails?.medium.url}
+                channel={data.snippet?.channelTitle}
+              />
+            )
+          );
+        })}
       </div>
     </div>
   );

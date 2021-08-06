@@ -57,3 +57,9 @@
   font-size: 0.8rem;
   box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
 }
+
+@media only screen and (max-width: 1340px) {
+  .related-video {
+    display: none;
+  }
+}

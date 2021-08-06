@@ -23,14 +23,13 @@ const HomePage = ({ setVideoId }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        Promise.all([
-          fetchReact(),
-          fetchJavascript(),
-          fetchNode(),
-        ]).then((data) => setVideos(...videos, data));
-        const timer = setTimeout(() => {
-          setLoading(false);
-        }, 1000);
+        Promise.all([fetchReact(), fetchJavascript(), fetchNode()])
+          .then((data) => setVideos(...videos, data))
+          .then(() => {
+            const timer = setTimeout(() => {
+              setLoading(false);
+            }, 1000);
+          });
       } catch (err) {
         alert(err);
       }
