@@ -9,6 +9,7 @@ const requests = {
   postComment: "api/comments",
   fetchVideoById: "api/videos",
   fetchRelatedVideos: "api/videos/relatedVideos",
+  fetchMixedVideos: "api/videos/byTopic/mix",
   updateVideoDetails: "api/videos",
 };
 

@@ -10,13 +10,13 @@ const HomePage = ({ setVideoId }) => {
   const [loading, setLoading] = useState(false);
 
   const fetchReact = () => {
-    return axios.get(requests.React);
+    return axios.get(`${requests.fetchMixedVideos}/React`);
   };
   const fetchJavascript = () => {
-    return axios.get(requests.Javascript);
+    return axios.get(`${requests.fetchMixedVideos}/Javascript`);
   };
   const fetchNode = () => {
-    return axios.get(requests.Node);
+    return axios.get(`${requests.fetchMixedVideos}/Node`);
   };
 
   useEffect(() => {

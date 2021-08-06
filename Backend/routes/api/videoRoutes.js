@@ -13,6 +13,21 @@ router.get("/byTopic/:subject", async (req, res) => {
   }
 });
 
+// Get all videos by topic/subject
+router.get("/byTopic/mix/:subject", async (req, res) => {
+  let subject = req.params.subject;
+  try {
+    const videosByTopic = await videos.findOne({ topic: subject });
+    const randomVideos = await videos.aggregate([
+      { $match: { topic: videosByTopic.topic } }, // Filter the results by Subject
+      { $sample: { size: 5 } }, // Retrieves 5 documents
+    ]);
+    res.status(200).json(randomVideos);
+  } catch (err) {
+    throw err;
+  }
+});
+
 // GET all videos from db
 router.get("/allVideos", async (req, res) => {
   try {
