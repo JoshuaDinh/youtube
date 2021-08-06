@@ -68,6 +68,10 @@
   cursor: pointer;
   z-index: -1;
 }
+.searchbar-mobile-nav-close {
+  transform: rotate(180deg);
+}
+
 .searchbar-mobile-nav-icon:hover {
   color: red;
 }

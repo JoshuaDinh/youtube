@@ -30,7 +30,9 @@ export const Searchbar = ({ token }) => {
         </div>
       </form>{" "}
       <ExpandMoreIcon
-        className="searchbar-mobile-nav-icon"
+        className={`searchbar-mobile-nav-icon ${
+          mobileNav && "searchbar-mobile-nav-close"
+        }`}
         onClick={toggleMobileNav}
       />
       {mobileNav && <MobileNav toggleMobileNav={toggleMobileNav} />}
