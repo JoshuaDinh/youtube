@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import requests from "./requests";
 import VideoPage from "./Pages/VideoPage";
 import ResultsPage from "./Pages/ResultsPage";
@@ -78,9 +73,18 @@ const App = () => {
               setLoading={setLoading}
             />
           </Route>
-          <Route path="/search_results=:search">
-            <ResultsPage setVideoId={setVideoId} />
-          </Route>
+          <Route
+            path="/search_results=:search"
+            render={(props) => (
+              <ResultsPage
+                props={props}
+                setVideoId={setVideoId}
+                loading={loading}
+                setLoading={setLoading}
+              />
+            )}
+          />
+
           {/* HomePage */}
           <Route exact path="/">
             <HomePage setVideoId={setVideoId} />
