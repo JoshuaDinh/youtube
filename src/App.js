@@ -11,7 +11,7 @@ import Searchbar from "./Components/Searchbar/Searchbar";
 
 const App = () => {
   const [videoId, setVideoId] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <Router>
@@ -76,7 +76,6 @@ const App = () => {
             />
           </Route>
           <Route
-            exact
             path="/search_results=:search"
             render={(props) => (
               <ResultsPage
@@ -90,7 +89,11 @@ const App = () => {
 
           {/* HomePage */}
           <Route exact path="/">
-            <HomePage setVideoId={setVideoId} />
+            <HomePage
+              setVideoId={setVideoId}
+              loading={loading}
+              setLoading={setLoading}
+            />
           </Route>
         </div>
       </Switch>

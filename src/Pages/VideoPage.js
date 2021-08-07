@@ -7,19 +7,16 @@ const VideoPage = ({ setVideoId, endPoint, title, loading, setLoading }) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       try {
-        setLoading(true);
         const videoData = await axios.get(endPoint);
         setVideos(videoData.data);
-        const timer = setTimeout(() => {
-          setLoading(false);
-        }, 700);
       } catch (err) {
         alert(err);
       }
+      setLoading(false);
     };
-
     fetchData();
   }, [endPoint]);
   return (

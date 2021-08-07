@@ -23,13 +23,11 @@ const VideoDetails = ({
     await axiosConfig.put(`${requests.updateVideoDetails}/${videoId}`, body);
     setLikes(likes + 1);
   };
+
   const handleDislikes = async () => {
     const body = { increment: "dislikes" };
     setAnimateDislike(true);
-    const post = await axiosConfig.put(
-      `${requests.updateVideoDetails}/${videoId}`,
-      body
-    );
+    await axiosConfig.put(`${requests.updateVideoDetails}/${videoId}`, body);
     setDislikes(dislikes + 1);
   };
 

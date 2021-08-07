@@ -4,7 +4,7 @@ import "./formAlert.css";
 const FormAlert = ({ formStatus }) => {
   return (
     <div className="form-alert">
-      <h3>{formStatus}</h3>
+      <span>{formStatus}</span>
     </div>
   );
 };

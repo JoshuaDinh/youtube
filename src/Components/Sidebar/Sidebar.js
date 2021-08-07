@@ -25,7 +25,7 @@ const Sidebar = () => {
         <p>Catagories</p>
         <NavLink
           exact={true}
-          to="Html-Css"
+          to="/Html-Css"
           className="NavLink"
           activeClassName="is-active"
         >

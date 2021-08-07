@@ -15,11 +15,11 @@ const WatchPage = ({ videoId, setVideoId, loading, setLoading }) => {
 
   useEffect(() => {
     setVideoId(window.location.pathname.split("/").splice(2));
-  }, []);
+  }, [setVideoId]);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
-      setLoading(true);
       try {
         const response = await axiosConfig.get(
           `${requests.fetchVideoById}/${videoId}`
@@ -30,13 +30,10 @@ const WatchPage = ({ videoId, setVideoId, loading, setLoading }) => {
       } catch (err) {
         alert(err);
       }
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 700);
-      return () => clearTimeout(timer);
+      setLoading(false);
     };
     fetchData();
-  }, [videoId]);
+  }, [videoId, setVideoId]);
 
   return (
     <>

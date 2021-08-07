@@ -17,16 +17,18 @@ const ResultsPage = ({ setVideoId, loading, setLoading, props }) => {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      const response = await axiosConfig.get(
-        `${requests.fetchVideosByQuery}${search}`
-      );
-      setResults(response.data);
-      setLoading(false);
+      try {
+        const response = await axiosConfig.get(
+          `${requests.fetchVideosByQuery}${search}`
+        );
+        setResults(response.data);
+      } catch (err) {
+        alert(err);
+      }
     };
+    setLoading(false);
     fetchData();
   }, [search]);
-
-  console.log(props);
 
   return (
     <>

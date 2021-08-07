@@ -45,12 +45,12 @@
   100% {
     opacity: 0;
     transform: scale(2);
-    color: red;
+    color: #870000;
   }
 }
 
 .video-details-icon:hover {
-  color: red;
+  color: #870000;
 }
 
 .video-details-description {
@@ -67,5 +67,5 @@
   position: relative;
   height: 100%;
   width: 100%;
-  border: 1px solid red;
+  border: 1px solid #870000;
 }

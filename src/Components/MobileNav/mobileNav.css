@@ -20,7 +20,17 @@
 .mobile-nav-section-container > p {
   margin: 2% 0;
   text-align: center;
-  background: -webkit-linear-gradient(rgb(105, 2, 2), red);
+  background: #870000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -38,6 +48,7 @@
   min-height: 7vh;
   width: 100%;
   margin: 20px 0;
+  padding: 15px;
   color: black;
   font-size: 0.9rem;
   border-radius: 10px;
@@ -48,7 +59,19 @@
 }
 
 .NavLink:hover {
-  background: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  background: #870000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0px 6px 18px -9px rgb(135, 0, 0, 0.75);
+
   color: whitesmoke;
 }
 
@@ -57,7 +80,19 @@
 }
 
 .is-active {
-  background: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  background: #870000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0px 6px 18px -9px rgb(135, 0, 0, 0.75);
+
   color: whitesmoke;
 }
 

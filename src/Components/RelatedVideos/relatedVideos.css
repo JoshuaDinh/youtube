@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   max-width: 20%;
-  background: rgb(212, 212, 212);
   border-radius: 10px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -11,8 +10,21 @@
 
 .related-video > h4 {
   margin-top: 5%;
-  color: grey;
   text-align: center;
+  background: #870000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .related-video::-webkit-scrollbar {

@@ -89,7 +89,18 @@
   width: 100%;
   margin-left: 4%;
   border-radius: 5px;
-  background-image: linear-gradient(315deg, rgb(105, 2, 2) 0%, red 90%);
+  background: #870000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
   cursor: pointer;
   border: 1px solid transparent;

@@ -6,7 +6,6 @@ const VideoCard = ({ title, thumbnail, setVideoId, videoId, homepage }) => {
     <Link
       className="video-card"
       to={`/watch/${videoId}`}
-      className="video-card"
       onClick={() => setVideoId(videoId)}
     >
       <img src={thumbnail} alt="#" className="video-thumbnail" />

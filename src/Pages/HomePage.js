@@ -5,9 +5,8 @@ import Loading from "../Components/Loading/Loading";
 import axios from "axios";
 import requests from "../requests";
 
-const HomePage = ({ setVideoId }) => {
+const HomePage = ({ setVideoId, loading, setLoading }) => {
   const [videos, setVideos] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   const fetchReact = () => {
     return axios.get(`${requests.fetchMixedVideos}/React`);
@@ -20,16 +19,12 @@ const HomePage = ({ setVideoId }) => {
   };
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       try {
-        setLoading(true);
         Promise.all([fetchReact(), fetchJavascript(), fetchNode()])
           .then((data) => setVideos(...videos, data))
-          .then(() => {
-            setTimeout(() => {
-              setLoading(false);
-            }, 1000);
-          });
+          .then(() => setLoading(false));
       } catch (err) {
         alert(err);
       }

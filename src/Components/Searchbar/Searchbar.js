@@ -23,7 +23,9 @@ const Searchbar = () => {
   };
 
   useEffect(() => {
-    history.push("/search_results=" + query);
+    if (query) {
+      history.push("/search_results=" + query);
+    }
   }, [query]);
 
   return (
