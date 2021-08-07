@@ -11,12 +11,20 @@ const Searchbar = () => {
   const [mobileNav, setMobileNav] = useState(false);
 
   const history = useHistory();
+
   const toggleMobileNav = () => {
     setMobileNav(!mobileNav);
   };
+
   const handleSubmit = (e, input) => {
     e.preventDefault();
     setQuery(input);
+  };
+
+  // Without resetting the query changing the search input on any other page auto-redirects to Results page
+  const handleInput = (e) => {
+    setQuery("");
+    setInput(e.target.value);
   };
 
   if (query) {
@@ -31,7 +39,7 @@ const Searchbar = () => {
             className="searchbar-input"
             placeholder="Search.."
             type="text"
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) => handleInput(e)}
             name={input}
           ></input>
           <SearchIcon
