@@ -19,6 +19,7 @@ const VideoPage = ({ setVideoId, endPoint, title, loading, setLoading }) => {
         alert(err);
       }
     };
+
     fetchData();
   }, [endPoint]);
   return (

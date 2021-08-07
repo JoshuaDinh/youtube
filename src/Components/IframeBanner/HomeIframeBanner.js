@@ -21,7 +21,6 @@ const HomeIframeBanner = ({ setVideoId }) => {
     fetchData();
   }, []);
 
-  console.log(randomVideos[0]?.[0]);
   // Gets first video from api call to display in iframe
   const videoSrc = `https://www.youtube.com/embed/${randomVideos[0]?.[0]?.videoId.videoId}`;
   return (

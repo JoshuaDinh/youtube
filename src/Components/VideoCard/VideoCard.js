@@ -1,5 +1,4 @@
 import React from "react";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import "./videoCard.css";
 import { Link } from "react-router-dom";
 const VideoCard = ({ title, thumbnail, setVideoId, videoId, homepage }) => {

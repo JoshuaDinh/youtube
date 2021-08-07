@@ -26,7 +26,7 @@ const HomePage = ({ setVideoId }) => {
         Promise.all([fetchReact(), fetchJavascript(), fetchNode()])
           .then((data) => setVideos(...videos, data))
           .then(() => {
-            const timer = setTimeout(() => {
+            setTimeout(() => {
               setLoading(false);
             }, 1000);
           });

@@ -23,10 +23,16 @@ const Sidebar = () => {
           <HomeIcon className="sidebar-icon" /> <span>Home</span>
         </NavLink>
         <p>Catagories</p>
-        <NavLink to="/html-css" className="NavLink" activeClassName="is-active">
+        <NavLink
+          exact={true}
+          to="Html-Css"
+          className="NavLink"
+          activeClassName="is-active"
+        >
           <HttpIcon className="sidebar-icon" /> <span>Html/Css</span>
         </NavLink>
         <NavLink
+          exact={true}
           to="/Javascript"
           className="NavLink"
           activeClassName="is-active"
@@ -34,13 +40,28 @@ const Sidebar = () => {
           <WebIcon className="sidebar-icon" />
           <span>Javascript</span>
         </NavLink>
-        <NavLink to="/React" className="NavLink" activeClassName="is-active">
+        <NavLink
+          exact={true}
+          to="/React"
+          className="NavLink"
+          activeClassName="is-active"
+        >
           <VerticalSplitIcon className="sidebar-icon" /> <span>React.js</span>
         </NavLink>
-        <NavLink to="/Node" className="NavLink" activeClassName="is-active">
+        <NavLink
+          exact={true}
+          to="/Node"
+          className="NavLink"
+          activeClassName="is-active"
+        >
           <LanguageIcon className="sidebar-icon" /> <span>Node.js</span>
         </NavLink>
-        <NavLink to="/MongoDB" className="NavLink" activeClassName="is-active">
+        <NavLink
+          exact={true}
+          to="/MongoDB"
+          className="NavLink"
+          activeClassName="is-active"
+        >
           <StorageIcon className="sidebar-icon" /> <span>MongoDB</span>
         </NavLink>
       </div>

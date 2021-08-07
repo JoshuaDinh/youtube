@@ -1,6 +1,5 @@
 import React from "react";
 import "./iframeBanner.css";
-import VideoCard from "../VideoCard/VideoCard";
 
 const IframeBanner = ({ videos }) => {
   // Gets first video from api call to display in iframe  console.log(videos);

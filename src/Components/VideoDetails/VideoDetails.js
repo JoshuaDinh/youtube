@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./videoDetails.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
@@ -20,10 +20,7 @@ const VideoDetails = ({
   const handleLikes = async () => {
     const body = { increment: "likes" };
     setAnimateLike(true);
-    const post = await axiosConfig.put(
-      `${requests.updateVideoDetails}/${videoId}`,
-      body
-    );
+    await axiosConfig.put(`${requests.updateVideoDetails}/${videoId}`, body);
     setLikes(likes + 1);
   };
   const handleDislikes = async () => {

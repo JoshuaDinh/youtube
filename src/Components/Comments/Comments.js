@@ -3,7 +3,6 @@ import "./comments.css";
 import axiosConfig from "../../axiosConfig";
 import requests from "../../requests";
 import CommentInput from "./CommentInput";
-import FormAlert from "../FormAlert/FormAlert";
 import Comment from "./Comment";
 
 export const Comments = ({ videoId }) => {

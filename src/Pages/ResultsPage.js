@@ -26,6 +26,8 @@ const ResultsPage = ({ setVideoId, loading, setLoading, props }) => {
     fetchData();
   }, [search]);
 
+  console.log(props);
+
   return (
     <>
       {loading && <Loading />}

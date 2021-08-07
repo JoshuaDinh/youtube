@@ -19,18 +19,13 @@ const Searchbar = () => {
   const handleSubmit = (e, input) => {
     e.preventDefault();
     setQuery(input);
-  };
-
-  // Without resetting the query changing the search input on any other page auto-redirects to Results page
-  const handleInput = (e) => {
-    setQuery("");
-    setInput(e.target.value);
-  };
-
-  if (query) {
     history.push("/search_results=" + query);
-  }
-  console.log(history);
+  };
+
+  useEffect(() => {
+    history.push("/search_results=" + query);
+  }, [query]);
+
   return (
     <header className="searchbar">
       <form className="searchbar-form" onSubmit={(e) => handleSubmit(e, input)}>
@@ -39,8 +34,9 @@ const Searchbar = () => {
             className="searchbar-input"
             placeholder="Search.."
             type="text"
-            onChange={(e) => handleInput(e)}
+            onChange={(e) => setInput(e.target.value)}
             name={input}
+            value={input}
           ></input>
           <SearchIcon
             className="searchbar-search-icon"

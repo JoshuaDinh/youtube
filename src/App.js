@@ -15,10 +15,11 @@ const App = () => {
 
   return (
     <Router>
+      {" "}
       <Sidebar />
-      <div className="App">
-        <Searchbar />
-        <Switch>
+      <Switch>
+        <div className="App">
+          <Searchbar />
           <Route path="/watch/:videoId">
             <WatchPage
               videoId={videoId}
@@ -48,6 +49,7 @@ const App = () => {
           </Route>
           <Route path="/Html-Css">
             <VideoPage
+              exact
               endPoint={requests.htmlcss}
               title="Html & Css  Videos"
               setVideoId={setVideoId}
@@ -74,6 +76,7 @@ const App = () => {
             />
           </Route>
           <Route
+            exact
             path="/search_results=:search"
             render={(props) => (
               <ResultsPage
@@ -89,8 +92,8 @@ const App = () => {
           <Route exact path="/">
             <HomePage setVideoId={setVideoId} />
           </Route>
-        </Switch>
-      </div>
+        </div>
+      </Switch>
     </Router>
   );
 };

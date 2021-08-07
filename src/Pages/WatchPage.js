@@ -19,20 +19,21 @@ const WatchPage = ({ videoId, setVideoId, loading, setLoading }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
-        setLoading(true);
         const response = await axiosConfig.get(
           `${requests.fetchVideoById}/${videoId}`
         );
         setVideoData(response.data.snippet);
         setLikes(response.data.likes);
         setDislikes(response.data.dislikes);
-        const timer = setTimeout(() => {
-          setLoading(false);
-        }, 700);
       } catch (err) {
         alert(err);
       }
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 700);
+      return () => clearTimeout(timer);
     };
     fetchData();
   }, [videoId]);
