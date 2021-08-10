@@ -15,7 +15,6 @@ const App = () => {
 
   return (
     <Router>
-      {" "}
       <Sidebar />
       <Switch>
         <div className="App">
@@ -88,7 +87,7 @@ const App = () => {
           />
 
           {/* HomePage */}
-          <Route exact path="/">
+          <Route exact path="/devtube">
             <HomePage
               setVideoId={setVideoId}
               loading={loading}

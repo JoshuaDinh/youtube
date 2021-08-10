@@ -1,6 +1,7 @@
 {
   "name": "youtubemaster",
   "version": "0.1.0",
+  "homepage": "http://joshuadinh.tech/devtube",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
@@ -40,6 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
