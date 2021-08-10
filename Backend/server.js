@@ -28,13 +28,15 @@ app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentsRoutes);
 
 // Serve static files
-if(process.env.NODE_ENV === 'production') {
 
 app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/devtube", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
-}
+// if(process.env.NODE_ENV === 'production') {
+
+
+// }
 
 app.listen(port, () => console.log(`app is running on ${port}`));

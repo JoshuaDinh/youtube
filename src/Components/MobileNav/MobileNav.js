@@ -11,7 +11,7 @@ const MobileNav = ({ toggleMobileNav }) => {
         <NavLink
           exact={true}
           activeClassName="is-active"
-          to="/"
+          to="/devtube"
           className="NavLink"
           onClick={toggleMobileNav}
         >

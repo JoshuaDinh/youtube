@@ -17,7 +17,7 @@ const Sidebar = () => {
         <NavLink
           exact={true}
           activeClassName="is-active"
-          to="/"
+          to="/devtube"
           className="NavLink"
         >
           <HomeIcon className="sidebar-icon" /> <span>Home</span>
