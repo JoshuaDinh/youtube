@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
     videoId: req.body.commentId,
     comment: req.body.comment,
     authorDisplayName: req.body.name,
-    // authorProfileImageUrl: req.body.authorProfileImageUrl,
+    authorProfileImageUrl: req.body.name.charAt(0).toUpperCase(),
   });
   try {
     const postComment = await newComment.save();

@@ -13,7 +13,7 @@
 }
 
 .comments-header {
-  margin: 2% 0;
+  margin: 2%;
 }
 
 .comment-author {
@@ -43,6 +43,36 @@
 .comment-form {
   position: relative;
   width: 100%;
+}
+
+.comment-form-header {
+  display: flex;
+  align-items: center;
+}
+.comment-form-header > h3 {
+  margin-right: 1rem;
+}
+
+.comment-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 2.5em;
+  background: #870000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #190a05,
+    #870000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 1px solid white;
+  border-radius: 999px;
+  color: whitesmoke;
 }
 
 .comment-input-container {

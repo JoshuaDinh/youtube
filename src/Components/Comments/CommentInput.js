@@ -43,7 +43,12 @@ const CommentInput = ({ videoId, setFormStatus, formStatus }) => {
   return (
     <form className="comment-form" onSubmit={(e) => handleSubmit(e)}>
       {displayAlert && <FormAlert formStatus={formStatus.data.msg} />}
-      <h3>Add Comment:</h3>
+      <div className="comment-form-header">
+        <h3>Add Comment:</h3>{" "}
+        <div className="comment-avatar">
+          <h2>{formData.name.charAt(0).toUpperCase()}</h2>
+        </div>
+      </div>
       <div className="comment-input-container">
         <div className="comment-input-wrapper">
           <input
