@@ -28,10 +28,12 @@ app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentsRoutes);
 
 // Serve static files
+
+if (process.env.NODE_ENV == "production") {
 app.use(express.static(path.join(__dirname, "clientStatic")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "clientStatic", "index.html"));
 });
-
+}
 
 app.listen(port, () => console.log(`app is running on ${port}`));
