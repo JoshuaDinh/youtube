@@ -27,16 +27,13 @@ app.use(express.json({ extended: false }));
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentsRoutes);
 
-// Serve static files
-
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("/devtube", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-// if(process.env.NODE_ENV === 'production') {
-
-
-// }
+// Serve static assets in production
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static("build"))
+  
+app.get("*",( req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"))
+})
+}
 
 app.listen(port, () => console.log(`app is running on ${port}`));
