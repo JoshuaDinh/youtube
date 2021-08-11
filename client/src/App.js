@@ -87,7 +87,7 @@ const App = () => {
           />
 
           {/* HomePage */}
-          <Route exact path="/devtube">
+          <Route exact path="/">
             <HomePage
               setVideoId={setVideoId}
               loading={loading}
