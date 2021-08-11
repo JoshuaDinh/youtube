@@ -1,6 +1,6 @@
 /* Video-Details */
 .video-details {
-  display: flex;
+  display: flex; 
   justify-content: flex-start;
   overflow: scroll;
   width: 100%;
@@ -28,7 +28,7 @@
   flex: 0.25;
   color: grey;
   font-weight: bolder;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .video-details-animate-like {
@@ -69,3 +69,16 @@
   width: 100%;
   border: 1px solid #870000;
 }
+
+@media only screen and (max-width: 700px) 
+ { 
+   .video-details { 
+     flex-direction: column
+    } 
+    .video-details-icon-container {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between; margin-top:20px;
+ }
+.video-details-icon-container { width: 25%;}  }
+

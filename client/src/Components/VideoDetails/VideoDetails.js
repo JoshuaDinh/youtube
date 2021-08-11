@@ -34,12 +34,12 @@ const VideoDetails = ({
   return (
     <div className="video-details">
       <div className="video-details-account">
-        <h2> {videoData?.title}</h2>
+        <h2> {videoData.title}</h2>
         <span className="video-details-description">
-          {videoData?.description}
+          {videoData.description}
         </span>
         <span className="video-details-date">
-          uploaded-{format(videoData?.publishedAt)}
+          uploaded-{format(videoData.publishedAt)}
         </span>
       </div>
       <div className="video-details-icon-container">
